@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Love and Share</title>
-    <link>https://kairoswang.github.io/</link>
+    <link>https://kairoswong.github.io/</link>
     <description>Recent content on Love and Share</description>
     <generator>Hugo -- 0.126.1</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 Sep 2024 09:40:14 +0800</lastBuildDate>
-    <atom:link href="https://kairoswang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kairoswong.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tracing the origins of Schrödinger equation</title>
-      <link>https://kairoswang.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/</link>
+      <link>https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/</link>
       <pubDate>Sat, 28 Sep 2024 09:40:14 +0800</pubDate>
-      <guid>https://kairoswang.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/</guid>
+      <guid>https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/</guid>
       <description>This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</description>
       <content:encoded><![CDATA[<blockquote>
 <p>This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</p>
@@ -249,9 +249,9 @@ and this amounts to saying that</p>
     </item>
     <item>
       <title>Viewing direct policy optimization from a physical perspective</title>
-      <link>https://kairoswang.github.io/posts/2024-06-24-dpo/</link>
+      <link>https://kairoswong.github.io/posts/2024-06-24-dpo/</link>
       <pubDate>Mon, 24 Jun 2024 23:45:42 +0800</pubDate>
-      <guid>https://kairoswang.github.io/posts/2024-06-24-dpo/</guid>
+      <guid>https://kairoswong.github.io/posts/2024-06-24-dpo/</guid>
       <description>Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans.</description>
       <content:encoded><![CDATA[<h3 id="introduction">Introduction</h3>
 <p>Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans. In advanced stages of reinforcement learning, as the complexity of training escalates and the distinction between selected and discarded responses diminishes, Supervised Fine-Tuning (SFT) may inadvertently increase the rewards for incorrect responses.</p>
@@ -415,9 +415,9 @@ $$
     </item>
     <item>
       <title>The challenges of scientific truth and belief systems</title>
-      <link>https://kairoswang.github.io/posts/2024-06-01-belief_system/</link>
+      <link>https://kairoswong.github.io/posts/2024-06-01-belief_system/</link>
       <pubDate>Sat, 01 Jun 2024 22:56:42 +0800</pubDate>
-      <guid>https://kairoswang.github.io/posts/2024-06-01-belief_system/</guid>
+      <guid>https://kairoswong.github.io/posts/2024-06-01-belief_system/</guid>
       <description>Introduction Mathematics and science are deeply interconnected, with math providing the founfation for scientific theories. However, there exists an huge gap within mathematics—a gap that ensures we will never touch complete certainty. Certain true statements remain unprovable, potentially challenging our belief in scientific discoveries.
 Historical context Russell&amp;rsquo;s paradox and formalism In 1874, Georg Cantor introduced the concept of sets, and a branch of mathematics named set theory, which studies well-defined collections of things.</description>
       <content:encoded><![CDATA[<h3 id="introduction">Introduction</h3>
@@ -492,9 +492,9 @@ founfation for scientific theories. However, there exists an huge gap within mat
     </item>
     <item>
       <title>KdV 方程求解及其背景</title>
-      <link>https://kairoswang.github.io/posts/2023-07-09-kdv_equation/</link>
+      <link>https://kairoswong.github.io/posts/2023-07-09-kdv_equation/</link>
       <pubDate>Sun, 09 Jul 2023 19:16:56 +0800</pubDate>
-      <guid>https://kairoswang.github.io/posts/2023-07-09-kdv_equation/</guid>
+      <guid>https://kairoswong.github.io/posts/2023-07-09-kdv_equation/</guid>
       <description>背景介绍 孤子的发现应追溯到1834年的夏日，英国科学家 J.S.Russel 骑马正沿着一条运河岸道旅行，偶然发现在狭窄的河床中行走的船突然停止前进，被船体带动的</description>
       <content:encoded><![CDATA[<h3 id="背景介绍">背景介绍</h3>
 <p>孤子的发现应追溯到1834年的夏日，英国科学家 <em>J.S.Russel</em> 骑马正沿着一条运河岸道旅行，偶然发现在狭窄的河床中行走的船突然停止前进，被船体带动的水团积聚在船头周围并剧烈地翻动着. 不久，一个圆形且轮廓分明的巨大孤立波峰开始形成，并急速离开船头向前运动. 波长约 10 米，高约 0.5 米，在行进中波的形状和速度并无明显变化，以后高度逐渐下降，在跟踪至三公里后，终于消失在蜿蜒的河道上. 这次发现的奇特景观促使 <em>Russel</em> 开始广泛的水波实验研究. 他称这沿着狭窄通道传播的、保持形状和速度不变的水包为“伟大的孤立波”，并意识到这是流体力学中某方程的稳定解. 然而, 由于当时数学水平与计算技术的限制，罗素的研究没有取得满意的进展，直到1895年，荷兰著名数学家 <em>Korteweg</em> 和他的学生 <em>de Vries</em> 在对孤波进行全面分析后指出这种波可近似为小振幅的长波，并以此建立了浅水波运动方程<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
@@ -672,9 +672,9 @@ $$
     </item>
     <item>
       <title>量子分形世界-Hofstadter蝴蝶</title>
-      <link>https://kairoswang.github.io/posts/2023-07-01-hofstadter_butterfly/</link>
+      <link>https://kairoswong.github.io/posts/2023-07-01-hofstadter_butterfly/</link>
       <pubDate>Sat, 01 Jul 2023 12:14:32 +0800</pubDate>
-      <guid>https://kairoswang.github.io/posts/2023-07-01-hofstadter_butterfly/</guid>
+      <guid>https://kairoswong.github.io/posts/2023-07-01-hofstadter_butterfly/</guid>
       <description>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 本文回顾了通过类比 Weierstrass 函数，可以从量子气体中寻求到相应的动力学</description>
       <content:encoded><![CDATA[<p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 本文回顾了通过类比 Weierstrass 函数，可以从量子气体中寻求到相应的动力学分形. 随后，主要详细讲解了一种有趣的量子分形现象 —Hofstadter蝴蝶. 对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到这种美丽的分形图案，最后举例了一些最新的相关的研究情况. (P.S. 这篇文章是我的课程设计，再次回看的时候添加了一些新内容，对以前的东西也有了新的理解.)</p>
 <h3 id="引言">引言</h3>
