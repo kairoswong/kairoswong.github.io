@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Viewing direct policy optimization from a physical perspective | Love and Share</title>
+<meta name="keywords" content="Nature language processing, Deep reinforcement learning">
+<meta name="description" content="Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans.">
+<meta name="author" content="Kairos Wong">
+<link rel="canonical" href="https://kairoswong.github.io/posts/2024-06-24-dpo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa3a950dc53e39fd52e88f8aa4fe3534775854957275bcd2b38a217fb10f2c14.css" integrity="sha256-&#43;jqVDcU&#43;Of1S6I&#43;KpP41NHdYVJVydbzSs4ohf7EPLBQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://kairoswong.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://kairoswong.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://kairoswong.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://kairoswong.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://kairoswong.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://kairoswong.github.io/posts/2024-06-24-dpo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+
+
+
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            displayMath: [['$$','$$']], 
+            inlineMath: [['$','$']],
+        },
+        TeX: {equationNumbers: {autoNumber: "AMS"}},
+    });
+</script>
+
+
+
+
+
+
+  
+
+<meta property="og:title" content="Viewing direct policy optimization from a physical perspective" />
+<meta property="og:description" content="Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kairoswong.github.io/posts/2024-06-24-dpo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-06-24T23:45:42+08:00" />
+<meta property="article:modified_time" content="2024-06-24T23:45:42+08:00" /><meta property="og:site_name" content="👋 Welcome" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Viewing direct policy optimization from a physical perspective"/>
+<meta name="twitter:description" content="Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://kairoswong.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Viewing direct policy optimization from a physical perspective",
+      "item": "https://kairoswong.github.io/posts/2024-06-24-dpo/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Viewing direct policy optimization from a physical perspective",
+  "name": "Viewing direct policy optimization from a physical perspective",
+  "description": "Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans.",
+  "keywords": [
+    "Nature language processing", "Deep reinforcement learning"
+  ],
+  "articleBody": "Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans. In advanced stages of reinforcement learning, as the complexity of training escalates and the distinction between selected and discarded responses diminishes, Supervised Fine-Tuning (SFT) may inadvertently increase the rewards for incorrect responses.\nBackground In the field of Natural Language Processing (NLP), the introduction of InstructGPT 1 has significantly advanced research in reinforcement learning from human feedback (RLHF). Typically, the RLHF stage follows supervised fine-tuning (SFT). InstructGPT employs proximal policy optimization (PPO) for preference optimization, but PPO requires the training of an additional reward model. This reward model’s training is inherently unstable, and its outcomes directly impact the final optimization’s effectiveness. Subsequent research has bypassed the reward model training step, directly proceeding with preference training. Knowledge Training Optimization (KTO) 2 learns from non-paired preference data, while Initial Public Offering (IPO) 3 uses a root-finding MSE loss to incorporate Kullback-Leibler (KL) regularization. Order Police (ORPO) 4 introduces a reference-model-free odds ratio term to directly contrast winning and losing responses with the policy model, jointly training with the SFT objective.\nTheoretical foundation Bradley-Terry model The DPO algorithm 5, and true to its name, is to integrate the decision and reward functions directly into the reinforcement learning objective, eliminating the need for separate reward modeling. Moreover, DPO has emerged as a promising alternative for aligning Large Language Models (LLMs) to human or AI preferences.\nImagine that the large language model is prompted with prompts $x$ to produce pairs of answers, we are definitely going to prefer one over the other. Here, the Bradley-Terry model 6 is used to quantify preferences. This model is particularly used in a pairwise comparison, allowing us to express human preference distribution, denoted by $p^{*}$. Like most alignment methods, DPO requires a dataset of paired preferences $\\mathcal{D} = \\lbrace x^{(i)}, y_{w}^{(i)}, y_{l}^{(i)} \\rbrace_{i = 1}^{N}$ sampled from $p^{*}$, where $y_{w}$ and $y_{l}$ denotes the preferred and dispreferred choice. And we assume that the preferences are generated by an underlying reward model $r^{*}(y, x)$, which could be parametrized by $r_{\\phi}(y, x)$. Specifically, the probability that item $y_{w}$ is preferred over item $y_{l}$ could be modeled as\n$$ \\begin{equation} p^{*}(y_{w} \\succ y_{l} \\mid x) = \\frac{\\exp(r^{*}(x,y_{w}))}{\\exp(r^{*}(x,y_{w}))+\\exp(r^{*}(x,y_{l}))}. \\label{eq1} \\end{equation} $$\nIn Eq. \\eqref{eq1}, we still have a question, why do we use the exponential function?\nBy using the exponential function, we could transform ratios into a log-linear model, which is more convenient for optimization and computation. And then, this exponential function has a natural probabilistic interpretation in distribution models. Finally, the non-negativity of the exponential function ensures that model parameters are always positive, avoiding issues with negative scoring.\nThere is a more general explanation we could use as a reference. Assuming we do not use $\\exp(\\cdot)$ and replace it with $a^{x}$, we could get\n$$ \\begin{equation} p^{*}(y_{w}\\succ y_{l}) = \\frac{a^{(r^{*}(x,y_{w}))}}{a^{(r^{*}(x,y_{w}))}+a^{(r^{*}(x,y_{l}))}} \\end{equation} $$\nBut if we use this linear transformation, $b(x,y) = \\log_{a}(\\mathrm{e})c(x,y)$, so that\n$$ \\begin{equation} a^{b(x,y)} = a^{\\log_{a}(\\mathrm{e})c(x,y)} = (\\mathrm{e}^{\\log a})^{\\log_{a}(\\mathrm{e})c(x,y)} = \\mathrm{e}^{c(x,y)} \\end{equation} $$\nIt is not hard to find that for any base number $a$, we can still find a corresponding linear transformation, which brings us back to the exponential function. And it has those good properties that we mentioned earlier, which is why we chose it.\nLog-likelihood loss function We now have Eq. \\eqref{eq1}, taking the natural logarithm of both sides of the equation allows us to linearize the model\n$$ \\begin{equation} \\begin{aligned} \\mathcal{L}_ {R}(r_{\\phi}, \\mathcal{D}) \u0026 =-\\mathbb{E}_ {\\left(x, y_w, y_l\\right) \\sim \\mathcal{D}}\\left[\\log \\frac{\\exp \\left(r_{\\phi}\\left(x, y_w\\right)\\right)}{\\exp \\left(r_{\\phi}\\left(x, y_w\\right)\\right)+\\exp \\left(r_{\\phi}\\left(x, y_l\\right)\\right)}\\right] \\\\ \u0026 =-\\mathbb{E}_ {\\left(x, y_w, y_l\\right) \\sim \\mathcal{D}}\\left[\\log \\frac{1}{1+\\exp \\left(r_{\\phi}\\left(x, y_l\\right)-r_{\\phi}\\left(x, y_w\\right)\\right)}\\right] \\\\ \u0026 =-\\mathbb{E}_ {\\left(x, y_w, y_l\\right) \\sim \\mathcal{D}}\\left[\\log \\sigma\\left(r_{\\phi}\\left(x, y_w\\right)-r_{\\phi}\\left(x, y_l\\right)\\right)\\right] \\end{aligned} \\label{eq4} \\end{equation} $$ where $\\sigma$ is the logistic function, the more specific expression is $ \\sigma (x)= {1}/({1 +\\exp{(-x)}})$.\nDuring the reinforcement learning fine-tuning phase, we need to find the following target to provide feedback to the language model,\n$$ \\begin{equation} \\max_{\\pi_{\\theta}} \\mathbb{E}_ {x \\sim \\mathcal{D}, y \\sim \\pi_{\\theta}}[r_{\\phi}(x,y)] - \\beta \\mathbb{D}_ {\\text{KL}}[\\pi_{\\theta}(y\\mid x) || \\pi_{\\text{ref}}(y\\mid x)] \\label{eq5} \\end{equation} $$\nwhere $\\beta$ is a hyper-parameter the controls the deviation from baseline reference policy $\\pi_{\\text{ref}}$, and $\\pi_{\\theta}$ is the language model policy. For this equation, $\\mathbb{E}_ {x \\sim \\mathcal{D}, y \\sim \\pi_{\\theta}}[r_ {\\phi}(x,y)]$, reflects our desire to achieve as much reward as possible in the given task while simultaneously minimizing $\\mathbb{D}_ {\\text{KL}}[\\pi_{\\theta}(y\\mid x) || \\pi_{\\text{ref}}(y\\mid x)]$, which measures how close or far the model distribution is from the reference distribution.\nDeriving the optimum of reward maximization objective For two probability distributions $P$ and $Q$, Kullback-Leibler (KL) divergence $\\mathbb{D}_{\\mathrm{KL}}(P|| Q)$ is defined as\n$$ \\begin{equation} \\mathbb{D}_ {\\text{KL}}(P || Q)= \\sum_{x \\in \\mathcal{X}} P(x)\\log \\left( \\frac{P(x)}{Q(x)} \\right) \\end{equation} $$\nwhere $\\mathcal{X}$ is the set of possible outcomes for the discrete random variable $x$. KL divergence measures the information loss when distribution $Q$ is used to approximate distribution $P$. In other words, it quantifies the difference between distributions $Q$ and $P$. In the following derivation, we need to introduce the concept of partition function in physics, $Z (x)$. With Eq. \\eqref{eq5}, we could have\n$$ \\begin{equation} \\begin{aligned} \u0026 \\max_ {\\pi_{\\theta}} \\mathbb{E}_ {x \\sim \\mathcal{D}, y \\sim \\pi_{\\theta}} [r_{\\phi}(x, y)] -\\beta \\mathbb{D}_ {\\mathrm{KL}}\\left[\\pi_{\\theta}(y \\mid x) \\| \\pi_{\\mathrm{ref}}(y \\mid x)\\right] \\\\ \u0026 = \\max_{\\pi_{\\theta}} \\mathbb{E}_ {x \\sim \\mathcal{D}, y \\sim \\pi_{\\theta}}[r_{\\phi}(x, y)] - \\mathbb{E} _ {x \\sim \\mathcal{D}, y \\sim \\pi_{\\theta}}\\left[ \\beta \\log \\frac{\\pi_{\\theta}(y \\mid x)}{\\pi_{\\text{ref}}(y \\mid x)} \\right]\\\\ \u0026 =\\max_ {\\pi_{\\theta}} \\mathbb{E}_ {x \\sim \\mathcal{D}} \\mathbb{E}_ {y \\sim \\pi_{\\theta}}\\left[r_{\\phi}(x, y)-\\beta \\log \\frac{\\pi_{\\theta}(y \\mid x)}{\\pi_{\\mathrm{ref}}(y \\mid x)}\\right] \\\\ \u0026 =\\min_ {\\pi_{\\theta}} \\mathbb{E}_ {x \\sim \\mathcal{D}} \\mathbb{E}_ {y \\sim \\pi_{\\theta}}\\left[\\log \\frac{\\pi_{\\theta}(y \\mid x)}{\\pi_{\\mathrm{ref}}(y \\mid x)}-\\frac{1}{\\beta} r_{\\phi}(x, y)\\right] \\\\ \u0026 =\\min_ {\\pi_{\\theta}} \\mathbb{E}_ {x \\sim \\mathcal{D}} \\mathbb{E}_ {y \\sim \\pi_{\\theta}}\\left[\\log \\frac{\\pi_{\\theta}(y \\mid x)}{\\color{red}{\\frac{1}{Z(x)} \\pi_{\\mathrm{ref}}(y \\mid x) \\exp \\left(\\frac{1}{\\beta} r_{\\phi}(x, y)\\right)}}-\\log Z(x)\\right], \\end{aligned}\\label{eq7} \\end{equation} $$ where partition function is\n$$ \\begin{equation} Z (x) = \\sum_{y}\\pi_{\\text{ref}(y \\mid x) }\\exp\\left( \\frac{1}{\\beta} r_{\\phi} (x, y) \\right). \\end{equation} $$\nLet us go back to statitical physics for explaining the partition function, partition function $Z$ is the sum of all possible state weights of a system, and it determines the equilibrium properties of this system. For a given system, the partition function in physics is defined as $ Z = \\sum_{i} \\exp\\left(-\\frac{E_{i}}{k_{B}T}\\right)$, where $E_{i}$ is the energy of the $i$-th state, $k_{B}$ is the Boltzmann constant, and $T$ is the temperature of the system. Physically, the partition function $Z$ represents a normalization factor in the system’s state space that determines the probability of each state. In the given optimization framework, our goal is to obtain the policy $\\pi_\\theta$ by maximizing the reward $r_\\phi(x, y)$ while minimizing the KL divergence between the distribution $\\pi_\\theta(y \\mid x)$ and the reference distribution $\\pi_{\\text{ref}}(y \\mid x)$. To simplify the computation of the KL divergence, we could introduce a partition function $Z(x)$, which is similar to the partition function in statistical physics. This function normalizes the weighted probabilities across all possible values of $y$. And then we need to define\n$$ \\begin{equation} \\begin{aligned} \\frac{1}{Z(x)} \\pi_{\\mathrm{ref}}(y \\mid x) \u0026\\exp \\left(\\frac{1}{\\beta} r_{\\phi}(x, y)\\right) \\\\ \u0026 = \\frac{\\pi_{\\text{ref}}(y \\mid x)\\exp \\left( \\frac{1}{\\beta}r_{\\phi}(x, y) \\right)}{\\sum_{y}\\pi_{\\text{ref}(y \\mid x)}\\exp\\left( \\frac{1}{\\beta}r_{\\phi}(x,y) \\right)}\\\\ \u0026 = \\pi^{*}(y \\mid x) \\end{aligned} \\end{equation} $$ Now we should re-organize the detailed result in Eq. \\eqref{eq7} as\n$$ \\begin{equation} \\begin{aligned} \\min_{\\pi_{\\theta}}\\mathbb{E}_ {x \\sim \\mathcal{D}, y \\sim \\pi_{ \\theta}}\u0026 \\left[ \\log \\frac{\\pi(y \\mid x)}{\\pi^{*}(y \\mid x)} - \\log Z(x) \\right] \\\\ \u0026 = \\min_{\\pi_{\\theta}}\\mathbb{E}_ {x \\sim \\mathcal{D}, y \\sim \\pi_{ \\theta}} \\left[ \\log \\frac{\\pi_{\\theta}(y \\mid x)}{\\pi^{*}(y \\mid x)} \\right] \\\\ \u0026 = \\min_{\\pi_{\\theta}}\\mathbb{E} _ {x \\sim \\mathcal{D}}[\\mathbb{D}_ {\\text{KL}}(\\pi_{\\theta}(y \\mid x) ||\\pi^{*}(y \\mid x))]. \\end{aligned} \\end{equation} $$ Since we all know $Z(x)$ does depend on $y$, only if the two distributions are identical we will find that the KL-divergence is minimized at $0$. Hence we got the corresponding optimal solution\n$$ \\begin{equation} \\pi_{\\theta}(y \\mid x)=\\pi^*(y \\mid x)=\\frac{1}{Z(x)} \\pi_{\\mathrm{ref}}(y \\mid x) \\exp \\left(\\frac{1}{\\beta} r_{\\phi}(x, y)\\right).\\label{eq11} \\end{equation} $$\nAnd then we derive $r_{\\phi}$ from Eq. \\eqref{eq11}\n$$ \\begin{equation} \\begin{aligned} r_{\\phi}(x, y) \u0026=\\beta \\log \\left[\\frac{\\pi_{\\theta}(y \\mid x)}{\\pi_{\\text{ref}}(y \\mid x)} Z(x)\\right] \\\\ \u0026 =\\beta \\log \\frac{\\pi_{\\theta}(y \\mid x)}{\\pi_{\\text{ref}}(y \\mid x)}+\\beta \\log Z(x). \\end{aligned} \\label{eq12} \\end{equation} $$ By substituting Eq. \\eqref{eq12} into Eq. \\eqref{eq4} we could obtain\n$$ \\begin{equation} \\begin{aligned} \u0026 \\mathcal{L}_ {\\mathrm{DPO}}\\left(\\pi_\\theta ; \\pi_{\\mathrm{ref}}\\right)= -\\mathbb{E}_{\\left(x, y_w, y_l\\right) \\sim \\mathcal{D}}\\left[\\log \\sigma\\left(r_\\phi\\left(x, y_w\\right)-r_\\phi\\left(x, y_l\\right)\\right)\\right]\\\\ \u0026 = -\\mathbb{E}_{\\left(x, y_w, y_l\\right) \\sim \\mathcal{D}}\\left[\\log \\sigma\\left(\\beta \\log \\frac{\\pi_\\theta\\left(y_w \\mid x\\right)}{\\pi_{\\mathrm{ref}}\\left(y_w \\mid x\\right)}-\\beta \\log \\frac{\\pi_\\theta\\left(y_l \\mid x\\right)}{\\pi_{\\mathrm{ref}}\\left(y_l \\mid x\\right)}\\right)\\right] \\end{aligned} \\end{equation} $$ Discussion Recent Literature Review. Even recently, researchers unveil SimPO 7, an innovative algorithm that streamlines reinforcement learning by leveraging human feedback. By adopting the average log probability of a sequence as an inherent reward, SimPO cleverly bypasses the complexity of using a reference model. This method not only simplifies the process but also proves to be more efficient in computation and memory usage. When pitted against established methods such as DPO, especially in benchmarks like AlpacaEval 2 and Arena-Hard, SimPO demonstrates superior performance.\nReferences L. Ouyang, J. Wu, X. Jiang, et al., “Training language models to follow instructions with human feedback,” Advances in neural information processing systems, vol. 35, pp. 27 730–27 744, 2022. ↩︎\nK. Ethayarajh, W. Xu, N. Muennighoff, D. Jurafsky, and D. Kiela, “Kto: Model alignment as prospect theoretic optimization,” arXiv preprint arXiv:2402.01306, 2024. ↩︎\nZ. Jiang, X. Huang, and C. Wei, “Preference as reward, maximum preference optimization with importance sampling,” arXiv preprint arXiv:2312.16430, 2023. ↩︎\nJ. Hong, N. Lee, and J. Thorne, “Reference-free monolithic preference optimization with odds ratio,” arXiv preprint arXiv:2403.07691, 2024. ↩︎\nR. Rafailov, A. Sharma, E. Mitchell, C. D. Manning, S. Ermon, and C. Finn, “Direct preference optimization: Your language model is secretly a reward model,” Advances in Neural Information Processing Systems, vol. 36, 2024. ↩︎\nR. A. Bradley and M. E. Terry, “Rank analysis of incomplete block designs: I. the method of paired comparisons,” Biometrika, vol. 39, no. 3/4, pp. 324–345, 1952. ↩︎\nY. Meng, M. Xia, and D. Chen, “Simpo: Simple preference optimization with a reference-free reward,” arXiv preprint arXiv:2405.14734, 2024. ↩︎\n",
+  "wordCount" : "1697",
+  "inLanguage": "en",
+  "datePublished": "2024-06-24T23:45:42+08:00",
+  "dateModified": "2024-06-24T23:45:42+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Kairos Wong"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kairoswong.github.io/posts/2024-06-24-dpo/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Love and Share",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kairoswong.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://kairoswong.github.io/" accesskey="h" title="Love and Share (Alt + H)">Love and Share</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://kairoswong.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kairoswong.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kairoswong.github.io/search/" title="🔍 (Alt &#43; /)" accesskey=/>
+                    <span>🔍</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post" autonumbering>
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Viewing direct policy optimization from a physical perspective
+    </h1>
+    <div class="post-meta"><span title='2024-06-24 23:45:42 +0800 CST'>2024-06-24</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;Kairos Wong
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#introduction" aria-label="Introduction">Introduction</a></li>
+                    <li>
+                        <a href="#background" aria-label="Background">Background</a></li>
+                    <li>
+                        <a href="#theoretical-foundation" aria-label="Theoretical foundation">Theoretical foundation</a><ul>
+                            
+                    <li>
+                        <a href="#bradley-terry-model" aria-label="Bradley-Terry model">Bradley-Terry model</a></li>
+                    <li>
+                        <a href="#log-likelihood-loss-function" aria-label="Log-likelihood loss function">Log-likelihood loss function</a></li>
+                    <li>
+                        <a href="#deriving-the-optimum-of-reward-maximization-objective" aria-label="Deriving the optimum of reward maximization objective">Deriving the optimum of reward maximization objective</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#discussion" aria-label="Discussion">Discussion</a></li>
+                    <li>
+                        <a href="#references" aria-label="References">References</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+  <div class="post-content"><h3 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h3>
+<p>Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans. In advanced stages of reinforcement learning, as the complexity of training escalates and the distinction between selected and discarded responses diminishes, Supervised Fine-Tuning (SFT) may inadvertently increase the rewards for incorrect responses.</p>
+<h3 id="background">Background<a hidden class="anchor" aria-hidden="true" href="#background">#</a></h3>
+<p>In the field of Natural Language Processing (NLP), the introduction of InstructGPT <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> has significantly advanced research in reinforcement learning from human feedback (RLHF). Typically, the RLHF stage follows supervised fine-tuning (SFT). InstructGPT employs proximal policy optimization (PPO) for preference optimization, but PPO requires the training of an additional reward model. This reward model’s training is inherently unstable, and its outcomes directly impact the final optimization’s effectiveness. Subsequent research has bypassed the reward model training step, directly proceeding with preference training. Knowledge Training Optimization (KTO) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> learns from non-paired preference data, while Initial Public Offering (IPO) <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> uses a root-finding MSE loss to incorporate Kullback-Leibler (KL) regularization. Order Police (ORPO) <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> introduces a reference-model-free odds ratio term to directly contrast winning and losing responses with the policy model, jointly training with the SFT objective.</p>
+<h3 id="theoretical-foundation">Theoretical foundation<a hidden class="anchor" aria-hidden="true" href="#theoretical-foundation">#</a></h3>
+<h4 id="bradley-terry-model">Bradley-Terry model<a hidden class="anchor" aria-hidden="true" href="#bradley-terry-model">#</a></h4>
+<p>The DPO algorithm <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, and true to its name, is to integrate the decision and reward functions directly into the reinforcement learning objective, eliminating the need for separate reward modeling. Moreover, DPO has emerged as a promising alternative for aligning Large Language Models (LLMs) to human or AI preferences.</p>
+<p>Imagine that the large language model is prompted with prompts $x$ to produce pairs of answers, we are definitely going to prefer one over the other. Here, the Bradley-Terry model <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> is used to quantify preferences. This model is particularly used in a pairwise comparison, allowing us to express human preference distribution, denoted by $p^{*}$. Like most alignment methods, DPO requires a dataset of paired preferences $\mathcal{D} = \lbrace x^{(i)}, y_{w}^{(i)}, y_{l}^{(i)}  \rbrace_{i = 1}^{N}$ sampled from $p^{*}$, where $y_{w}$ and $y_{l}$ denotes the preferred and dispreferred choice. And we assume that the preferences are generated by an underlying reward model $r^{*}(y, x)$, which could be parametrized by $r_{\phi}(y, x)$. Specifically, the probability that item $y_{w}$ is preferred over item $y_{l}$ could be modeled as</p>
+<p>$$
+\begin{equation}
+p^{*}(y_{w} \succ y_{l} \mid x) = \frac{\exp(r^{*}(x,y_{w}))}{\exp(r^{*}(x,y_{w}))+\exp(r^{*}(x,y_{l}))}. \label{eq1}
+\end{equation}
+$$</p>
+<p>In Eq. \eqref{eq1}, we still have a question, <strong>why do we use the exponential function?</strong></p>
+<p>By using the exponential function, we could transform ratios into a log-linear model, which is more convenient for optimization and computation. And then, this exponential function has a natural probabilistic interpretation in distribution models. Finally, the non-negativity of the exponential function ensures that model parameters are always positive, avoiding issues with negative scoring.</p>
+<p>There is a more general explanation we could use as a reference. Assuming we do not use $\exp(\cdot)$ and replace it with $a^{x}$, we could get</p>
+<p>$$
+\begin{equation}
+p^{*}(y_{w}\succ y_{l}) = \frac{a^{(r^{*}(x,y_{w}))}}{a^{(r^{*}(x,y_{w}))}+a^{(r^{*}(x,y_{l}))}}
+\end{equation}
+$$</p>
+<p>But if we use this linear transformation, $b(x,y) = \log_{a}(\mathrm{e})c(x,y)$, so that</p>
+<p>$$
+\begin{equation}
+a^{b(x,y)} = a^{\log_{a}(\mathrm{e})c(x,y)} = (\mathrm{e}^{\log a})^{\log_{a}(\mathrm{e})c(x,y)} = \mathrm{e}^{c(x,y)}
+\end{equation}
+$$</p>
+<p>It is not hard to find that for any base number $a$, we can still find a corresponding linear transformation, which brings us back to the exponential function. And it has those good properties that we mentioned earlier, which is why we chose it.</p>
+<h4 id="log-likelihood-loss-function">Log-likelihood loss function<a hidden class="anchor" aria-hidden="true" href="#log-likelihood-loss-function">#</a></h4>
+<p>We now have Eq. \eqref{eq1}, taking the natural logarithm of both sides of the equation allows us to linearize the model</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}_ {R}(r_{\phi}, \mathcal{D}) & 
+        =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \frac{\exp \left(r_{\phi}\left(x, y_w\right)\right)}{\exp \left(r_{\phi}\left(x, y_w\right)\right)+\exp \left(r_{\phi}\left(x, y_l\right)\right)}\right] \\
+        & =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \frac{1}{1+\exp \left(r_{\phi}\left(x, y_l\right)-r_{\phi}\left(x, y_w\right)\right)}\right] \\
+        & =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \sigma\left(r_{\phi}\left(x, y_w\right)-r_{\phi}\left(x, y_l\right)\right)\right]
+    \end{aligned} \label{eq4}
+\end{equation}
+$$
+</div>
+<p>where $\sigma$ is the logistic function, the more specific expression is $ \sigma (x)= {1}/({1 +\exp{(-x)}})$.</p>
+<p>During the reinforcement learning fine-tuning phase, we need to find the following target to provide feedback to the language model,</p>
+<p>$$
+\begin{equation}
+\max_{\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_{\phi}(x,y)] - \beta \mathbb{D}_ {\text{KL}}[\pi_{\theta}(y\mid x) || \pi_{\text{ref}}(y\mid x)] \label{eq5}
+\end{equation}
+$$</p>
+<p>where $\beta$ is a hyper-parameter the controls the deviation from baseline reference policy $\pi_{\text{ref}}$, and $\pi_{\theta}$ is the language model policy. For this equation, $\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_ {\phi}(x,y)]$, reflects our desire to achieve as much reward as possible in the given task while simultaneously minimizing  $\mathbb{D}_ {\text{KL}}[\pi_{\theta}(y\mid x) || \pi_{\text{ref}}(y\mid x)]$, which measures how close or far the model distribution is from the reference distribution.</p>
+<h4 id="deriving-the-optimum-of-reward-maximization-objective">Deriving the optimum of reward maximization objective<a hidden class="anchor" aria-hidden="true" href="#deriving-the-optimum-of-reward-maximization-objective">#</a></h4>
+<p>For two probability distributions $P$ and $Q$, Kullback-Leibler (KL) divergence $\mathbb{D}_{\mathrm{KL}}(P|| Q)$ is defined as</p>
+<p>$$
+\begin{equation}
+\mathbb{D}_ {\text{KL}}(P || Q)= \sum_{x \in \mathcal{X}} P(x)\log \left( \frac{P(x)}{Q(x)} \right)
+\end{equation}
+$$</p>
+<p>where $\mathcal{X}$ is the set of possible outcomes for the discrete random variable $x$. KL divergence measures the information loss when distribution $Q$ is used to approximate distribution $P$. In other words, it quantifies the difference between distributions $Q$ and $P$. In the following derivation, we need to introduce the concept of partition function in physics, $Z (x)$. With Eq. \eqref{eq5}, we could have</p>
+</div>
+$$
+\begin{equation}
+    \begin{aligned}
+    & \max_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}} [r_{\phi}(x, y)] -\beta \mathbb{D}_ {\mathrm{KL}}\left[\pi_{\theta}(y \mid x) \| \pi_{\mathrm{ref}}(y \mid x)\right]  \\
+    & = \max_{\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_{\phi}(x, y)] - \mathbb{E} _ {x \sim \mathcal{D}, y \sim \pi_{\theta}}\left[ \beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\text{ref}}(y \mid x)} \right]\\
+    & =\max_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[r_{\phi}(x, y)-\beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\mathrm{ref}}(y \mid x)}\right] \\
+    & =\min_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[\log \frac{\pi_{\theta}(y \mid x)}{\pi_{\mathrm{ref}}(y \mid x)}-\frac{1}{\beta} r_{\phi}(x, y)\right] \\
+    & =\min_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[\log \frac{\pi_{\theta}(y \mid x)}{\color{red}{\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right)}}-\log Z(x)\right],
+    \end{aligned}\label{eq7}
+\end{equation}
+$$
+</div>
+<p>where partition function is</p>
+<p>$$
+\begin{equation}
+Z (x) = \sum_{y}\pi_{\text{ref}(y \mid x) }\exp\left( \frac{1}{\beta} r_{\phi} (x, y) \right).
+\end{equation}
+$$</p>
+<p>Let us go back to statitical physics for explaining the partition function, partition function $Z$ is the sum of all possible state weights of a system, and it determines the equilibrium properties of this system. For a given system, the partition function in physics is defined as $ Z = \sum_{i} \exp\left(-\frac{E_{i}}{k_{B}T}\right)$, where $E_{i}$ is the energy of the $i$-th state, $k_{B}$ is the Boltzmann constant, and $T$ is the temperature of the system. Physically, the partition function $Z$ represents a normalization factor in the system&rsquo;s state space that determines the probability of each state. In the given optimization framework, our goal is to obtain the policy $\pi_\theta$ by maximizing the reward $r_\phi(x, y)$ while minimizing the KL divergence between the distribution $\pi_\theta(y \mid x)$ and the reference distribution $\pi_{\text{ref}}(y \mid x)$. To simplify the computation of the KL divergence, we could introduce a partition function $Z(x)$, which is similar to the partition function in statistical physics. This function normalizes the weighted probabilities across all possible values of $y$. And then we need to define</p>
+</div>
+$$
+\begin{equation}
+\begin{aligned}
+        \frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) &\exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right) \\
+        & = \frac{\pi_{\text{ref}}(y \mid x)\exp \left( \frac{1}{\beta}r_{\phi}(x, y) \right)}{\sum_{y}\pi_{\text{ref}(y \mid x)}\exp\left( \frac{1}{\beta}r_{\phi}(x,y) \right)}\\
+        & = \pi^{*}(y \mid x)
+\end{aligned}
+\end{equation}
+$$
+</div>
+<p>Now we should re-organize the detailed result in Eq. \eqref{eq7} as</p>
+</div>
+$$
+\begin{equation}
+    \begin{aligned}
+\min_{\pi_{\theta}}\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{ \theta}}& \left[ \log \frac{\pi(y \mid x)}{\pi^{*}(y \mid  x)} - \log Z(x) \right] \\
+& = \min_{\pi_{\theta}}\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{ \theta}} \left[ \log \frac{\pi_{\theta}(y \mid x)}{\pi^{*}(y \mid  x)} \right] \\
+& = \min_{\pi_{\theta}}\mathbb{E} _ {x \sim \mathcal{D}}[\mathbb{D}_ {\text{KL}}(\pi_{\theta}(y \mid x) ||\pi^{*}(y \mid x))].
+\end{aligned}
+\end{equation}
+$$
+</div>
+<p>Since we all know $Z(x)$ does depend on $y$, only if the two distributions are identical we will find that the KL-divergence is minimized at $0$. Hence we got the corresponding optimal solution</p>
+<p>$$
+\begin{equation}
+\pi_{\theta}(y \mid x)=\pi^*(y \mid x)=\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right).\label{eq11}
+\end{equation}
+$$</p>
+<p>And then we derive $r_{\phi}$ from Eq. \eqref{eq11}</p>
+</div>
+$$
+\begin{equation}
+    \begin{aligned}
+        r_{\phi}(x, y) &=\beta \log \left[\frac{\pi_{\theta}(y \mid x)}{\pi_{\text{ref}}(y \mid x)} Z(x)\right] \\
+        & =\beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\text{ref}}(y \mid x)}+\beta \log Z(x). 
+    \end{aligned} \label{eq12}
+\end{equation}
+$$
+</div>
+<p>By substituting Eq. \eqref{eq12} into Eq. \eqref{eq4} we could obtain</p>
+</div>
+$$
+\begin{equation}
+    \begin{aligned}
+    & \mathcal{L}_ {\mathrm{DPO}}\left(\pi_\theta ; \pi_{\mathrm{ref}}\right)= -\mathbb{E}_{\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \sigma\left(r_\phi\left(x, y_w\right)-r_\phi\left(x, y_l\right)\right)\right]\\
+    & = -\mathbb{E}_{\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \sigma\left(\beta \log \frac{\pi_\theta\left(y_w \mid x\right)}{\pi_{\mathrm{ref}}\left(y_w \mid x\right)}-\beta \log \frac{\pi_\theta\left(y_l \mid x\right)}{\pi_{\mathrm{ref}}\left(y_l \mid x\right)}\right)\right]
+    \end{aligned}    
+\end{equation}
+$$
+</div>
+<h3 id="discussion">Discussion<a hidden class="anchor" aria-hidden="true" href="#discussion">#</a></h3>
+<p><strong>Recent Literature Review.</strong> Even recently, researchers unveil SimPO <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, an innovative algorithm that streamlines reinforcement learning by leveraging human feedback. By adopting the average log probability of a sequence as an inherent reward, SimPO cleverly bypasses the complexity of using a reference model. This method not only simplifies the process but also proves to be more efficient in computation and memory usage. When pitted against established methods such as DPO, especially in benchmarks like AlpacaEval 2 and Arena-Hard, SimPO demonstrates superior performance.</p>
+<h3 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>L. Ouyang, J. Wu, X. Jiang, et al., “Training language models to follow instructions with human feedback,” Advances in neural information processing systems, vol. 35, pp. 27 730–27 744, 2022.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>K. Ethayarajh, W. Xu, N. Muennighoff, D. Jurafsky, and D. Kiela, “Kto: Model alignment as prospect theoretic optimization,” arXiv preprint arXiv:2402.01306, 2024.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Z. Jiang, X. Huang, and C. Wei, “Preference as reward, maximum preference optimization with importance sampling,” arXiv preprint arXiv:2312.16430, 2023.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>J. Hong, N. Lee, and J. Thorne, “Reference-free monolithic preference optimization with odds ratio,” arXiv preprint arXiv:2403.07691, 2024.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>R. Rafailov, A. Sharma, E. Mitchell, C. D. Manning, S. Ermon, and C. Finn, “Direct preference optimization: Your language model is secretly a reward model,” Advances in Neural Information Processing Systems, vol. 36, 2024.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>R. A. Bradley and M. E. Terry, “Rank analysis of incomplete block designs: I. the method of paired comparisons,” Biometrika, vol. 39, no. 3/4, pp. 324–345, 1952.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>Y. Meng, M. Xia, and D. Chen, “Simpo: Simple preference optimization with a reference-free reward,” arXiv preprint arXiv:2405.14734, 2024.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://kairoswong.github.io/tags/nature-language-processing/">Nature Language Processing</a></li>
+      <li><a href="https://kairoswong.github.io/tags/deep-reinforcement-learning/">Deep Reinforcement Learning</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Tracing the origins of Schrödinger equation</span>
+  </a>
+  <a class="next" href="https://kairoswong.github.io/posts/2024-06-01-belief_system/">
+    <span class="title">Next »</span>
+    <br>
+    <span>The challenges of scientific truth and belief systems</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://kairoswong.github.io/">Love and Share</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

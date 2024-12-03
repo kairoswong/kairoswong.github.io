@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Tracing the origins of Schrödinger equation | Love and Share</title>
+<meta name="keywords" content="Physics">
+<meta name="description" content="This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.">
+<meta name="author" content="Kairos Wong">
+<link rel="canonical" href="https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa3a950dc53e39fd52e88f8aa4fe3534775854957275bcd2b38a217fb10f2c14.css" integrity="sha256-&#43;jqVDcU&#43;Of1S6I&#43;KpP41NHdYVJVydbzSs4ohf7EPLBQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://kairoswong.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://kairoswong.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://kairoswong.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://kairoswong.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://kairoswong.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+
+
+
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            displayMath: [['$$','$$']], 
+            inlineMath: [['$','$']],
+        },
+        TeX: {equationNumbers: {autoNumber: "AMS"}},
+    });
+</script>
+
+
+
+
+
+
+  
+
+<meta property="og:title" content="Tracing the origins of Schrödinger equation" />
+<meta property="og:description" content="This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-09-28T09:40:14+08:00" />
+<meta property="article:modified_time" content="2024-09-28T09:40:14+08:00" /><meta property="og:site_name" content="👋 Welcome" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tracing the origins of Schrödinger equation"/>
+<meta name="twitter:description" content="This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://kairoswong.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Tracing the origins of Schrödinger equation",
+      "item": "https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tracing the origins of Schrödinger equation",
+  "name": "Tracing the origins of Schrödinger equation",
+  "description": "This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.",
+  "keywords": [
+    "Physics"
+  ],
+  "articleBody": " This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.\nIntroduction In the history of modern physics, few equations have fascinated scientists as much as the Schrödinger equation. Created in the early 20th century, a time of groundbreaking discoveries about the quantum world, this equation has become a symbol of the wave mechanics that form the basis of quantum theory. By delving into the precursors of quantum theory that challenged classical conceptions, we will uncover a network of concepts and discoveries that led to the equation summarizing how quantum systems behave.\nInitial steps toward the hydrogen equation Attempt at relativistic equation Building on the concept of de Broglie’s matter-wave theory, physicist Peter Debye casually remarked that if particles exhibit wave-like properties, they should satisfy some sort of wave equation. Inspired by Debye’s comment, Erwin Schrödinger set out to find an appropriate wave equation for electrons. The earlist surviving document pertaining to wave mechanics is a concise three-page memorandum titled Hydrogen Atom Eigenvibrations (Fig. 1) by Schrödinger towards the end of 1925.\nFig. 1: Hydrogen Atom Eigenvibrations, Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)\nSchrödinger started from a phase wave for the electron of the mass $m$ and velocity $v$, and then wrote down the relations for frequency $\\nu$ and phase velocity $u$ 1,\n\\begin{equation} \\nu=\\frac{mc^2}{h\\sqrt{1-\\beta^2}} \\label{eq1} \\end{equation} and \\begin{equation} u=\\frac c\\beta=\\frac{c^2}v=\\frac{mc^2/\\sqrt{1-\\beta^2}}{mv/\\sqrt{1-\\beta^2}}=\\frac{\\mathrm{energy}}{\\mathrm{momentum}}, \\label{eq2} \\end{equation} where $\\beta=v/c,c$ is the velocity of light in vacuo and $h$ is Plank’s constant. As a first example, he generalized the relations Eq. \\eqref{eq1} and Eq. \\eqref{eq2} to encompass the behavior of electron phase waves within the electric field generated by a hydrogen nucleus. We could follow what we have seen from manuscript, assuming the situation within the electric field of hydrogen atoms,\n\\begin{equation} h\\nu=\\frac{mc^2}{\\sqrt{1-\\beta^2}}-\\frac{e^2}r \\label{eq3} \\end{equation}\nwhere $e$ denotes the charge of the electron, $r$ is the nucleus-electron distance. Furthermore, the potential field of a pseudo-hydrogen atom could be expressed as $-Ze^{2}/r$, where $Z$ stands for number of nuclear charges (Hydrogen atom is a special case of $Z = 1$). Here, we could get the expression of phase velocity by combining Eq. \\eqref{eq2} and Eq. \\eqref{eq3},\n\\begin{equation} u=c\\frac{h\\nu/mc^2}{\\sqrt{(h\\nu/mc^2+e^2/mc^2r)^2-1}}. \\label{eq4} \\end{equation}\nHere comes with Helmholtz equation,\n\\begin{equation} \\nabla^2\\psi+k^2\\psi=0 \\label{eq5} \\end{equation}\nwhere $\\nabla^2$ is the Laplace operator, $k$ is the wave number, and $\\psi$ is the wave function we assume exists. The motivation for using Helmholtz equation as a starting point lies in its frequently appearance in electromagnetic waves with both spatial and temporal dependencies. Combining with $k= \\omega / u = 2\\pi \\nu /u$, we substitute modified initial form Eq. \\eqref{eq4} into Eq. \\eqref{eq5} and obtain the simplified formula\n\\begin{equation} \\nabla^2\\psi+\\frac{4\\pi^2m^2c^2}{h^2}\\left[\\left(\\frac{h\\nu}{mc^2}+\\frac{e^2}{mc^2r}\\right)^2-1\\right]\\psi=0. \\label{eq_6} \\end{equation}\nIn light of the symmetry of electrons within a pseudo-hydrogen atom system, solutions are typically sought through the method of separation of variables in spherical coordinates. By denoting $\\psi(r,\\theta,\\varphi){=}R(r)\\Theta(\\theta)\\Phi(\\varphi)$, the part about angle could be described by spherical harmonics $Y_{l}^m(\\theta,\\varphi) = \\Theta(\\theta)\\Phi(\\varphi)$. The Laplace operator $\\nabla^2$ applied to a scalar function $\\psi(r,\\theta,\\varphi)$ in spherical coordinates can be expressed as follows\n$$ \\nabla^2 \\psi \\left( r, \\theta, \\varphi \\right)=\\frac{1}{r^2} \\frac{\\partial}{\\partial r}\\left(r^2 \\frac{\\partial \\psi}{\\partial r}\\right)+\\frac{1}{r^2 \\sin \\theta} \\frac{\\partial}{\\partial \\theta}\\left(\\sin \\theta \\frac{\\partial \\psi}{\\partial \\theta}\\right)+\\frac{1}{r^2 \\sin ^2 \\theta} \\frac{\\partial^2 \\psi}{\\partial \\varphi^2}. $$\nAfter separating variables, we could find that $$ \\begin{aligned} \\frac{\\mathrm{d}^2 R}{\\mathrm{~d} r^2}+\\frac{2}{r} \\frac{\\mathrm{d} R}{\\mathrm{~d} r}\u0026+\\left[4\\pi^2\\left( \\frac{\\nu^2}{c^2} - \\frac{m^2c^2}{h^2} \\right)+ \\frac{8\\pi^2 e^2 \\nu/hc^2}{ r} + \\frac{4\\pi^2 e^4/c^2h^2-l(l+1)}{r^2} \\right] R=0 \\\\ \u0026\\frac{1}{\\sin \\theta} \\frac{\\partial}{\\partial \\theta}\\left(\\sin \\theta \\frac{\\partial Y}{\\partial \\theta}\\right)+\\frac{1}{\\sin ^2 \\theta} \\frac{\\partial^2 Y}{\\partial \\varphi^2}+l(l+1) Y=0 \\end{aligned} $$\nThe resuilting radial equation is following,\n\\begin{equation} \\frac{\\mathrm{d}^2 R}{\\mathrm{~d} r^2}+\\frac{2}{r} \\frac{\\mathrm{d} R}{\\mathrm{~d} r}+\\left[-A + \\frac{2B}{r} -\\frac{C}{r^2} \\right] R=0 \\label{eq_7} \\end{equation}\nwhere $A, B, C$ are constants that are represented in simplification processing, respectively. However, the solution of this equation posed some troubles for Schrödinger. Initially, he attempted a novel trial solution named Bessel function $r^{\\alpha} \\mathcal{J}(r)$ and proceeded to simplify the equation by substituting it in.\nFig. 2: Hydrogen Atom Eigenvibrations, Erwin Schrödinger, Page3 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)\nInspired by Ludwig Schlesinger’s book on integral equations 2, Schrödinger noticed that this equation possessed a unique finite solution only if\n\\begin{equation} \\begin{aligned} \u0026 R(r) = \\oint_{L} (z- \\sqrt{A})^{\\alpha _{1} - 1}(z+ \\sqrt{A})^{\\alpha _{2} - 1} e ^{z r} \\mathrm{d} z, \\quad \\\\ \u0026 \\alpha _{1}, \\alpha _{2} = \\pm \\frac{B}{\\sqrt{A}} - \\sqrt{C + \\frac{1}{4}}+ \\frac{1}{2} = \\text{integer} \\end{aligned} \\end{equation}\nThe path of integration $L$ has to satisfy specific condition,\n\\begin{equation} \\oint_L \\frac{\\mathrm{d}}{\\mathrm{d} z}\\left[(z-\\sqrt{A})^{\\alpha_1}(z+\\sqrt{A})^{\\alpha_2}e^{z r}\\right] \\mathrm{d} z=0 \\end{equation}\nAnd more specifically, the item $C$ could be written as $(l+\\frac{1}{2})^2, l \\in \\mathbb{Z}$. The outcome is very similar to an expression by Sommerfeld to describe the relativistic fine structure of hydrogen 3, yet there is a discrepancy of 1/2 (Fig. 2). At that time, Sommerfeld’s results have been validated by experiments, so Schrödinger felt that his first approach to describe an atomic wave equation had failed. The time has come to the winter of 1925, he had gone for his Christmas vacation to Arosa. From a letter to Wien on 27 December, he wrote the following words (Fig. 3):\nJust now a new atomic theory is niggling me. If only I knew more mathematics! I am very optimistic about this thing and hope that if only I can master the calculations, it will be very fine. I think I can provide a vibrational system [ein schwingendes System] in comparatively natural ways, not through ad hoc assumptions … I hope that I will soon be able to report on the thing in a more detailed and comprehensible way.\nFig. 3: A new atomic theory, Erwin Schrödinger, December 27, 1925 (Image source: CHRISTIES)\nInterestingly, in this letter, he explicitly wrote down the formula for the difference in term frequencies of the hydrogen spectral lines,\n\\begin{equation} \\nu_{n} - \\nu _{m} = R (\\frac{1}{m^2} - \\frac{1}{n^2}) \\end{equation}\nwhere $R$ denotes the Rydberg constant, and $n, m$ are different integers, respectively. We might never know what happened before Christmas 1925, but from his notebook named Eigenwertproblem des Atoms, we can see that he turned towards deriving non-relativistic results.\nReturn to nonrelativistic equation If we look at it from a contemporary perspective, Schrödinger’s relativistic approach was bound to fail for a straightforward reason: incorporating relativity necessitates considering electron spin. However, the concept of electron spin was still in its infancy at that time, so Schrödinger decided to present a non-relativistic result 4 (Fig. 4).\nFig. 4: Eigenwertproblem des Atoms I (Starkeffeckt), Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)\nAs the same way, Schrödinger began with an equation for the de Broglie phase wave frequency of an electron moving with velocity $v$ in the electric field of a hydrogen nucleus,\n\\begin{equation} h\\nu=mc^2+ \\frac{mv^2}{2}-\\frac{e^2}r \\label{eq_11} \\end{equation}\nwhich he then substituted it into the equation for phase velocity $u$ of de Broglie wave,\n\\begin{equation} u=\\frac{h\\nu}{mv}=\\frac{h\\nu}{\\sqrt{2m(h\\nu-mc^2+{e^2}/{r})}} \\end{equation}\nthe differential equation for nonrelativistic hydrigen atom could be expressed as\n\\begin{equation} \\nabla^2\\psi+\\frac{8\\pi^2m}{h^2}\\left(h\\nu-mc^2+\\frac{e^2}{r} \\right)\\psi=0 \\end{equation}\nCompared to solving relativistic equations, solving non-relativistic equations is considerably simpler. The radial part of this differential equation could also be represented by Eq. \\eqref{eq_7}, with correspondence as follows:\n$$ A = -\\frac{8\\pi^2 m}{h^2}(h \\nu - mc^2),\\quad B = \\frac{4\\pi^2m e^2}{h^2}, \\quad C = l(l+1) $$\nAccording to what we have mentioned before, the quantum number for radial part is expressed as $ n _{r} = B/\\sqrt{A} - \\sqrt{C + 1/4}+ 1/2$, negative part has been discarded because it has no physical significance. He thus arrived at this result\n\\begin{equation} n_{r} = \\sqrt{\\frac{Rhc}{mc^2-h\\nu}} -l,\\quad R = \\frac{2\\pi^2m e^4}{ch^3} \\label{eq_14} \\end{equation}\nwhere $R$ is the Rydberg constant, relating to the electromagnetic spectra of an atom. Here, the energy of hydrogen atom could be derived from Eq. \\eqref{eq_14},\n\\begin{equation} h \\nu = mc^2 - \\frac{Rhc}{(n_{r} + l)^2} \\end{equation}\nFig. 5: Eigenwertproblem des Atoms I (Starkeffeckt), Erwin Schrödinger, Page58 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)\nIt is the conclusion that Schrödinger had mentioned in his letter towards Wien. His final calculations led to a remarkable outcome—the origin of quantized integers, which did not arise from Bohr’s forced requirements based on classical physics imagery, but rather from the inherent constraints of the wave equation itself (Fig. 5). This breakthrough suggested that quantum phenomena could be described more naturally by wave mechanics, without the need for additional assumptions imposed by old quantum theory. Schrödinger’s next work involved the generalization of this equation and providing a formal derivation by utilizing least action principle (Hamiltonian principle). Moreover, Schrödinger’s formulation laid the groundwork for further developments in quantum theory, influencing the matrix mechanics of Heisenberg and the probabilistic interpretation introduced by Born.\nCombining Hamiltonian mechanics Hamiltonian mechanics is a theoretical framework in physics that provides a reformulation of classical mechanics. In 5, Schrödinger intended to re-derive the previously mentioned differential equations starting from the principle of least action (Fig. 6).\nFig. 6: Eigenwertproblem des Atoms II (Allgemeine Theorie, Starkeffekt, Strömungstheorie), Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)\nAt beginning, the first one is Hamilton-Jacobi equation,\n\\begin{equation} \\mathcal{H} \\left(q, \\frac{\\partial S}{ \\partial q}\\right) = E \\end{equation}\nwhere $\\mathcal{H}$ denotes the Hamiltonian function based on the position coordinates $q$ and momentum coordinates $p$, which has been written as the partial derivatives of the action function $S$. In fact, this also reveals why, in quantum mechanics, momentum can be equivalent to the differential operator. And $E$ is the energy of the system. Schrödinger further replaced the classical function $S$ via the special transformation (This formula is very similar to the expression for entropy in statistical mechanics)\n\\begin{equation} S = K \\ln \\psi \\end{equation}\nwhere $K$ had the dimensions of an action, he explained the motivation about this transformation and wrote:“We seek a function $\\psi$, such that for any arbitrary variation of it the integral of the said quadratic form, taken over the whole coordinate space, is stationary, $\\psi$ being everywhere real, single-valued, finite, and continuously differentiable up to the second order.” 6 Finally he arrived at this equation\n\\begin{equation} \\mathcal{H} \\left(q, \\frac{K}{\\psi}\\frac{\\partial \\psi}{ \\partial q}\\right) = E \\end{equation}\nUsing the usual notations, the kinetic energy $T$ and the potential energy $V$ are\n\\begin{equation} T = \\frac{1}{2m} (p_{x}^2 + p_{y}^2 + p_{z}^2);\\quad V = -\\frac{e^2}{r} \\end{equation}\nIn the case of nonrelativistic hydrogen system, descrbed by the classical Hamilton-Jacobi equation\n\\begin{equation} \\frac{1}{2 m}\\left[\\left(\\frac{\\partial S}{\\partial x}\\right)^2+\\left(\\frac{\\partial S}{\\partial y}\\right)^2+\\left(\\frac{\\partial S}{\\partial z}\\right)^2\\right] -\\frac{e^2}{r} =E \\end{equation}\nand got quadratic form equation\n\\begin{equation} \\left(\\frac{\\partial \\psi}{\\partial x}\\right)^2+\\left(\\frac{\\partial \\psi}{\\partial y}\\right)^2+\\left(\\frac{\\partial \\psi}{\\partial z}\\right)^2-\\frac{2 m}{K^2}\\left(E+\\frac{e^2}{r}\\right) \\psi^2 =0 \\end{equation} And then this quadratic form could be inserted into the variational problem,\n\\begin{equation} \\delta \\iiint \\left[\\left(\\frac{\\partial \\psi}{\\partial x}\\right)^2+\\left(\\frac{\\partial \\psi}{\\partial y}\\right)^2+\\left(\\frac{\\partial \\psi}{\\partial z}\\right)^2-\\frac{2 m}{K^2}\\left(E+\\frac{e^2}{r}\\right) \\psi^2 \\right] \\mathrm{d}x \\mathrm{d}y \\mathrm{d}z =0 \\end{equation}\nBy the distribution integral formula and simplifying it, we will find that\n\\begin{equation} \\nabla^2 \\psi+\\frac{2 m}{K^2}\\left(E+\\frac{e^2}{r}\\right) \\psi=0 \\end{equation}\nSchrödinger observed that the familiar Bohr energy levels, which align with the Balmer series, can be derived by assigning a specific value to the constant $K$, he provided a specific value $K = \\frac{h}{2\\pi}$ for which comes two classes, depending on the value $E$,\nFor negative values $E\u003c0$ only discrete solutions existed, with the discrete level solutions $$ E=-\\frac{2 \\pi^2 m e^4}{h^2 n^2}, \\quad n=1,2,3, \\ldots $$ For positive values $E \u003e 0$ allowed a consistent solution approaches $0$ as $1/r$ increases. In summary, the Schrödinger equation uses the concept of the Hamiltonian from classical mechanics to describe the time evolution of quantum states, bridging the gap between classical and quantum descriptions of physical phenomena. This relationship is a key aspect of the correspondence principle, which seeks to ensure that quantum mechanics encompasses classical mechanics as a limiting case.\nTime-dependent Schrödinger equation Schrödinger suggested that the wave function of the hydrogen atom could potentially be understood as a type of vibrational process within the atom. This interpretation might offer a representation that is closer to the actual behavior of electrons, compared to the concept of discrete electronic orbits. In fact, he had already obtained what would later be called stationary Schrödinger equation in his initial paper concerning hydrogen atom. The specific expression is\n\\begin{equation} \\nabla^2 \\psi+\\frac{2 m}{\\hbar^2}\\left(E - V\\right) \\psi=0 \\label{eq_25} \\end{equation}\nEvidently, this equation is not so general, as it does not depend on time and hence could only describe periodic systems. Then what if the equation evolves over time? In next paper über das verhältnis der heisenberg-born-jordanschen quantenmechanik zu der meinen 7, which was received on 17 March 1926, he introduced the following consideration, provided the time-dependence of wave funciton has the basical plane wave form,\n\\begin{equation} \\psi \\sim e^{\\pm i Et/\\hbar} \\end{equation} and this amounts to saying that\n\\begin{equation} \\frac{\\partial \\psi}{\\partial t} = \\pm \\frac{ i }{\\hbar} E\\psi \\end{equation}\nFrom this equation and combine the expression in Eq. \\eqref{eq_25} to eliminate the energy $E$, we could get the final time-dependence wave equation\n\\begin{equation} -\\frac{\\hbar}{2m}\\nabla^2 \\psi + V\\psi = \\pm i \\hbar \\frac{\\partial \\psi}{\\partial t} \\end{equation}\nLooking back from a modern perspective, the derivation of Schrödinger’s equation involved many elements that were not rigorous, and it is generally believed by later scholars that this was a process of conjecture. In 1926, Max Born introduced the concept of probability amplitude, which successfully interpreted the physical meaning of the wave function. However, both Schrödinger and Einstein shared the same viewpoint, disagreeing with the statistical or probabilistic approach, as well as the associated discontinuous wave function collapse.\nDiscussion In this exploration, we have traced the intricate pathways that led to the formulation of Schrödinger equation, a cornerstone of quantum mechanics. The pivotal role of de Broglie’s hypothesis of matter waves set the stage for Schrödinger’s groundbreaking work. The elegance of the equation stems from its capacity to harmonize a spectrum of distinct observations and experiments within a cohesive theoretical framework, all while circumventing the need for traditional assumptions. Its origins remind us that scientific breakthroughs are often the result of building upon the collective knowledge of the past, driven by innovative thinking and courage to venture into the unknown.\nAcknowledgments Sincerely, I thank for valuable discussions with Hong Su and Yiming Ding.\nReferences Rechenberg, H. Erwin Schrödinger and the creation of wave mechanics. Acta Physica Polonica, Series B;(Poland)19 (1988). ↩︎\nSchlesinger, L. Einführung in die Theorie der Differentialgleichungen mit einer unabhängigen Variablen (Göschen, 1900). ↩︎\nSommerfeld, A. Zur quantentheorie der spektrallinien. Annalen der Physik 356, 1–94 (1916). ↩︎\nMehra, J. Erwin Schrödinger and the rise of wave mechanics. II. The creation of wave mechanics. Foundations of Physics 17, 1141–1188 (1987). ↩︎\nSchrödinger, E. An undulatory theory of the mechanics of atoms and molecules. Physical review 28, 1049 (1926). ↩︎\nSchödinger, E. Quantisierung als Eigenwertproblem.(Erste Mitteilung). Annalen der Physik 79, 361–376 (1926). ↩︎\nSchrödinger, E. über das verhältnis der heisenberg-born-jordanschen quantenmechanik zu der meinen. Annalen der Physik 79, 734 (1926). ↩︎\n",
+  "wordCount" : "2504",
+  "inLanguage": "en",
+  "datePublished": "2024-09-28T09:40:14+08:00",
+  "dateModified": "2024-09-28T09:40:14+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Kairos Wong"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Love and Share",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kairoswong.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://kairoswong.github.io/" accesskey="h" title="Love and Share (Alt + H)">Love and Share</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://kairoswong.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kairoswong.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kairoswong.github.io/search/" title="🔍 (Alt &#43; /)" accesskey=/>
+                    <span>🔍</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post" autonumbering>
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Tracing the origins of Schrödinger equation
+    </h1>
+    <div class="post-meta"><span title='2024-09-28 09:40:14 +0800 CST'>2024-09-28</span>&nbsp;·&nbsp;12 min&nbsp;·&nbsp;Kairos Wong
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#introduction" aria-label="Introduction">Introduction</a></li>
+                    <li>
+                        <a href="#initial-steps-toward-the-hydrogen-equation" aria-label="Initial steps toward the hydrogen equation">Initial steps toward the hydrogen equation</a><ul>
+                            
+                    <li>
+                        <a href="#attempt-at-relativistic-equation" aria-label="Attempt at relativistic equation">Attempt at relativistic equation</a></li>
+                    <li>
+                        <a href="#return-to-nonrelativistic-equation" aria-label="Return to nonrelativistic equation">Return to nonrelativistic equation</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#combining-hamiltonian-mechanics" aria-label="Combining Hamiltonian mechanics">Combining Hamiltonian mechanics</a></li>
+                    <li>
+                        <a href="#time-dependent-schr%c3%b6dinger-equation" aria-label="Time-dependent Schrödinger equation">Time-dependent Schrödinger equation</a></li>
+                    <li>
+                        <a href="#discussion" aria-label="Discussion">Discussion</a></li>
+                    <li>
+                        <a href="#acknowledgments" aria-label="Acknowledgments">Acknowledgments</a></li>
+                    <li>
+                        <a href="#references" aria-label="References">References</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+  <div class="post-content"><blockquote>
+<p>This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</p>
+</blockquote>
+<h3 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h3>
+<p>In the history of modern physics, few equations have fascinated scientists as much as the Schrödinger equation. Created in the early 20th century, a time of groundbreaking discoveries about the quantum world, this equation has become a symbol of the wave mechanics that form the basis of quantum theory. By delving into the precursors of quantum theory that challenged classical conceptions, we will uncover a network of concepts and discoveries that led to the equation summarizing how quantum systems behave.</p>
+<h3 id="initial-steps-toward-the-hydrogen-equation">Initial steps toward the hydrogen equation<a hidden class="anchor" aria-hidden="true" href="#initial-steps-toward-the-hydrogen-equation">#</a></h3>
+<h4 id="attempt-at-relativistic-equation">Attempt at relativistic equation<a hidden class="anchor" aria-hidden="true" href="#attempt-at-relativistic-equation">#</a></h4>
+<p>Building on the concept of de Broglie’s matter-wave theory, physicist Peter Debye casually remarked that if particles exhibit wave-like properties, they should satisfy some sort of wave equation. Inspired by Debye’s comment, Erwin Schrödinger set out to find an appropriate wave equation for electrons. The earlist surviving document pertaining to wave mechanics is a concise three-page memorandum titled <em><strong>Hydrogen Atom Eigenvibrations</strong></em> (Fig. 1) by Schrödinger towards the end of 1925.</p>
+<figure class="align-center ">
+    <img loading="lazy" src="./Fig_1.jpg#center"
+         alt="Fig. 1: Hydrogen Atom Eigenvibrations, Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
+            <p>Fig. 1: Hydrogen Atom Eigenvibrations, Erwin Schrödinger, Page1 <br> (Image source: <a href="https://bibliothek.univie.ac.at/zb-physik-fb-chemie/">Universität Wien, Österreichische Zentralbibliothek für Physik</a>)</p>
+        </figcaption>
+</figure>
+
+<p>Schrödinger started from a phase wave for the electron of the mass $m$ and velocity $v$, and then wrote down the relations for frequency $\nu$ and phase velocity $u$ <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>,</p>
+<p>\begin{equation}
+\nu=\frac{mc^2}{h\sqrt{1-\beta^2}} \label{eq1}
+\end{equation}
+and
+\begin{equation}
+u=\frac c\beta=\frac{c^2}v=\frac{mc^2/\sqrt{1-\beta^2}}{mv/\sqrt{1-\beta^2}}=\frac{\mathrm{energy}}{\mathrm{momentum}}, \label{eq2}
+\end{equation}
+where $\beta=v/c,c$ is the velocity of light in vacuo and $h$ is Plank&rsquo;s constant. As a first example, he generalized the relations Eq. \eqref{eq1} and Eq. \eqref{eq2} to encompass the behavior of electron phase waves within the electric field generated by a hydrogen nucleus. We could follow what we have seen from manuscript, assuming the situation within the electric field of hydrogen atoms,</p>
+<p>\begin{equation}
+h\nu=\frac{mc^2}{\sqrt{1-\beta^2}}-\frac{e^2}r \label{eq3}
+\end{equation}</p>
+<p>where $e$ denotes the charge of the electron, $r$ is the nucleus-electron distance. Furthermore, the potential field of a pseudo-hydrogen atom could be expressed as $-Ze^{2}/r$, where $Z$ stands for number of nuclear charges (Hydrogen atom is a special case of $Z = 1$). Here, we could get the expression of phase velocity by combining Eq. \eqref{eq2} and Eq. \eqref{eq3},</p>
+<p>\begin{equation}
+u=c\frac{h\nu/mc^2}{\sqrt{(h\nu/mc^2+e^2/mc^2r)^2-1}}. \label{eq4}
+\end{equation}</p>
+<p>Here comes with Helmholtz equation,</p>
+<p>\begin{equation}
+\nabla^2\psi+k^2\psi=0 \label{eq5}
+\end{equation}</p>
+<p>where $\nabla^2$ is the Laplace operator, $k$ is the wave number, and $\psi$ is the wave function we assume exists. The motivation for using Helmholtz equation as a starting point lies in its frequently appearance in electromagnetic waves with both spatial and temporal dependencies. Combining with $k= \omega / u = 2\pi \nu /u$, we substitute modified initial form Eq. \eqref{eq4} into Eq. \eqref{eq5} and obtain the simplified formula</p>
+<p>\begin{equation}
+\nabla^2\psi+\frac{4\pi^2m^2c^2}{h^2}\left[\left(\frac{h\nu}{mc^2}+\frac{e^2}{mc^2r}\right)^2-1\right]\psi=0.  \label{eq_6}
+\end{equation}</p>
+<p>In light of the symmetry of electrons within a pseudo-hydrogen atom system, solutions are typically sought through the method of separation of variables in spherical coordinates. By denoting $\psi(r,\theta,\varphi){=}R(r)\Theta(\theta)\Phi(\varphi)$, the part about angle could be described by spherical harmonics $Y_{l}^m(\theta,\varphi) = \Theta(\theta)\Phi(\varphi)$. The Laplace operator $\nabla^2$ applied to a scalar function $\psi(r,\theta,\varphi)$ in spherical coordinates can be expressed as follows</p>
+<p>$$
+\nabla^2 \psi \left( r, \theta, \varphi \right)=\frac{1}{r^2} \frac{\partial}{\partial r}\left(r^2 \frac{\partial \psi}{\partial r}\right)+\frac{1}{r^2 \sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial \psi}{\partial \theta}\right)+\frac{1}{r^2 \sin ^2 \theta} \frac{\partial^2 \psi}{\partial \varphi^2}.
+$$</p>
+<p>After separating variables, we could find that
+$$
+\begin{aligned}
+\frac{\mathrm{d}^2 R}{\mathrm{~d} r^2}+\frac{2}{r} \frac{\mathrm{d} R}{\mathrm{~d} r}&amp;+\left[4\pi^2\left( \frac{\nu^2}{c^2} - \frac{m^2c^2}{h^2} \right)+ \frac{8\pi^2  e^2 \nu/hc^2}{ r} + \frac{4\pi^2 e^4/c^2h^2-l(l+1)}{r^2} \right] R=0 \\
+&amp;\frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial Y}{\partial \theta}\right)+\frac{1}{\sin ^2 \theta} \frac{\partial^2 Y}{\partial \varphi^2}+l(l+1) Y=0
+\end{aligned}
+$$</p>
+<p>The resuilting radial equation is following,</p>
+<p>\begin{equation}
+\frac{\mathrm{d}^2 R}{\mathrm{~d} r^2}+\frac{2}{r} \frac{\mathrm{d} R}{\mathrm{~d} r}+\left[-A + \frac{2B}{r} -\frac{C}{r^2} \right] R=0 \label{eq_7}
+\end{equation}</p>
+<p>where $A, B, C$ are constants that are represented in simplification processing, respectively. However, the solution of this equation posed some troubles for Schrödinger. Initially, he attempted a novel trial solution
+named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the equation by substituting it in.</p>
+<figure class="align-center ">
+    <img loading="lazy" src="./Fig_2.jpg#center"
+         alt="Fig. 2: Hydrogen Atom Eigenvibrations, Erwin Schrödinger, Page3 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
+            <p>Fig. 2: Hydrogen Atom Eigenvibrations, Erwin Schrödinger, Page3 <br> (Image source: <a href="https://bibliothek.univie.ac.at/zb-physik-fb-chemie/">Universität Wien, Österreichische Zentralbibliothek für Physik</a>)</p>
+        </figcaption>
+</figure>
+
+<p>Inspired by Ludwig Schlesinger&rsquo;s book on integral equations <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, Schrödinger noticed that this equation possessed a unique finite solution only if</p>
+<p>\begin{equation}
+\begin{aligned}
+&amp; R(r) = \oint_{L} (z- \sqrt{A})^{\alpha _{1} - 1}(z+ \sqrt{A})^{\alpha _{2} - 1} e ^{z r} \mathrm{d} z, \quad \\
+&amp; \alpha _{1}, \alpha _{2} = \pm \frac{B}{\sqrt{A}} - \sqrt{C + \frac{1}{4}}+ \frac{1}{2} = \text{integer}
+\end{aligned}
+\end{equation}</p>
+<p>The path of integration $L$ has to satisfy specific condition,</p>
+<p>\begin{equation}
+\oint_L \frac{\mathrm{d}}{\mathrm{d} z}\left[(z-\sqrt{A})^{\alpha_1}(z+\sqrt{A})^{\alpha_2}e^{z r}\right] \mathrm{d} z=0
+\end{equation}</p>
+<p>And more specifically, the item $C$ could be written as $(l+\frac{1}{2})^2, l \in \mathbb{Z}$. The outcome is very similar to an expression by Sommerfeld to describe the relativistic fine structure of hydrogen <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, yet there is a discrepancy of 1/2 (Fig. 2). At that time, Sommerfeld’s results have been validated by experiments, so Schrödinger felt that his first approach to describe an atomic wave equation had failed. The time has come to the winter of 1925, he had gone for his Christmas vacation to Arosa. From a letter to Wien on 27 December, he wrote the following words (Fig. 3):</p>
+<blockquote>
+<p>Just now a new atomic theory is niggling me. If only I knew more mathematics! I am very optimistic about this thing and hope that if only I can master the calculations, it will be very fine. I think I can provide a vibrational system [<em>ein schwingendes System</em>] in comparatively natural ways, not through <em>ad hoc</em> assumptions &hellip; I hope that I will soon be able to report on the thing in a more detailed and comprehensible way.</p>
+</blockquote>
+<figure class="align-center ">
+    <img loading="lazy" src="./Fig_3.jpg#center"
+         alt="Fig. 3: A new atomic theory, Erwin Schrödinger, December 27, 1925 (Image source: CHRISTIES)" width="70%" height="70%"/> <figcaption>
+            <p>Fig. 3: A new atomic theory, Erwin Schrödinger, December 27, 1925 <br> (Image source: <a href="https://onlineonly.christies.com/s/eureka-scientific-breakthroughs-20th-century/a-new-atomic-theory-11/90142">CHRISTIES</a>)</p>
+        </figcaption>
+</figure>
+
+<p>Interestingly, in this letter, he explicitly wrote down the formula for the difference in term frequencies of the hydrogen spectral lines,</p>
+<p>\begin{equation}
+\nu_{n} - \nu _{m} = R (\frac{1}{m^2} - \frac{1}{n^2})
+\end{equation}</p>
+<p>where $R$ denotes the Rydberg constant, and $n, m$ are different integers, respectively. We might never know what happened before Christmas 1925, but from his notebook named <em>Eigenwertproblem des Atoms</em>, we can see that he turned towards deriving non-relativistic results.</p>
+<h4 id="return-to-nonrelativistic-equation">Return to nonrelativistic equation<a hidden class="anchor" aria-hidden="true" href="#return-to-nonrelativistic-equation">#</a></h4>
+<p>If we look at it from a contemporary perspective, Schrödinger&rsquo;s relativistic approach was bound to fail for a straightforward reason: incorporating relativity necessitates considering electron spin. However, the concept of electron spin was still in its infancy at that time, so Schrödinger decided to present a non-relativistic result <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> (Fig. 4).</p>
+<figure class="align-center ">
+    <img loading="lazy" src="./Fig_4.jpg#center"
+         alt="Fig. 4: Eigenwertproblem des Atoms I (Starkeffeckt), Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
+            <p>Fig. 4: Eigenwertproblem des Atoms I (Starkeffeckt), Erwin Schrödinger, Page1 <br> (Image source: <a href="https://bibliothek.univie.ac.at/zb-physik-fb-chemie/">Universität Wien, Österreichische Zentralbibliothek für Physik</a>)</p>
+        </figcaption>
+</figure>
+
+<p>As the same way, Schrödinger began with an equation for the de Broglie phase wave frequency of an electron moving with velocity $v$ in the electric field of a hydrogen nucleus,</p>
+<p>\begin{equation}
+h\nu=mc^2+ \frac{mv^2}{2}-\frac{e^2}r \label{eq_11}
+\end{equation}</p>
+<p>which he then substituted it into the equation for phase velocity $u$ of de Broglie wave,</p>
+<p>\begin{equation}
+u=\frac{h\nu}{mv}=\frac{h\nu}{\sqrt{2m(h\nu-mc^2+{e^2}/{r})}}
+\end{equation}</p>
+<p>the differential equation for nonrelativistic hydrigen atom could be expressed as</p>
+<p>\begin{equation}
+\nabla^2\psi+\frac{8\pi^2m}{h^2}\left(h\nu-mc^2+\frac{e^2}{r} \right)\psi=0
+\end{equation}</p>
+<p>Compared to solving relativistic equations, solving non-relativistic equations is considerably simpler. The radial part of this differential equation could also be represented by Eq. \eqref{eq_7}, with correspondence as follows:</p>
+<p>$$
+A = -\frac{8\pi^2 m}{h^2}(h \nu - mc^2),\quad B = \frac{4\pi^2m e^2}{h^2}, \quad C = l(l+1)
+$$</p>
+<p>According to what we have mentioned before, the quantum number for radial part is expressed as $ n _{r} = B/\sqrt{A} - \sqrt{C + 1/4}+ 1/2$, negative part has been discarded because it has no physical significance. He thus arrived at this result</p>
+<p>\begin{equation}
+n_{r} = \sqrt{\frac{Rhc}{mc^2-h\nu}} -l,\quad R = \frac{2\pi^2m e^4}{ch^3} \label{eq_14}
+\end{equation}</p>
+<p>where $R$ is the Rydberg constant, relating to the electromagnetic spectra of an atom. Here, the energy of hydrogen atom could be derived from Eq. \eqref{eq_14},</p>
+<p>\begin{equation}
+h \nu = mc^2 - \frac{Rhc}{(n_{r} + l)^2}
+\end{equation}</p>
+<figure class="align-center ">
+    <img loading="lazy" src="./Fig_5.jpg#center"
+         alt="Fig. 5: Eigenwertproblem des Atoms I (Starkeffeckt), Erwin Schrödinger, Page58 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
+            <p>Fig. 5: Eigenwertproblem des Atoms I (Starkeffeckt), Erwin Schrödinger, Page58 <br> (Image source: <a href="https://bibliothek.univie.ac.at/zb-physik-fb-chemie/">Universität Wien, Österreichische Zentralbibliothek für Physik</a>)</p>
+        </figcaption>
+</figure>
+
+<p>It is the conclusion that Schrödinger had mentioned in his letter towards Wien. His final calculations led to a remarkable outcome—the origin of quantized integers, which did not arise from Bohr’s forced requirements based on classical physics imagery, but rather from the inherent constraints of the wave equation itself (Fig. 5). This breakthrough suggested that quantum phenomena could be described more naturally by wave mechanics, without the need for additional assumptions imposed by old quantum theory. Schrödinger’s next work involved the generalization of this equation and providing a formal derivation by utilizing least action principle (Hamiltonian principle). Moreover, Schrödinger’s formulation laid the groundwork for further developments in quantum theory, influencing the matrix mechanics of Heisenberg and the probabilistic interpretation introduced by Born.</p>
+<h3 id="combining-hamiltonian-mechanics">Combining Hamiltonian mechanics<a hidden class="anchor" aria-hidden="true" href="#combining-hamiltonian-mechanics">#</a></h3>
+<p>Hamiltonian mechanics is a theoretical framework in physics that provides a reformulation of classical mechanics. In <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, Schrödinger intended to re-derive the previously mentioned differential equations starting from the principle of least action (Fig. 6).</p>
+<figure class="align-center ">
+    <img loading="lazy" src="./Fig_6.jpg#center"
+         alt="Fig. 6: Eigenwertproblem des Atoms II (Allgemeine Theorie, Starkeffekt, Strömungstheorie), Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
+            <p>Fig. 6: Eigenwertproblem des Atoms II (Allgemeine Theorie, Starkeffekt, Strömungstheorie), Erwin Schrödinger, Page1 <br> (Image source: <a href="https://bibliothek.univie.ac.at/zb-physik-fb-chemie/">Universität Wien, Österreichische Zentralbibliothek für Physik</a>)</p>
+        </figcaption>
+</figure>
+
+<p>At beginning, the first one is Hamilton-Jacobi equation,</p>
+<p>\begin{equation}
+\mathcal{H} \left(q, \frac{\partial S}{ \partial q}\right) = E
+\end{equation}</p>
+<p>where $\mathcal{H}$ denotes the Hamiltonian function based on the position coordinates $q$ and momentum coordinates $p$, which has been written as the partial derivatives of the action function $S$. In fact, this also reveals why, in quantum mechanics, momentum can be equivalent to the differential operator. And $E$ is the energy of the system. Schrödinger further replaced the classical function $S$ via the special transformation (This formula is very similar to the expression for entropy in statistical mechanics)</p>
+<p>\begin{equation}
+S = K \ln \psi
+\end{equation}</p>
+<p>where $K$ had the dimensions of an action, he explained the motivation about this transformation and wrote:“We seek a function $\psi$, such that for any arbitrary variation of it the integral of the said quadratic form, taken over the whole coordinate space, is stationary, $\psi$ being everywhere real, single-valued, finite, and continuously differentiable up to the second order.” <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> Finally he arrived at this equation</p>
+<p>\begin{equation}
+\mathcal{H} \left(q, \frac{K}{\psi}\frac{\partial \psi}{ \partial q}\right) = E
+\end{equation}</p>
+<p>Using the usual notations, the kinetic energy $T$ and the potential energy $V$ are</p>
+<p>\begin{equation}
+T = \frac{1}{2m} (p_{x}^2 + p_{y}^2 + p_{z}^2);\quad V = -\frac{e^2}{r}
+\end{equation}</p>
+<p>In the case of nonrelativistic hydrogen system, descrbed by the classical Hamilton-Jacobi equation</p>
+<p>\begin{equation}
+\frac{1}{2 m}\left[\left(\frac{\partial S}{\partial x}\right)^2+\left(\frac{\partial S}{\partial y}\right)^2+\left(\frac{\partial S}{\partial z}\right)^2\right] -\frac{e^2}{r} =E
+\end{equation}</p>
+<p>and got quadratic form equation</p>
+<p>\begin{equation}
+\left(\frac{\partial \psi}{\partial x}\right)^2+\left(\frac{\partial \psi}{\partial y}\right)^2+\left(\frac{\partial \psi}{\partial z}\right)^2-\frac{2 m}{K^2}\left(E+\frac{e^2}{r}\right) \psi^2 =0
+\end{equation}
+And then this quadratic form could be inserted into the variational problem,</p>
+<p>\begin{equation}
+\delta \iiint \left[\left(\frac{\partial \psi}{\partial x}\right)^2+\left(\frac{\partial \psi}{\partial y}\right)^2+\left(\frac{\partial \psi}{\partial z}\right)^2-\frac{2 m}{K^2}\left(E+\frac{e^2}{r}\right) \psi^2 \right] \mathrm{d}x \mathrm{d}y \mathrm{d}z =0
+\end{equation}</p>
+<p>By the distribution integral formula and simplifying it, we will find that</p>
+<p>\begin{equation}
+\nabla^2 \psi+\frac{2 m}{K^2}\left(E+\frac{e^2}{r}\right) \psi=0
+\end{equation}</p>
+<p>Schrödinger observed that the familiar Bohr energy levels, which align with the Balmer series, can be derived by assigning a specific value to the constant $K$, he provided a specific value $K = \frac{h}{2\pi}$ for which comes two classes, depending on the value $E$,</p>
+<ul>
+<li>For negative values $E&lt;0$ only discrete solutions existed, with the discrete level solutions
+$$
+E=-\frac{2 \pi^2 m e^4}{h^2 n^2}, \quad n=1,2,3, \ldots
+$$</li>
+<li>For positive values $E &gt; 0$ allowed a consistent solution approaches $0$ as $1/r$ increases.</li>
+</ul>
+<p>In summary, the Schrödinger equation uses the concept of the Hamiltonian from classical mechanics to describe the time evolution of quantum states, bridging the gap between classical and quantum descriptions of physical phenomena. This relationship is a key aspect of the correspondence principle, which seeks to ensure that quantum mechanics encompasses classical mechanics as a limiting case.</p>
+<h3 id="time-dependent-schrödinger-equation">Time-dependent Schrödinger equation<a hidden class="anchor" aria-hidden="true" href="#time-dependent-schrödinger-equation">#</a></h3>
+<p>Schrödinger suggested that the wave function of the hydrogen atom could potentially be understood as a type of vibrational process within the atom. This interpretation might offer a representation that is closer to the actual behavior of electrons, compared to the concept of discrete electronic orbits. In fact, he had already obtained what would later be called stationary Schrödinger equation in his initial paper concerning hydrogen atom. The specific expression is</p>
+<p>\begin{equation}
+\nabla^2 \psi+\frac{2 m}{\hbar^2}\left(E - V\right) \psi=0 \label{eq_25}
+\end{equation}</p>
+<p>Evidently,  this equation is not so general, as it does not depend on time and hence could only describe periodic systems. Then what if the equation evolves over time?
+In next paper <em>über das verhältnis der heisenberg-born-jordanschen quantenmechanik zu der meinen</em> <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, which was received on 17 March 1926, he introduced the following consideration, provided the time-dependence of wave funciton has the basical plane wave form,</p>
+<p>\begin{equation}
+\psi \sim e^{\pm  i Et/\hbar}
+\end{equation}
+and this amounts to saying that</p>
+<p>\begin{equation}
+\frac{\partial \psi}{\partial t} = \pm \frac{ i }{\hbar} E\psi
+\end{equation}</p>
+<p>From this equation and combine the expression in Eq. \eqref{eq_25} to eliminate the energy $E$, we could get the final time-dependence wave equation</p>
+<p>\begin{equation}
+-\frac{\hbar}{2m}\nabla^2 \psi + V\psi = \pm i \hbar \frac{\partial \psi}{\partial t}
+\end{equation}</p>
+<p>Looking back from a modern perspective, the derivation of Schrödinger’s equation involved many elements that were not rigorous, and it is generally believed by later scholars that this was a process of conjecture. In 1926, Max Born introduced the concept of probability amplitude, which successfully interpreted the physical meaning of the wave function. However, both Schrödinger and Einstein shared the same viewpoint, disagreeing with the statistical or probabilistic approach, as well as the associated discontinuous wave function collapse.</p>
+<h3 id="discussion">Discussion<a hidden class="anchor" aria-hidden="true" href="#discussion">#</a></h3>
+<p>In this exploration, we have traced the intricate pathways that led to the formulation of Schrödinger equation, a cornerstone of quantum mechanics. The pivotal role of de Broglie’s hypothesis of matter waves set the stage for Schrödinger’s groundbreaking work. The elegance of the equation stems from its capacity to harmonize a spectrum of distinct observations and experiments within a cohesive theoretical framework, all while circumventing the need for traditional assumptions. Its origins remind us that scientific breakthroughs are often the result of building upon the collective knowledge of the past, driven by innovative thinking and courage to venture into the unknown.</p>
+<h3 id="acknowledgments">Acknowledgments<a hidden class="anchor" aria-hidden="true" href="#acknowledgments">#</a></h3>
+<p>Sincerely, I thank for valuable discussions with Hong Su and Yiming Ding.</p>
+<h3 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Rechenberg, H. Erwin Schrödinger and the creation of wave mechanics. Acta Physica Polonica, Series B;(Poland)19 (1988).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Schlesinger, L. Einführung in die Theorie der Differentialgleichungen mit einer unabhängigen Variablen (Göschen, 1900).&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Sommerfeld, A. Zur quantentheorie der spektrallinien. Annalen der Physik 356, 1–94 (1916).&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Mehra, J. Erwin Schrödinger and the rise of wave mechanics. II. The creation of wave mechanics. Foundations of Physics 17, 1141–1188 (1987).&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Schrödinger, E. An undulatory theory of the mechanics of atoms and molecules. Physical review 28, 1049 (1926).&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Schödinger, E. Quantisierung als Eigenwertproblem.(Erste Mitteilung). Annalen der Physik 79, 361–376 (1926).&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>Schrödinger, E. über das verhältnis der heisenberg-born-jordanschen quantenmechanik zu der meinen. Annalen der Physik 79, 734 (1926).&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://kairoswong.github.io/tags/physics/">Physics</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://kairoswong.github.io/posts/2024-06-24-dpo/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Viewing direct policy optimization from a physical perspective</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://kairoswong.github.io/">Love and Share</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

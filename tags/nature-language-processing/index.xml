@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nature Language Processing on Love and Share</title>
+    <link>https://kairoswong.github.io/tags/nature-language-processing/</link>
+    <description>Recent content in Nature Language Processing on Love and Share</description>
+    <generator>Hugo -- 0.126.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Jun 2024 23:45:42 +0800</lastBuildDate>
+    <atom:link href="https://kairoswong.github.io/tags/nature-language-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Viewing direct policy optimization from a physical perspective</title>
+      <link>https://kairoswong.github.io/posts/2024-06-24-dpo/</link>
+      <pubDate>Mon, 24 Jun 2024 23:45:42 +0800</pubDate>
+      <guid>https://kairoswong.github.io/posts/2024-06-24-dpo/</guid>
+      <description>Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans.</description>
+      <content:encoded><![CDATA[<h3 id="introduction">Introduction</h3>
+<p>Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans. In advanced stages of reinforcement learning, as the complexity of training escalates and the distinction between selected and discarded responses diminishes, Supervised Fine-Tuning (SFT) may inadvertently increase the rewards for incorrect responses.</p>
+<h3 id="background">Background</h3>
+<p>In the field of Natural Language Processing (NLP), the introduction of InstructGPT <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> has significantly advanced research in reinforcement learning from human feedback (RLHF). Typically, the RLHF stage follows supervised fine-tuning (SFT). InstructGPT employs proximal policy optimization (PPO) for preference optimization, but PPO requires the training of an additional reward model. This reward model’s training is inherently unstable, and its outcomes directly impact the final optimization’s effectiveness. Subsequent research has bypassed the reward model training step, directly proceeding with preference training. Knowledge Training Optimization (KTO) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> learns from non-paired preference data, while Initial Public Offering (IPO) <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> uses a root-finding MSE loss to incorporate Kullback-Leibler (KL) regularization. Order Police (ORPO) <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> introduces a reference-model-free odds ratio term to directly contrast winning and losing responses with the policy model, jointly training with the SFT objective.</p>
+<h3 id="theoretical-foundation">Theoretical foundation</h3>
+<h4 id="bradley-terry-model">Bradley-Terry model</h4>
+<p>The DPO algorithm <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, and true to its name, is to integrate the decision and reward functions directly into the reinforcement learning objective, eliminating the need for separate reward modeling. Moreover, DPO has emerged as a promising alternative for aligning Large Language Models (LLMs) to human or AI preferences.</p>
+<p>Imagine that the large language model is prompted with prompts $x$ to produce pairs of answers, we are definitely going to prefer one over the other. Here, the Bradley-Terry model <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> is used to quantify preferences. This model is particularly used in a pairwise comparison, allowing us to express human preference distribution, denoted by $p^{*}$. Like most alignment methods, DPO requires a dataset of paired preferences $\mathcal{D} = \lbrace x^{(i)}, y_{w}^{(i)}, y_{l}^{(i)}  \rbrace_{i = 1}^{N}$ sampled from $p^{*}$, where $y_{w}$ and $y_{l}$ denotes the preferred and dispreferred choice. And we assume that the preferences are generated by an underlying reward model $r^{*}(y, x)$, which could be parametrized by $r_{\phi}(y, x)$. Specifically, the probability that item $y_{w}$ is preferred over item $y_{l}$ could be modeled as</p>
+<p>$$
+\begin{equation}
+p^{*}(y_{w} \succ y_{l} \mid x) = \frac{\exp(r^{*}(x,y_{w}))}{\exp(r^{*}(x,y_{w}))+\exp(r^{*}(x,y_{l}))}. \label{eq1}
+\end{equation}
+$$</p>
+<p>In Eq. \eqref{eq1}, we still have a question, <strong>why do we use the exponential function?</strong></p>
+<p>By using the exponential function, we could transform ratios into a log-linear model, which is more convenient for optimization and computation. And then, this exponential function has a natural probabilistic interpretation in distribution models. Finally, the non-negativity of the exponential function ensures that model parameters are always positive, avoiding issues with negative scoring.</p>
+<p>There is a more general explanation we could use as a reference. Assuming we do not use $\exp(\cdot)$ and replace it with $a^{x}$, we could get</p>
+<p>$$
+\begin{equation}
+p^{*}(y_{w}\succ y_{l}) = \frac{a^{(r^{*}(x,y_{w}))}}{a^{(r^{*}(x,y_{w}))}+a^{(r^{*}(x,y_{l}))}}
+\end{equation}
+$$</p>
+<p>But if we use this linear transformation, $b(x,y) = \log_{a}(\mathrm{e})c(x,y)$, so that</p>
+<p>$$
+\begin{equation}
+a^{b(x,y)} = a^{\log_{a}(\mathrm{e})c(x,y)} = (\mathrm{e}^{\log a})^{\log_{a}(\mathrm{e})c(x,y)} = \mathrm{e}^{c(x,y)}
+\end{equation}
+$$</p>
+<p>It is not hard to find that for any base number $a$, we can still find a corresponding linear transformation, which brings us back to the exponential function. And it has those good properties that we mentioned earlier, which is why we chose it.</p>
+<h4 id="log-likelihood-loss-function">Log-likelihood loss function</h4>
+<p>We now have Eq. \eqref{eq1}, taking the natural logarithm of both sides of the equation allows us to linearize the model</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}_ {R}(r_{\phi}, \mathcal{D}) & 
+        =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \frac{\exp \left(r_{\phi}\left(x, y_w\right)\right)}{\exp \left(r_{\phi}\left(x, y_w\right)\right)+\exp \left(r_{\phi}\left(x, y_l\right)\right)}\right] \\
+        & =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \frac{1}{1+\exp \left(r_{\phi}\left(x, y_l\right)-r_{\phi}\left(x, y_w\right)\right)}\right] \\
+        & =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \sigma\left(r_{\phi}\left(x, y_w\right)-r_{\phi}\left(x, y_l\right)\right)\right]
+    \end{aligned} \label{eq4}
+\end{equation}
+$$
+</div>
+<p>where $\sigma$ is the logistic function, the more specific expression is $ \sigma (x)= {1}/({1 +\exp{(-x)}})$.</p>
+<p>During the reinforcement learning fine-tuning phase, we need to find the following target to provide feedback to the language model,</p>
+<p>$$
+\begin{equation}
+\max_{\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_{\phi}(x,y)] - \beta \mathbb{D}_ {\text{KL}}[\pi_{\theta}(y\mid x) || \pi_{\text{ref}}(y\mid x)] \label{eq5}
+\end{equation}
+$$</p>
+<p>where $\beta$ is a hyper-parameter the controls the deviation from baseline reference policy $\pi_{\text{ref}}$, and $\pi_{\theta}$ is the language model policy. For this equation, $\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_ {\phi}(x,y)]$, reflects our desire to achieve as much reward as possible in the given task while simultaneously minimizing  $\mathbb{D}_ {\text{KL}}[\pi_{\theta}(y\mid x) || \pi_{\text{ref}}(y\mid x)]$, which measures how close or far the model distribution is from the reference distribution.</p>
+<h4 id="deriving-the-optimum-of-reward-maximization-objective">Deriving the optimum of reward maximization objective</h4>
+<p>For two probability distributions $P$ and $Q$, Kullback-Leibler (KL) divergence $\mathbb{D}_{\mathrm{KL}}(P|| Q)$ is defined as</p>
+<p>$$
+\begin{equation}
+\mathbb{D}_ {\text{KL}}(P || Q)= \sum_{x \in \mathcal{X}} P(x)\log \left( \frac{P(x)}{Q(x)} \right)
+\end{equation}
+$$</p>
+<p>where $\mathcal{X}$ is the set of possible outcomes for the discrete random variable $x$. KL divergence measures the information loss when distribution $Q$ is used to approximate distribution $P$. In other words, it quantifies the difference between distributions $Q$ and $P$. In the following derivation, we need to introduce the concept of partition function in physics, $Z (x)$. With Eq. \eqref{eq5}, we could have</p>
+</div>
+$$
+\begin{equation}
+    \begin{aligned}
+    & \max_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}} [r_{\phi}(x, y)] -\beta \mathbb{D}_ {\mathrm{KL}}\left[\pi_{\theta}(y \mid x) \| \pi_{\mathrm{ref}}(y \mid x)\right]  \\
+    & = \max_{\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_{\phi}(x, y)] - \mathbb{E} _ {x \sim \mathcal{D}, y \sim \pi_{\theta}}\left[ \beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\text{ref}}(y \mid x)} \right]\\
+    & =\max_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[r_{\phi}(x, y)-\beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\mathrm{ref}}(y \mid x)}\right] \\
+    & =\min_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[\log \frac{\pi_{\theta}(y \mid x)}{\pi_{\mathrm{ref}}(y \mid x)}-\frac{1}{\beta} r_{\phi}(x, y)\right] \\
+    & =\min_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[\log \frac{\pi_{\theta}(y \mid x)}{\color{red}{\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right)}}-\log Z(x)\right],
+    \end{aligned}\label{eq7}
+\end{equation}
+$$
+</div>
+<p>where partition function is</p>
+<p>$$
+\begin{equation}
+Z (x) = \sum_{y}\pi_{\text{ref}(y \mid x) }\exp\left( \frac{1}{\beta} r_{\phi} (x, y) \right).
+\end{equation}
+$$</p>
+<p>Let us go back to statitical physics for explaining the partition function, partition function $Z$ is the sum of all possible state weights of a system, and it determines the equilibrium properties of this system. For a given system, the partition function in physics is defined as $ Z = \sum_{i} \exp\left(-\frac{E_{i}}{k_{B}T}\right)$, where $E_{i}$ is the energy of the $i$-th state, $k_{B}$ is the Boltzmann constant, and $T$ is the temperature of the system. Physically, the partition function $Z$ represents a normalization factor in the system&rsquo;s state space that determines the probability of each state. In the given optimization framework, our goal is to obtain the policy $\pi_\theta$ by maximizing the reward $r_\phi(x, y)$ while minimizing the KL divergence between the distribution $\pi_\theta(y \mid x)$ and the reference distribution $\pi_{\text{ref}}(y \mid x)$. To simplify the computation of the KL divergence, we could introduce a partition function $Z(x)$, which is similar to the partition function in statistical physics. This function normalizes the weighted probabilities across all possible values of $y$. And then we need to define</p>
+</div>
+$$
+\begin{equation}
+\begin{aligned}
+        \frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) &\exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right) \\
+        & = \frac{\pi_{\text{ref}}(y \mid x)\exp \left( \frac{1}{\beta}r_{\phi}(x, y) \right)}{\sum_{y}\pi_{\text{ref}(y \mid x)}\exp\left( \frac{1}{\beta}r_{\phi}(x,y) \right)}\\
+        & = \pi^{*}(y \mid x)
+\end{aligned}
+\end{equation}
+$$
+</div>
+<p>Now we should re-organize the detailed result in Eq. \eqref{eq7} as</p>
+</div>
+$$
+\begin{equation}
+    \begin{aligned}
+\min_{\pi_{\theta}}\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{ \theta}}& \left[ \log \frac{\pi(y \mid x)}{\pi^{*}(y \mid  x)} - \log Z(x) \right] \\
+& = \min_{\pi_{\theta}}\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{ \theta}} \left[ \log \frac{\pi_{\theta}(y \mid x)}{\pi^{*}(y \mid  x)} \right] \\
+& = \min_{\pi_{\theta}}\mathbb{E} _ {x \sim \mathcal{D}}[\mathbb{D}_ {\text{KL}}(\pi_{\theta}(y \mid x) ||\pi^{*}(y \mid x))].
+\end{aligned}
+\end{equation}
+$$
+</div>
+<p>Since we all know $Z(x)$ does depend on $y$, only if the two distributions are identical we will find that the KL-divergence is minimized at $0$. Hence we got the corresponding optimal solution</p>
+<p>$$
+\begin{equation}
+\pi_{\theta}(y \mid x)=\pi^*(y \mid x)=\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right).\label{eq11}
+\end{equation}
+$$</p>
+<p>And then we derive $r_{\phi}$ from Eq. \eqref{eq11}</p>
+</div>
+$$
+\begin{equation}
+    \begin{aligned}
+        r_{\phi}(x, y) &=\beta \log \left[\frac{\pi_{\theta}(y \mid x)}{\pi_{\text{ref}}(y \mid x)} Z(x)\right] \\
+        & =\beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\text{ref}}(y \mid x)}+\beta \log Z(x). 
+    \end{aligned} \label{eq12}
+\end{equation}
+$$
+</div>
+<p>By substituting Eq. \eqref{eq12} into Eq. \eqref{eq4} we could obtain</p>
+</div>
+$$
+\begin{equation}
+    \begin{aligned}
+    & \mathcal{L}_ {\mathrm{DPO}}\left(\pi_\theta ; \pi_{\mathrm{ref}}\right)= -\mathbb{E}_{\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \sigma\left(r_\phi\left(x, y_w\right)-r_\phi\left(x, y_l\right)\right)\right]\\
+    & = -\mathbb{E}_{\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \sigma\left(\beta \log \frac{\pi_\theta\left(y_w \mid x\right)}{\pi_{\mathrm{ref}}\left(y_w \mid x\right)}-\beta \log \frac{\pi_\theta\left(y_l \mid x\right)}{\pi_{\mathrm{ref}}\left(y_l \mid x\right)}\right)\right]
+    \end{aligned}    
+\end{equation}
+$$
+</div>
+<h3 id="discussion">Discussion</h3>
+<p><strong>Recent Literature Review.</strong> Even recently, researchers unveil SimPO <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, an innovative algorithm that streamlines reinforcement learning by leveraging human feedback. By adopting the average log probability of a sequence as an inherent reward, SimPO cleverly bypasses the complexity of using a reference model. This method not only simplifies the process but also proves to be more efficient in computation and memory usage. When pitted against established methods such as DPO, especially in benchmarks like AlpacaEval 2 and Arena-Hard, SimPO demonstrates superior performance.</p>
+<h3 id="references">References</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>L. Ouyang, J. Wu, X. Jiang, et al., “Training language models to follow instructions with human feedback,” Advances in neural information processing systems, vol. 35, pp. 27 730–27 744, 2022.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>K. Ethayarajh, W. Xu, N. Muennighoff, D. Jurafsky, and D. Kiela, “Kto: Model alignment as prospect theoretic optimization,” arXiv preprint arXiv:2402.01306, 2024.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Z. Jiang, X. Huang, and C. Wei, “Preference as reward, maximum preference optimization with importance sampling,” arXiv preprint arXiv:2312.16430, 2023.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>J. Hong, N. Lee, and J. Thorne, “Reference-free monolithic preference optimization with odds ratio,” arXiv preprint arXiv:2403.07691, 2024.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>R. Rafailov, A. Sharma, E. Mitchell, C. D. Manning, S. Ermon, and C. Finn, “Direct preference optimization: Your language model is secretly a reward model,” Advances in Neural Information Processing Systems, vol. 36, 2024.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>R. A. Bradley and M. E. Terry, “Rank analysis of incomplete block designs: I. the method of paired comparisons,” Biometrika, vol. 39, no. 3/4, pp. 324–345, 1952.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>Y. Meng, M. Xia, and D. Chen, “Simpo: Simple preference optimization with a reference-free reward,” arXiv preprint arXiv:2405.14734, 2024.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
