@@ -9,19 +9,19 @@
     <lastBuildDate>Sat, 28 Sep 2024 09:40:14 +0800</lastBuildDate>
     <atom:link href="https://kairoswong.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tracing the origins of Schrödinger equation</title>
+      <title>Tracing the origins of the Schrödinger equation</title>
       <link>https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/</link>
       <pubDate>Sat, 28 Sep 2024 09:40:14 +0800</pubDate>
       <guid>https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/</guid>
-      <description>This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</description>
+      <description>This blog aims to trace the historical and scientific origins of the Schrödinger equation, focusing on its development from the hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</description>
       <content:encoded><![CDATA[<blockquote>
-<p>This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</p>
+<p>This blog aims to trace the historical and scientific origins of the Schrödinger equation, focusing on its development from the hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</p>
 </blockquote>
 <h3 id="introduction">Introduction</h3>
 <p>In the history of modern physics, few equations have fascinated scientists as much as the Schrödinger equation. Created in the early 20th century, a time of groundbreaking discoveries about the quantum world, this equation has become a symbol of the wave mechanics that form the basis of quantum theory. By delving into the precursors of quantum theory that challenged classical conceptions, we will uncover a network of concepts and discoveries that led to the equation summarizing how quantum systems behave.</p>
 <h3 id="initial-steps-toward-the-hydrogen-equation">Initial steps toward the hydrogen equation</h3>
 <h4 id="attempt-at-relativistic-equation">Attempt at relativistic equation</h4>
-<p>Building on the concept of de Broglie’s matter-wave theory, physicist Peter Debye casually remarked that if particles exhibit wave-like properties, they should satisfy some sort of wave equation. Inspired by Debye’s comment, Erwin Schrödinger set out to find an appropriate wave equation for electrons. The earlist surviving document pertaining to wave mechanics is a concise three-page memorandum titled <em><strong>Hydrogen Atom Eigenvibrations</strong></em> (Fig. 1) by Schrödinger towards the end of 1925.</p>
+<p>Building on the concept of de Broglie's matter-wave theory, physicist Peter Debye casually remarked that if particles exhibit wave-like properties, they should satisfy some sort of wave equation. Inspired by Debye's comment, Erwin Schrödinger set out to find an appropriate wave equation for electrons. The earliest surviving document pertaining to wave mechanics is a concise three-page memorandum titled <em><strong>Hydrogen Atom Eigenvibrations</strong></em> (Fig. 1) by Schrödinger towards the end of 1925.</p>
 <figure class="align-center ">
     <img loading="lazy" src="./Fig_1.jpg#center"
          alt="Fig. 1: Hydrogen Atom Eigenvibrations, Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
@@ -37,23 +37,23 @@ and
 \begin{equation}
 u=\frac c\beta=\frac{c^2}v=\frac{mc^2/\sqrt{1-\beta^2}}{mv/\sqrt{1-\beta^2}}=\frac{\mathrm{energy}}{\mathrm{momentum}}, \label{eq2}
 \end{equation}
-where $\beta=v/c,c$ is the velocity of light in vacuo and $h$ is Plank&rsquo;s constant. As a first example, he generalized the relations Eq. \eqref{eq1} and Eq. \eqref{eq2} to encompass the behavior of electron phase waves within the electric field generated by a hydrogen nucleus. We could follow what we have seen from manuscript, assuming the situation within the electric field of hydrogen atoms,</p>
+where $\beta=v/c,c$ is the velocity of light in vacuo and $h$ is Planck's constant. As a first example, he generalized the relations Eq. \eqref{eq1} and Eq. \eqref{eq2} to encompass the behavior of electron phase waves within the electric field generated by a hydrogen nucleus. We could follow what we have seen from the manuscript, assuming the situation within the electric field of hydrogen atoms,</p>
 <p>\begin{equation}
 h\nu=\frac{mc^2}{\sqrt{1-\beta^2}}-\frac{e^2}r \label{eq3}
 \end{equation}</p>
-<p>where $e$ denotes the charge of the electron, $r$ is the nucleus-electron distance. Furthermore, the potential field of a pseudo-hydrogen atom could be expressed as $-Ze^{2}/r$, where $Z$ stands for number of nuclear charges (Hydrogen atom is a special case of $Z = 1$). Here, we could get the expression of phase velocity by combining Eq. \eqref{eq2} and Eq. \eqref{eq3},</p>
+<p>where $e$ denotes the charge of the electron, and $r$ is the nucleus-electron distance. Furthermore, the potential field of a pseudo-hydrogen atom could be expressed as $-Ze^{2}/r$, where $Z$ stands for number of nuclear charges (Hydrogen atom is a special case of $Z = 1$). Here, we could get the expression of phase velocity by combining Eq. \eqref{eq2} and Eq. \eqref{eq3},</p>
 <p>\begin{equation}
 u=c\frac{h\nu/mc^2}{\sqrt{(h\nu/mc^2+e^2/mc^2r)^2-1}}. \label{eq4}
 \end{equation}</p>
-<p>Here comes with Helmholtz equation,</p>
+<p>Here comes the Helmholtz equation,</p>
 <p>\begin{equation}
 \nabla^2\psi+k^2\psi=0 \label{eq5}
 \end{equation}</p>
-<p>where $\nabla^2$ is the Laplace operator, $k$ is the wave number, and $\psi$ is the wave function we assume exists. The motivation for using Helmholtz equation as a starting point lies in its frequently appearance in electromagnetic waves with both spatial and temporal dependencies. Combining with $k= \omega / u = 2\pi \nu /u$, we substitute modified initial form Eq. \eqref{eq4} into Eq. \eqref{eq5} and obtain the simplified formula</p>
+<p>where $\nabla^2$ is the Laplace operator, $k$ is the wave number, and $\psi$ is the wave function we assume exists. The motivation for using Helmholtz equation as a starting point lies in its frequent appearance in electromagnetic waves with both spatial and temporal dependencies. Combining with $k= \omega / u = 2\pi \nu /u$, we substitute modified initial form Eq. \eqref{eq4} into Eq. \eqref{eq5} and obtain the simplified formula</p>
 <p>\begin{equation}
 \nabla^2\psi+\frac{4\pi^2m^2c^2}{h^2}\left[\left(\frac{h\nu}{mc^2}+\frac{e^2}{mc^2r}\right)^2-1\right]\psi=0.  \label{eq_6}
 \end{equation}</p>
-<p>In light of the symmetry of electrons within a pseudo-hydrogen atom system, solutions are typically sought through the method of separation of variables in spherical coordinates. By denoting $\psi(r,\theta,\varphi){=}R(r)\Theta(\theta)\Phi(\varphi)$, the part about angle could be described by spherical harmonics $Y_{l}^m(\theta,\varphi) = \Theta(\theta)\Phi(\varphi)$. The Laplace operator $\nabla^2$ applied to a scalar function $\psi(r,\theta,\varphi)$ in spherical coordinates can be expressed as follows</p>
+<p>In light of the symmetry of electrons within a pseudo-hydrogen atom system, solutions are typically sought through the method of separation of variables in spherical coordinates. By denoting $\psi(r,\theta,\varphi){=}R(r)\Theta(\theta)\Phi(\varphi)$, the angular part could be described by spherical harmonics $Y_{l}^m(\theta,\varphi) = \Theta(\theta)\Phi(\varphi)$. The Laplace operator $\nabla^2$ applied to a scalar function $\psi(r,\theta,\varphi)$ in spherical coordinates can be expressed as follows</p>
 <p>$$
 \nabla^2 \psi \left( r, \theta, \varphi \right)=\frac{1}{r^2} \frac{\partial}{\partial r}\left(r^2 \frac{\partial \psi}{\partial r}\right)+\frac{1}{r^2 \sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial \psi}{\partial \theta}\right)+\frac{1}{r^2 \sin ^2 \theta} \frac{\partial^2 \psi}{\partial \varphi^2}.
 $$</p>
@@ -64,11 +64,11 @@ $$
 &amp;\frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial Y}{\partial \theta}\right)+\frac{1}{\sin ^2 \theta} \frac{\partial^2 Y}{\partial \varphi^2}+l(l+1) Y=0
 \end{aligned}
 $$</p>
-<p>The resuilting radial equation is following,</p>
+<p>The resulting radial equation is as follows,</p>
 <p>\begin{equation}
 \frac{\mathrm{d}^2 R}{\mathrm{~d} r^2}+\frac{2}{r} \frac{\mathrm{d} R}{\mathrm{~d} r}+\left[-A + \frac{2B}{r} -\frac{C}{r^2} \right] R=0 \label{eq_7}
 \end{equation}</p>
-<p>where $A, B, C$ are constants that are represented in simplification processing, respectively. However, the solution of this equation posed some troubles for Schrödinger. Initially, he attempted a novel trial solution
+<p>where $A, B, C$ are constants that are represented in the simplification process, respectively. However, the solution of this equation posed some trouble for Schrödinger. Initially, he attempted a novel trial solution
 named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the equation by substituting it in.</p>
 <figure class="align-center ">
     <img loading="lazy" src="./Fig_2.jpg#center"
@@ -77,20 +77,20 @@ named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the 
         </figcaption>
 </figure>
 
-<p>Inspired by Ludwig Schlesinger&rsquo;s book on integral equations <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, Schrödinger noticed that this equation possessed a unique finite solution only if</p>
+<p>Inspired by Ludwig Schlesinger's book on integral equations <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, Schrödinger noticed that this equation possessed a unique finite solution only if</p>
 <p>\begin{equation}
 \begin{aligned}
 &amp; R(r) = \oint_{L} (z- \sqrt{A})^{\alpha _{1} - 1}(z+ \sqrt{A})^{\alpha _{2} - 1} e ^{z r} \mathrm{d} z, \quad \\
 &amp; \alpha _{1}, \alpha _{2} = \pm \frac{B}{\sqrt{A}} - \sqrt{C + \frac{1}{4}}+ \frac{1}{2} = \text{integer}
 \end{aligned}
 \end{equation}</p>
-<p>The path of integration $L$ has to satisfy specific condition,</p>
+<p>The path of integration $L$ has to satisfy a specific condition,</p>
 <p>\begin{equation}
 \oint_L \frac{\mathrm{d}}{\mathrm{d} z}\left[(z-\sqrt{A})^{\alpha_1}(z+\sqrt{A})^{\alpha_2}e^{z r}\right] \mathrm{d} z=0
 \end{equation}</p>
-<p>And more specifically, the item $C$ could be written as $(l+\frac{1}{2})^2, l \in \mathbb{Z}$. The outcome is very similar to an expression by Sommerfeld to describe the relativistic fine structure of hydrogen <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, yet there is a discrepancy of 1/2 (Fig. 2). At that time, Sommerfeld’s results have been validated by experiments, so Schrödinger felt that his first approach to describe an atomic wave equation had failed. The time has come to the winter of 1925, he had gone for his Christmas vacation to Arosa. From a letter to Wien on 27 December, he wrote the following words (Fig. 3):</p>
+<p>And more specifically, the item $C$ could be written as $(l+\frac{1}{2})^2, l \in \mathbb{Z}$. The outcome is very similar to an expression by Sommerfeld to describe the relativistic fine structure of hydrogen <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, yet there is a discrepancy of 1/2 (Fig. 2). At that time, Sommerfeld's results have been validated by experiments, so Schrödinger felt that his first approach to describe an atomic wave equation had failed. The time had come to the winter of 1925; he had gone for his Christmas vacation to Arosa. From a letter to Wien on 27 December, he wrote the following words (Fig. 3):</p>
 <blockquote>
-<p>Just now a new atomic theory is niggling me. If only I knew more mathematics! I am very optimistic about this thing and hope that if only I can master the calculations, it will be very fine. I think I can provide a vibrational system [<em>ein schwingendes System</em>] in comparatively natural ways, not through <em>ad hoc</em> assumptions &hellip; I hope that I will soon be able to report on the thing in a more detailed and comprehensible way.</p>
+<p>Just now a new atomic theory is niggling me. If only I knew more mathematics! I am very optimistic about this thing and hope that if only I can master the calculations, it will be very fine. I think I can provide a vibrational system [<em>ein schwingendes System</em>] in comparatively natural ways, not through <em>ad hoc</em> assumptions ... I hope that I will soon be able to report on the thing in a more detailed and comprehensible way.</p>
 </blockquote>
 <figure class="align-center ">
     <img loading="lazy" src="./Fig_3.jpg#center"
@@ -105,7 +105,7 @@ named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the 
 \end{equation}</p>
 <p>where $R$ denotes the Rydberg constant, and $n, m$ are different integers, respectively. We might never know what happened before Christmas 1925, but from his notebook named <em>Eigenwertproblem des Atoms</em>, we can see that he turned towards deriving non-relativistic results.</p>
 <h4 id="return-to-nonrelativistic-equation">Return to nonrelativistic equation</h4>
-<p>If we look at it from a contemporary perspective, Schrödinger&rsquo;s relativistic approach was bound to fail for a straightforward reason: incorporating relativity necessitates considering electron spin. However, the concept of electron spin was still in its infancy at that time, so Schrödinger decided to present a non-relativistic result <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> (Fig. 4).</p>
+<p>If we look at it from a contemporary perspective, Schrödinger's relativistic approach was bound to fail for a straightforward reason: incorporating relativity necessitates considering electron spin. However, the concept of electron spin was still in its infancy at that time, so Schrödinger decided to present a non-relativistic result <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> (Fig. 4).</p>
 <figure class="align-center ">
     <img loading="lazy" src="./Fig_4.jpg#center"
          alt="Fig. 4: Eigenwertproblem des Atoms I (Starkeffeckt), Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
@@ -113,15 +113,15 @@ named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the 
         </figcaption>
 </figure>
 
-<p>As the same way, Schrödinger began with an equation for the de Broglie phase wave frequency of an electron moving with velocity $v$ in the electric field of a hydrogen nucleus,</p>
+<p>In the same way, Schrödinger began with an equation for the de Broglie phase wave frequency of an electron moving with velocity $v$ in the electric field of a hydrogen nucleus,</p>
 <p>\begin{equation}
 h\nu=mc^2+ \frac{mv^2}{2}-\frac{e^2}r \label{eq_11}
 \end{equation}</p>
-<p>which he then substituted it into the equation for phase velocity $u$ of de Broglie wave,</p>
+<p>which he then substituted into the equation for phase velocity $u$ of de Broglie wave,</p>
 <p>\begin{equation}
 u=\frac{h\nu}{mv}=\frac{h\nu}{\sqrt{2m(h\nu-mc^2+{e^2}/{r})}}
 \end{equation}</p>
-<p>the differential equation for nonrelativistic hydrigen atom could be expressed as</p>
+<p>the differential equation for nonrelativistic hydrogen atom could be expressed as</p>
 <p>\begin{equation}
 \nabla^2\psi+\frac{8\pi^2m}{h^2}\left(h\nu-mc^2+\frac{e^2}{r} \right)\psi=0
 \end{equation}</p>
@@ -129,7 +129,7 @@ u=\frac{h\nu}{mv}=\frac{h\nu}{\sqrt{2m(h\nu-mc^2+{e^2}/{r})}}
 <p>$$
 A = -\frac{8\pi^2 m}{h^2}(h \nu - mc^2),\quad B = \frac{4\pi^2m e^2}{h^2}, \quad C = l(l+1)
 $$</p>
-<p>According to what we have mentioned before, the quantum number for radial part is expressed as $ n _{r} = B/\sqrt{A} - \sqrt{C + 1/4}+ 1/2$, negative part has been discarded because it has no physical significance. He thus arrived at this result</p>
+<p>According to what we have mentioned before, the quantum number for radial part is expressed as $ n _{r} = B/\sqrt{A} - \sqrt{C + 1/4}+ 1/2$; the negative part has been discarded because it has no physical significance. He thus arrived at this result</p>
 <p>\begin{equation}
 n_{r} = \sqrt{\frac{Rhc}{mc^2-h\nu}} -l,\quad R = \frac{2\pi^2m e^4}{ch^3} \label{eq_14}
 \end{equation}</p>
@@ -144,7 +144,7 @@ h \nu = mc^2 - \frac{Rhc}{(n_{r} + l)^2}
         </figcaption>
 </figure>
 
-<p>It is the conclusion that Schrödinger had mentioned in his letter towards Wien. His final calculations led to a remarkable outcome—the origin of quantized integers, which did not arise from Bohr’s forced requirements based on classical physics imagery, but rather from the inherent constraints of the wave equation itself (Fig. 5). This breakthrough suggested that quantum phenomena could be described more naturally by wave mechanics, without the need for additional assumptions imposed by old quantum theory. Schrödinger’s next work involved the generalization of this equation and providing a formal derivation by utilizing least action principle (Hamiltonian principle). Moreover, Schrödinger’s formulation laid the groundwork for further developments in quantum theory, influencing the matrix mechanics of Heisenberg and the probabilistic interpretation introduced by Born.</p>
+<p>It is the conclusion that Schrödinger had mentioned in his letter to Wien. His final calculations led to a remarkable outcome—the origin of quantized integers, which did not arise from Bohr's forced requirements based on classical physics imagery, but rather from the inherent constraints of the wave equation itself (Fig. 5). This breakthrough suggested that quantum phenomena could be described more naturally by wave mechanics, without the need for additional assumptions imposed by old quantum theory. Schrödinger's next work involved the generalization of this equation and providing a formal derivation by utilizing least action principle (Hamiltonian principle). Moreover, Schrödinger's formulation laid the groundwork for further developments in quantum theory, influencing the matrix mechanics of Heisenberg and the probabilistic interpretation introduced by Born.</p>
 <h3 id="combining-hamiltonian-mechanics">Combining Hamiltonian mechanics</h3>
 <p>Hamiltonian mechanics is a theoretical framework in physics that provides a reformulation of classical mechanics. In <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, Schrödinger intended to re-derive the previously mentioned differential equations starting from the principle of least action (Fig. 6).</p>
 <figure class="align-center ">
@@ -154,7 +154,7 @@ h \nu = mc^2 - \frac{Rhc}{(n_{r} + l)^2}
         </figcaption>
 </figure>
 
-<p>At beginning, the first one is Hamilton-Jacobi equation,</p>
+<p>At the beginning, the first one is Hamilton-Jacobi equation,</p>
 <p>\begin{equation}
 \mathcal{H} \left(q, \frac{\partial S}{ \partial q}\right) = E
 \end{equation}</p>
@@ -162,7 +162,7 @@ h \nu = mc^2 - \frac{Rhc}{(n_{r} + l)^2}
 <p>\begin{equation}
 S = K \ln \psi
 \end{equation}</p>
-<p>where $K$ had the dimensions of an action, he explained the motivation about this transformation and wrote:“We seek a function $\psi$, such that for any arbitrary variation of it the integral of the said quadratic form, taken over the whole coordinate space, is stationary, $\psi$ being everywhere real, single-valued, finite, and continuously differentiable up to the second order.” <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> Finally he arrived at this equation</p>
+<p>where $K$ had the dimensions of an action. He explained the motivation about this transformation and wrote:“We seek a function $\psi$, such that for any arbitrary variation of it the integral of the said quadratic form, taken over the whole coordinate space, is stationary, $\psi$ being everywhere real, single-valued, finite, and continuously differentiable up to the second order.” <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> Finally he arrived at this equation</p>
 <p>\begin{equation}
 \mathcal{H} \left(q, \frac{K}{\psi}\frac{\partial \psi}{ \partial q}\right) = E
 \end{equation}</p>
@@ -170,11 +170,11 @@ S = K \ln \psi
 <p>\begin{equation}
 T = \frac{1}{2m} (p_{x}^2 + p_{y}^2 + p_{z}^2);\quad V = -\frac{e^2}{r}
 \end{equation}</p>
-<p>In the case of nonrelativistic hydrogen system, descrbed by the classical Hamilton-Jacobi equation</p>
+<p>In the case of nonrelativistic hydrogen system, described by the classical Hamilton-Jacobi equation</p>
 <p>\begin{equation}
 \frac{1}{2 m}\left[\left(\frac{\partial S}{\partial x}\right)^2+\left(\frac{\partial S}{\partial y}\right)^2+\left(\frac{\partial S}{\partial z}\right)^2\right] -\frac{e^2}{r} =E
 \end{equation}</p>
-<p>and got quadratic form equation</p>
+<p>and got the quadratic form equation</p>
 <p>\begin{equation}
 \left(\frac{\partial \psi}{\partial x}\right)^2+\left(\frac{\partial \psi}{\partial y}\right)^2+\left(\frac{\partial \psi}{\partial z}\right)^2-\frac{2 m}{K^2}\left(E+\frac{e^2}{r}\right) \psi^2 =0
 \end{equation}
@@ -186,13 +186,13 @@ And then this quadratic form could be inserted into the variational problem,</p>
 <p>\begin{equation}
 \nabla^2 \psi+\frac{2 m}{K^2}\left(E+\frac{e^2}{r}\right) \psi=0
 \end{equation}</p>
-<p>Schrödinger observed that the familiar Bohr energy levels, which align with the Balmer series, can be derived by assigning a specific value to the constant $K$, he provided a specific value $K = \frac{h}{2\pi}$ for which comes two classes, depending on the value $E$,</p>
+<p>Schrödinger observed that the familiar Bohr energy levels, which align with the Balmer series, can be derived by assigning a specific value to the constant $K$. He provided a specific value $K = \frac{h}{2\pi}$ for which comes two classes, depending on the value $E$,</p>
 <ul>
 <li>For negative values $E&lt;0$ only discrete solutions existed, with the discrete level solutions
 $$
 E=-\frac{2 \pi^2 m e^4}{h^2 n^2}, \quad n=1,2,3, \ldots
 $$</li>
-<li>For positive values $E &gt; 0$ allowed a consistent solution approaches $0$ as $1/r$ increases.</li>
+<li>For positive values $E &gt; 0$, a consistent solution approaches $0$ as $1/r$ increases.</li>
 </ul>
 <p>In summary, the Schrödinger equation uses the concept of the Hamiltonian from classical mechanics to describe the time evolution of quantum states, bridging the gap between classical and quantum descriptions of physical phenomena. This relationship is a key aspect of the correspondence principle, which seeks to ensure that quantum mechanics encompasses classical mechanics as a limiting case.</p>
 <h3 id="time-dependent-schrödinger-equation">Time-dependent Schrödinger equation</h3>
@@ -201,7 +201,7 @@ $$</li>
 \nabla^2 \psi+\frac{2 m}{\hbar^2}\left(E - V\right) \psi=0 \label{eq_25}
 \end{equation}</p>
 <p>Evidently,  this equation is not so general, as it does not depend on time and hence could only describe periodic systems. Then what if the equation evolves over time?
-In next paper <em>über das verhältnis der heisenberg-born-jordanschen quantenmechanik zu der meinen</em> <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, which was received on 17 March 1926, he introduced the following consideration, provided the time-dependence of wave funciton has the basical plane wave form,</p>
+In the next paper <em>über das verhältnis der heisenberg-born-jordanschen quantenmechanik zu der meinen</em> <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, which was received on 17 March 1926, he introduced the following consideration. Provided the time-dependence of wave function has the basic plane wave form,</p>
 <p>\begin{equation}
 \psi \sim e^{\pm  i Et/\hbar}
 \end{equation}
@@ -209,15 +209,15 @@ and this amounts to saying that</p>
 <p>\begin{equation}
 \frac{\partial \psi}{\partial t} = \pm \frac{ i }{\hbar} E\psi
 \end{equation}</p>
-<p>From this equation and combine the expression in Eq. \eqref{eq_25} to eliminate the energy $E$, we could get the final time-dependence wave equation</p>
+<p>From this equation, combining the expression in Eq. \eqref{eq_25} to eliminate the energy $E$, we could get the final time-dependence wave equation</p>
 <p>\begin{equation}
 -\frac{\hbar}{2m}\nabla^2 \psi + V\psi = \pm i \hbar \frac{\partial \psi}{\partial t}
 \end{equation}</p>
-<p>Looking back from a modern perspective, the derivation of Schrödinger’s equation involved many elements that were not rigorous, and it is generally believed by later scholars that this was a process of conjecture. In 1926, Max Born introduced the concept of probability amplitude, which successfully interpreted the physical meaning of the wave function. However, both Schrödinger and Einstein shared the same viewpoint, disagreeing with the statistical or probabilistic approach, as well as the associated discontinuous wave function collapse.</p>
+<p>Looking back from a modern perspective, the derivation of Schrödinger's equation involved many elements that were not rigorous, and it is generally believed by later scholars that this was a process of conjecture. In 1926, Max Born introduced the concept of probability amplitude, which successfully interpreted the physical meaning of the wave function. However, both Schrödinger and Einstein shared the same viewpoint, disagreeing with the statistical or probabilistic approach, as well as the associated discontinuous wave function collapse.</p>
 <h3 id="discussion">Discussion</h3>
-<p>In this exploration, we have traced the intricate pathways that led to the formulation of Schrödinger equation, a cornerstone of quantum mechanics. The pivotal role of de Broglie’s hypothesis of matter waves set the stage for Schrödinger’s groundbreaking work. The elegance of the equation stems from its capacity to harmonize a spectrum of distinct observations and experiments within a cohesive theoretical framework, all while circumventing the need for traditional assumptions. Its origins remind us that scientific breakthroughs are often the result of building upon the collective knowledge of the past, driven by innovative thinking and courage to venture into the unknown.</p>
+<p>In this exploration, we have traced the intricate pathways that led to the formulation of Schrödinger equation, a cornerstone of quantum mechanics. The pivotal role of de Broglie's hypothesis of matter waves set the stage for Schrödinger's groundbreaking work. The elegance of the equation stems from its capacity to harmonize a spectrum of distinct observations and experiments within a cohesive theoretical framework, all while circumventing the need for traditional assumptions. Its origins remind us that scientific breakthroughs are often the result of building upon the collective knowledge of the past, driven by innovative thinking and courage to venture into the unknown.</p>
 <h3 id="acknowledgments">Acknowledgments</h3>
-<p>Sincerely, I thank for valuable discussions with Hong Su and Yiming Ding.</p>
+<p>Sincerely, I thank Hong Su and Yiming Ding for valuable discussions.</p>
 <h3 id="references">References</h3>
 <div class="footnotes" role="doc-endnotes">
 <hr>
@@ -415,13 +415,13 @@ $$
 <hr>
 <ol>
 <li id="fn:1">
-<p>Korteweg, Diederik Johannes, and Gustav De Vries. &ldquo;On the change of form of long waves advancing in a rectangular canal, and on a new type of long stationary waves.&rdquo; The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 39.240 (1895): 422-443.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Korteweg, Diederik Johannes, and Gustav De Vries. &quot;On the change of form of long waves advancing in a rectangular canal, and on a new type of long stationary waves.&quot; The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 39.240 (1895): 422-443.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>Lax, Peter D. &ldquo;Integrals of nonlinear equations of evolution and solitary waves.&rdquo; Communications on pure and applied mathematics 21.5 (1968): 467-490.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Lax, Peter D. &quot;Integrals of nonlinear equations of evolution and solitary waves.&quot; Communications on pure and applied mathematics 21.5 (1968): 467-490.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>Malfliet, Willy. &ldquo;Solitary wave solutions of nonlinear wave equations.&rdquo; American journal of physics 60.7 (1992): 650-654.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Malfliet, Willy. &quot;Solitary wave solutions of nonlinear wave equations.&quot; American journal of physics 60.7 (1992): 650-654.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -519,10 +519,10 @@ $$</p>
 </figure>
 
 <p>数值模拟表明，所有这些要求可以很容易地同时满足实际参数在冷原子气体. 目前的计算是基于单个粒子图，忽略了粒子间的相互作用.</p>
-<h3 id="霍夫斯塔特蝴蝶hofstadters-butterfly">霍夫斯塔特蝴蝶(Hofstadter&rsquo;s Butterfly)</h3>
+<h3 id="霍夫斯塔特蝴蝶hofstadters-butterfly">霍夫斯塔特蝴蝶(Hofstadter's Butterfly)</h3>
 <p>1976年，Douglas Hofstadter 在研究 Bloch 电子在外磁场作用下的量子现象时发现电子的能量和磁场强度可形成分形图像.</p>
 <h4 id="朗道能级">朗道能级</h4>
-<p>事实上，从现在的眼光来看，Hofstadter&rsquo;s Butterfly本身就是朗道能级的二维格点版本. 带电粒子能量在一系列分立的数值中取值，形成朗道能级. 求解外加磁场下的薛定谔方程，从而得到电子能级的分布，即为朗道能级. 外加磁场为均匀磁场，沿 $z$ 方向，即 $\textbf{B}=(0,0,B)$.</p>
+<p>事实上，从现在的眼光来看，Hofstadter's Butterfly本身就是朗道能级的二维格点版本. 带电粒子能量在一系列分立的数值中取值，形成朗道能级. 求解外加磁场下的薛定谔方程，从而得到电子能级的分布，即为朗道能级. 外加磁场为均匀磁场，沿 $z$ 方向，即 $\textbf{B}=(0,0,B)$.</p>
 <p>由 $\mathbf{B}=\nabla \times \hat{\mathbf{A}}$，取朗道规范可得磁矢势 $\hat{\mathbf{A}}=(-B y , 0, 0)$，式中 $\lvert {B} \rvert$，这样的规范下电子的正则动量为 $\hat{\textbf{p}}+q \hat{\textbf{A}}$，电子的哈密顿量可以写为：</p>
 <p>$$
 \begin{equation}
@@ -800,40 +800,40 @@ $$</p>
 </figure>
 
 <h3 id="结语">结语</h3>
-<p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 这一种有趣的量子分形现象——Hofstadter蝴蝶，从它与整数量子霍尔效应的联系出发，最近火热的转角石墨烯体系、分数陈绝缘体等与其相关密切. 从现在的眼光来看，Hofstadter&rsquo;s Butterfly本身就是朗道能级的二维格点版本. 本文也讨论了对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到一个美丽的分形图案. 但若要在实验上得以实现，需要极大的磁通，最后也举例了最新的实验观测情况. 实际上，Hofstadter蝴蝶中与之相关的物理现象有很多，例如分数量子霍尔效应也与之有重要的联系.</p>
+<p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 这一种有趣的量子分形现象——Hofstadter蝴蝶，从它与整数量子霍尔效应的联系出发，最近火热的转角石墨烯体系、分数陈绝缘体等与其相关密切. 从现在的眼光来看，Hofstadter's Butterfly本身就是朗道能级的二维格点版本. 本文也讨论了对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到一个美丽的分形图案. 但若要在实验上得以实现，需要极大的磁通，最后也举例了最新的实验观测情况. 实际上，Hofstadter蝴蝶中与之相关的物理现象有很多，例如分数量子霍尔效应也与之有重要的联系.</p>
 <h3 id="references">References</h3>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>Mandelbrot, Benoit B. &ldquo;Les objets fractals: forme, hasard et dimension.&rdquo; (1975).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Mandelbrot, Benoit B. &quot;Les objets fractals: forme, hasard et dimension.&quot; (1975).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>Gao, Chao, Hui Zhai, and Zhe-Yu Shi. &ldquo;Dynamical fractal in quantum gases with discrete scaling symmetry.&rdquo; Physical Review Letters 122.23 (2019): 230402.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Gao, Chao, Hui Zhai, and Zhe-Yu Shi. &quot;Dynamical fractal in quantum gases with discrete scaling symmetry.&quot; Physical Review Letters 122.23 (2019): 230402.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>Klitzing, K. V., Gerhard Dorda, and Michael Pepper. &ldquo;New method for high-accuracy determination of the fine-structure constant based on quantized Hall resistance.&rdquo; Physical review letters 45.6 (1980): 494.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Klitzing, K. V., Gerhard Dorda, and Michael Pepper. &quot;New method for high-accuracy determination of the fine-structure constant based on quantized Hall resistance.&quot; Physical review letters 45.6 (1980): 494.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
-<p>Satija, Indubala. &ldquo;Pythagorean triplets, integral apollonians and the Hofstadter butterfly.&rdquo; arXiv preprint arXiv:1802.04585 (2018).&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Satija, Indubala. &quot;Pythagorean triplets, integral apollonians and the Hofstadter butterfly.&quot; arXiv preprint arXiv:1802.04585 (2018).&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
-<p>János K. Asbóth, László Oroszlány, András Pályi. &ldquo;A Short Course on Topological Insulators: Band Structure and Edge States in One and Two Dimensions.&rdquo; Springer International Publishing, 2016.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>János K. Asbóth, László Oroszlány, András Pályi. &quot;A Short Course on Topological Insulators: Band Structure and Edge States in One and Two Dimensions.&quot; Springer International Publishing, 2016.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6">
-<p>Cage, Marvin E., et al. &ldquo;The quantum Hall effect.&rdquo; Springer Science &amp; Business Media, 2012.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Cage, Marvin E., et al. &quot;The quantum Hall effect.&quot; Springer Science &amp; Business Media, 2012.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
-<p>Analytis, James G., Stephen J. Blundell, and Arzhang Ardavan. &ldquo;Landau levels, molecular orbitals, and the Hofstadter butterfly in finite systems.&rdquo; American Journal of Physics 72.5 (2004): 613-618.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Analytis, James G., Stephen J. Blundell, and Arzhang Ardavan. &quot;Landau levels, molecular orbitals, and the Hofstadter butterfly in finite systems.&quot; American Journal of Physics 72.5 (2004): 613-618.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8">
-<p>Kuhl, U., and H-J. Stöckmann. &ldquo;Microwave realization of the Hofstadter butterfly.&rdquo; Physical review letters 80.15 (1998): 3232.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Kuhl, U., and H-J. Stöckmann. &quot;Microwave realization of the Hofstadter butterfly.&quot; Physical review letters 80.15 (1998): 3232.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:9">
-<p>Roushan, Pedram, et al. &ldquo;Spectroscopic signatures of localization with interacting photons in superconducting qubits.&rdquo; Science 358.6367 (2017): 1175-1179.&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Roushan, Pedram, et al. &quot;Spectroscopic signatures of localization with interacting photons in superconducting qubits.&quot; Science 358.6367 (2017): 1175-1179.&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:10">
-<p>Barrier, Julien, et al. &ldquo;Long-range ballistic transport of Brown-Zak fermions in graphene superlattices.&rdquo; Nature Communications 11.1 (2020): 5756.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Barrier, Julien, et al. &quot;Long-range ballistic transport of Brown-Zak fermions in graphene superlattices.&quot; Nature Communications 11.1 (2020): 5756.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

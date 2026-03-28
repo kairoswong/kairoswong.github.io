@@ -9,19 +9,19 @@
     <lastBuildDate>Sat, 28 Sep 2024 09:40:14 +0800</lastBuildDate>
     <atom:link href="https://kairoswong.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tracing the origins of Schrödinger equation</title>
+      <title>Tracing the origins of the Schrödinger equation</title>
       <link>https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/</link>
       <pubDate>Sat, 28 Sep 2024 09:40:14 +0800</pubDate>
       <guid>https://kairoswong.github.io/posts/2024-09-28-schr%C3%B6dinger_equation/</guid>
-      <description>This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</description>
+      <description>This blog aims to trace the historical and scientific origins of the Schrödinger equation, focusing on its development from the hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</description>
       <content:encoded><![CDATA[<blockquote>
-<p>This blog aims to trace historical and scientific origins of Schrödinger equation, focusing on its development from hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</p>
+<p>This blog aims to trace the historical and scientific origins of the Schrödinger equation, focusing on its development from the hydrogen atom model. Initially, attempts were made to derive a relativistic equation for the hydrogen atom, but eventually, a nonrelativistic approach was adopted instead. By combining principles from Hamiltonian mechanics, Erwin Schrödinger successfully formulated the final Schrödinger equation. Through this exploration, we could gain a deeper understanding of the scientific advancements and conceptual breakthroughs that led to the creation of the Schrödinger equation, shedding light on its profound impact on the field of quantum mechanics.</p>
 </blockquote>
 <h3 id="introduction">Introduction</h3>
 <p>In the history of modern physics, few equations have fascinated scientists as much as the Schrödinger equation. Created in the early 20th century, a time of groundbreaking discoveries about the quantum world, this equation has become a symbol of the wave mechanics that form the basis of quantum theory. By delving into the precursors of quantum theory that challenged classical conceptions, we will uncover a network of concepts and discoveries that led to the equation summarizing how quantum systems behave.</p>
 <h3 id="initial-steps-toward-the-hydrogen-equation">Initial steps toward the hydrogen equation</h3>
 <h4 id="attempt-at-relativistic-equation">Attempt at relativistic equation</h4>
-<p>Building on the concept of de Broglie’s matter-wave theory, physicist Peter Debye casually remarked that if particles exhibit wave-like properties, they should satisfy some sort of wave equation. Inspired by Debye’s comment, Erwin Schrödinger set out to find an appropriate wave equation for electrons. The earlist surviving document pertaining to wave mechanics is a concise three-page memorandum titled <em><strong>Hydrogen Atom Eigenvibrations</strong></em> (Fig. 1) by Schrödinger towards the end of 1925.</p>
+<p>Building on the concept of de Broglie's matter-wave theory, physicist Peter Debye casually remarked that if particles exhibit wave-like properties, they should satisfy some sort of wave equation. Inspired by Debye's comment, Erwin Schrödinger set out to find an appropriate wave equation for electrons. The earliest surviving document pertaining to wave mechanics is a concise three-page memorandum titled <em><strong>Hydrogen Atom Eigenvibrations</strong></em> (Fig. 1) by Schrödinger towards the end of 1925.</p>
 <figure class="align-center ">
     <img loading="lazy" src="./Fig_1.jpg#center"
          alt="Fig. 1: Hydrogen Atom Eigenvibrations, Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
@@ -37,23 +37,23 @@ and
 \begin{equation}
 u=\frac c\beta=\frac{c^2}v=\frac{mc^2/\sqrt{1-\beta^2}}{mv/\sqrt{1-\beta^2}}=\frac{\mathrm{energy}}{\mathrm{momentum}}, \label{eq2}
 \end{equation}
-where $\beta=v/c,c$ is the velocity of light in vacuo and $h$ is Plank&rsquo;s constant. As a first example, he generalized the relations Eq. \eqref{eq1} and Eq. \eqref{eq2} to encompass the behavior of electron phase waves within the electric field generated by a hydrogen nucleus. We could follow what we have seen from manuscript, assuming the situation within the electric field of hydrogen atoms,</p>
+where $\beta=v/c,c$ is the velocity of light in vacuo and $h$ is Planck's constant. As a first example, he generalized the relations Eq. \eqref{eq1} and Eq. \eqref{eq2} to encompass the behavior of electron phase waves within the electric field generated by a hydrogen nucleus. We could follow what we have seen from the manuscript, assuming the situation within the electric field of hydrogen atoms,</p>
 <p>\begin{equation}
 h\nu=\frac{mc^2}{\sqrt{1-\beta^2}}-\frac{e^2}r \label{eq3}
 \end{equation}</p>
-<p>where $e$ denotes the charge of the electron, $r$ is the nucleus-electron distance. Furthermore, the potential field of a pseudo-hydrogen atom could be expressed as $-Ze^{2}/r$, where $Z$ stands for number of nuclear charges (Hydrogen atom is a special case of $Z = 1$). Here, we could get the expression of phase velocity by combining Eq. \eqref{eq2} and Eq. \eqref{eq3},</p>
+<p>where $e$ denotes the charge of the electron, and $r$ is the nucleus-electron distance. Furthermore, the potential field of a pseudo-hydrogen atom could be expressed as $-Ze^{2}/r$, where $Z$ stands for number of nuclear charges (Hydrogen atom is a special case of $Z = 1$). Here, we could get the expression of phase velocity by combining Eq. \eqref{eq2} and Eq. \eqref{eq3},</p>
 <p>\begin{equation}
 u=c\frac{h\nu/mc^2}{\sqrt{(h\nu/mc^2+e^2/mc^2r)^2-1}}. \label{eq4}
 \end{equation}</p>
-<p>Here comes with Helmholtz equation,</p>
+<p>Here comes the Helmholtz equation,</p>
 <p>\begin{equation}
 \nabla^2\psi+k^2\psi=0 \label{eq5}
 \end{equation}</p>
-<p>where $\nabla^2$ is the Laplace operator, $k$ is the wave number, and $\psi$ is the wave function we assume exists. The motivation for using Helmholtz equation as a starting point lies in its frequently appearance in electromagnetic waves with both spatial and temporal dependencies. Combining with $k= \omega / u = 2\pi \nu /u$, we substitute modified initial form Eq. \eqref{eq4} into Eq. \eqref{eq5} and obtain the simplified formula</p>
+<p>where $\nabla^2$ is the Laplace operator, $k$ is the wave number, and $\psi$ is the wave function we assume exists. The motivation for using Helmholtz equation as a starting point lies in its frequent appearance in electromagnetic waves with both spatial and temporal dependencies. Combining with $k= \omega / u = 2\pi \nu /u$, we substitute modified initial form Eq. \eqref{eq4} into Eq. \eqref{eq5} and obtain the simplified formula</p>
 <p>\begin{equation}
 \nabla^2\psi+\frac{4\pi^2m^2c^2}{h^2}\left[\left(\frac{h\nu}{mc^2}+\frac{e^2}{mc^2r}\right)^2-1\right]\psi=0.  \label{eq_6}
 \end{equation}</p>
-<p>In light of the symmetry of electrons within a pseudo-hydrogen atom system, solutions are typically sought through the method of separation of variables in spherical coordinates. By denoting $\psi(r,\theta,\varphi){=}R(r)\Theta(\theta)\Phi(\varphi)$, the part about angle could be described by spherical harmonics $Y_{l}^m(\theta,\varphi) = \Theta(\theta)\Phi(\varphi)$. The Laplace operator $\nabla^2$ applied to a scalar function $\psi(r,\theta,\varphi)$ in spherical coordinates can be expressed as follows</p>
+<p>In light of the symmetry of electrons within a pseudo-hydrogen atom system, solutions are typically sought through the method of separation of variables in spherical coordinates. By denoting $\psi(r,\theta,\varphi){=}R(r)\Theta(\theta)\Phi(\varphi)$, the angular part could be described by spherical harmonics $Y_{l}^m(\theta,\varphi) = \Theta(\theta)\Phi(\varphi)$. The Laplace operator $\nabla^2$ applied to a scalar function $\psi(r,\theta,\varphi)$ in spherical coordinates can be expressed as follows</p>
 <p>$$
 \nabla^2 \psi \left( r, \theta, \varphi \right)=\frac{1}{r^2} \frac{\partial}{\partial r}\left(r^2 \frac{\partial \psi}{\partial r}\right)+\frac{1}{r^2 \sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial \psi}{\partial \theta}\right)+\frac{1}{r^2 \sin ^2 \theta} \frac{\partial^2 \psi}{\partial \varphi^2}.
 $$</p>
@@ -64,11 +64,11 @@ $$
 &amp;\frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial Y}{\partial \theta}\right)+\frac{1}{\sin ^2 \theta} \frac{\partial^2 Y}{\partial \varphi^2}+l(l+1) Y=0
 \end{aligned}
 $$</p>
-<p>The resuilting radial equation is following,</p>
+<p>The resulting radial equation is as follows,</p>
 <p>\begin{equation}
 \frac{\mathrm{d}^2 R}{\mathrm{~d} r^2}+\frac{2}{r} \frac{\mathrm{d} R}{\mathrm{~d} r}+\left[-A + \frac{2B}{r} -\frac{C}{r^2} \right] R=0 \label{eq_7}
 \end{equation}</p>
-<p>where $A, B, C$ are constants that are represented in simplification processing, respectively. However, the solution of this equation posed some troubles for Schrödinger. Initially, he attempted a novel trial solution
+<p>where $A, B, C$ are constants that are represented in the simplification process, respectively. However, the solution of this equation posed some trouble for Schrödinger. Initially, he attempted a novel trial solution
 named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the equation by substituting it in.</p>
 <figure class="align-center ">
     <img loading="lazy" src="./Fig_2.jpg#center"
@@ -77,20 +77,20 @@ named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the 
         </figcaption>
 </figure>
 
-<p>Inspired by Ludwig Schlesinger&rsquo;s book on integral equations <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, Schrödinger noticed that this equation possessed a unique finite solution only if</p>
+<p>Inspired by Ludwig Schlesinger's book on integral equations <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, Schrödinger noticed that this equation possessed a unique finite solution only if</p>
 <p>\begin{equation}
 \begin{aligned}
 &amp; R(r) = \oint_{L} (z- \sqrt{A})^{\alpha _{1} - 1}(z+ \sqrt{A})^{\alpha _{2} - 1} e ^{z r} \mathrm{d} z, \quad \\
 &amp; \alpha _{1}, \alpha _{2} = \pm \frac{B}{\sqrt{A}} - \sqrt{C + \frac{1}{4}}+ \frac{1}{2} = \text{integer}
 \end{aligned}
 \end{equation}</p>
-<p>The path of integration $L$ has to satisfy specific condition,</p>
+<p>The path of integration $L$ has to satisfy a specific condition,</p>
 <p>\begin{equation}
 \oint_L \frac{\mathrm{d}}{\mathrm{d} z}\left[(z-\sqrt{A})^{\alpha_1}(z+\sqrt{A})^{\alpha_2}e^{z r}\right] \mathrm{d} z=0
 \end{equation}</p>
-<p>And more specifically, the item $C$ could be written as $(l+\frac{1}{2})^2, l \in \mathbb{Z}$. The outcome is very similar to an expression by Sommerfeld to describe the relativistic fine structure of hydrogen <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, yet there is a discrepancy of 1/2 (Fig. 2). At that time, Sommerfeld’s results have been validated by experiments, so Schrödinger felt that his first approach to describe an atomic wave equation had failed. The time has come to the winter of 1925, he had gone for his Christmas vacation to Arosa. From a letter to Wien on 27 December, he wrote the following words (Fig. 3):</p>
+<p>And more specifically, the item $C$ could be written as $(l+\frac{1}{2})^2, l \in \mathbb{Z}$. The outcome is very similar to an expression by Sommerfeld to describe the relativistic fine structure of hydrogen <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, yet there is a discrepancy of 1/2 (Fig. 2). At that time, Sommerfeld's results have been validated by experiments, so Schrödinger felt that his first approach to describe an atomic wave equation had failed. The time had come to the winter of 1925; he had gone for his Christmas vacation to Arosa. From a letter to Wien on 27 December, he wrote the following words (Fig. 3):</p>
 <blockquote>
-<p>Just now a new atomic theory is niggling me. If only I knew more mathematics! I am very optimistic about this thing and hope that if only I can master the calculations, it will be very fine. I think I can provide a vibrational system [<em>ein schwingendes System</em>] in comparatively natural ways, not through <em>ad hoc</em> assumptions &hellip; I hope that I will soon be able to report on the thing in a more detailed and comprehensible way.</p>
+<p>Just now a new atomic theory is niggling me. If only I knew more mathematics! I am very optimistic about this thing and hope that if only I can master the calculations, it will be very fine. I think I can provide a vibrational system [<em>ein schwingendes System</em>] in comparatively natural ways, not through <em>ad hoc</em> assumptions ... I hope that I will soon be able to report on the thing in a more detailed and comprehensible way.</p>
 </blockquote>
 <figure class="align-center ">
     <img loading="lazy" src="./Fig_3.jpg#center"
@@ -105,7 +105,7 @@ named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the 
 \end{equation}</p>
 <p>where $R$ denotes the Rydberg constant, and $n, m$ are different integers, respectively. We might never know what happened before Christmas 1925, but from his notebook named <em>Eigenwertproblem des Atoms</em>, we can see that he turned towards deriving non-relativistic results.</p>
 <h4 id="return-to-nonrelativistic-equation">Return to nonrelativistic equation</h4>
-<p>If we look at it from a contemporary perspective, Schrödinger&rsquo;s relativistic approach was bound to fail for a straightforward reason: incorporating relativity necessitates considering electron spin. However, the concept of electron spin was still in its infancy at that time, so Schrödinger decided to present a non-relativistic result <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> (Fig. 4).</p>
+<p>If we look at it from a contemporary perspective, Schrödinger's relativistic approach was bound to fail for a straightforward reason: incorporating relativity necessitates considering electron spin. However, the concept of electron spin was still in its infancy at that time, so Schrödinger decided to present a non-relativistic result <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> (Fig. 4).</p>
 <figure class="align-center ">
     <img loading="lazy" src="./Fig_4.jpg#center"
          alt="Fig. 4: Eigenwertproblem des Atoms I (Starkeffeckt), Erwin Schrödinger, Page1 (Image source: Universität Wien, Österreichische Zentralbibliothek für Physik)" width="70%" height="70%"/> <figcaption>
@@ -113,15 +113,15 @@ named Bessel function $r^{\alpha} \mathcal{J}(r)$ and proceeded to simplify the 
         </figcaption>
 </figure>
 
-<p>As the same way, Schrödinger began with an equation for the de Broglie phase wave frequency of an electron moving with velocity $v$ in the electric field of a hydrogen nucleus,</p>
+<p>In the same way, Schrödinger began with an equation for the de Broglie phase wave frequency of an electron moving with velocity $v$ in the electric field of a hydrogen nucleus,</p>
 <p>\begin{equation}
 h\nu=mc^2+ \frac{mv^2}{2}-\frac{e^2}r \label{eq_11}
 \end{equation}</p>
-<p>which he then substituted it into the equation for phase velocity $u$ of de Broglie wave,</p>
+<p>which he then substituted into the equation for phase velocity $u$ of de Broglie wave,</p>
 <p>\begin{equation}
 u=\frac{h\nu}{mv}=\frac{h\nu}{\sqrt{2m(h\nu-mc^2+{e^2}/{r})}}
 \end{equation}</p>
-<p>the differential equation for nonrelativistic hydrigen atom could be expressed as</p>
+<p>the differential equation for nonrelativistic hydrogen atom could be expressed as</p>
 <p>\begin{equation}
 \nabla^2\psi+\frac{8\pi^2m}{h^2}\left(h\nu-mc^2+\frac{e^2}{r} \right)\psi=0
 \end{equation}</p>
@@ -129,7 +129,7 @@ u=\frac{h\nu}{mv}=\frac{h\nu}{\sqrt{2m(h\nu-mc^2+{e^2}/{r})}}
 <p>$$
 A = -\frac{8\pi^2 m}{h^2}(h \nu - mc^2),\quad B = \frac{4\pi^2m e^2}{h^2}, \quad C = l(l+1)
 $$</p>
-<p>According to what we have mentioned before, the quantum number for radial part is expressed as $ n _{r} = B/\sqrt{A} - \sqrt{C + 1/4}+ 1/2$, negative part has been discarded because it has no physical significance. He thus arrived at this result</p>
+<p>According to what we have mentioned before, the quantum number for radial part is expressed as $ n _{r} = B/\sqrt{A} - \sqrt{C + 1/4}+ 1/2$; the negative part has been discarded because it has no physical significance. He thus arrived at this result</p>
 <p>\begin{equation}
 n_{r} = \sqrt{\frac{Rhc}{mc^2-h\nu}} -l,\quad R = \frac{2\pi^2m e^4}{ch^3} \label{eq_14}
 \end{equation}</p>
@@ -144,7 +144,7 @@ h \nu = mc^2 - \frac{Rhc}{(n_{r} + l)^2}
         </figcaption>
 </figure>
 
-<p>It is the conclusion that Schrödinger had mentioned in his letter towards Wien. His final calculations led to a remarkable outcome—the origin of quantized integers, which did not arise from Bohr’s forced requirements based on classical physics imagery, but rather from the inherent constraints of the wave equation itself (Fig. 5). This breakthrough suggested that quantum phenomena could be described more naturally by wave mechanics, without the need for additional assumptions imposed by old quantum theory. Schrödinger’s next work involved the generalization of this equation and providing a formal derivation by utilizing least action principle (Hamiltonian principle). Moreover, Schrödinger’s formulation laid the groundwork for further developments in quantum theory, influencing the matrix mechanics of Heisenberg and the probabilistic interpretation introduced by Born.</p>
+<p>It is the conclusion that Schrödinger had mentioned in his letter to Wien. His final calculations led to a remarkable outcome—the origin of quantized integers, which did not arise from Bohr's forced requirements based on classical physics imagery, but rather from the inherent constraints of the wave equation itself (Fig. 5). This breakthrough suggested that quantum phenomena could be described more naturally by wave mechanics, without the need for additional assumptions imposed by old quantum theory. Schrödinger's next work involved the generalization of this equation and providing a formal derivation by utilizing least action principle (Hamiltonian principle). Moreover, Schrödinger's formulation laid the groundwork for further developments in quantum theory, influencing the matrix mechanics of Heisenberg and the probabilistic interpretation introduced by Born.</p>
 <h3 id="combining-hamiltonian-mechanics">Combining Hamiltonian mechanics</h3>
 <p>Hamiltonian mechanics is a theoretical framework in physics that provides a reformulation of classical mechanics. In <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, Schrödinger intended to re-derive the previously mentioned differential equations starting from the principle of least action (Fig. 6).</p>
 <figure class="align-center ">
@@ -154,7 +154,7 @@ h \nu = mc^2 - \frac{Rhc}{(n_{r} + l)^2}
         </figcaption>
 </figure>
 
-<p>At beginning, the first one is Hamilton-Jacobi equation,</p>
+<p>At the beginning, the first one is Hamilton-Jacobi equation,</p>
 <p>\begin{equation}
 \mathcal{H} \left(q, \frac{\partial S}{ \partial q}\right) = E
 \end{equation}</p>
@@ -162,7 +162,7 @@ h \nu = mc^2 - \frac{Rhc}{(n_{r} + l)^2}
 <p>\begin{equation}
 S = K \ln \psi
 \end{equation}</p>
-<p>where $K$ had the dimensions of an action, he explained the motivation about this transformation and wrote:“We seek a function $\psi$, such that for any arbitrary variation of it the integral of the said quadratic form, taken over the whole coordinate space, is stationary, $\psi$ being everywhere real, single-valued, finite, and continuously differentiable up to the second order.” <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> Finally he arrived at this equation</p>
+<p>where $K$ had the dimensions of an action. He explained the motivation about this transformation and wrote:“We seek a function $\psi$, such that for any arbitrary variation of it the integral of the said quadratic form, taken over the whole coordinate space, is stationary, $\psi$ being everywhere real, single-valued, finite, and continuously differentiable up to the second order.” <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> Finally he arrived at this equation</p>
 <p>\begin{equation}
 \mathcal{H} \left(q, \frac{K}{\psi}\frac{\partial \psi}{ \partial q}\right) = E
 \end{equation}</p>
@@ -170,11 +170,11 @@ S = K \ln \psi
 <p>\begin{equation}
 T = \frac{1}{2m} (p_{x}^2 + p_{y}^2 + p_{z}^2);\quad V = -\frac{e^2}{r}
 \end{equation}</p>
-<p>In the case of nonrelativistic hydrogen system, descrbed by the classical Hamilton-Jacobi equation</p>
+<p>In the case of nonrelativistic hydrogen system, described by the classical Hamilton-Jacobi equation</p>
 <p>\begin{equation}
 \frac{1}{2 m}\left[\left(\frac{\partial S}{\partial x}\right)^2+\left(\frac{\partial S}{\partial y}\right)^2+\left(\frac{\partial S}{\partial z}\right)^2\right] -\frac{e^2}{r} =E
 \end{equation}</p>
-<p>and got quadratic form equation</p>
+<p>and got the quadratic form equation</p>
 <p>\begin{equation}
 \left(\frac{\partial \psi}{\partial x}\right)^2+\left(\frac{\partial \psi}{\partial y}\right)^2+\left(\frac{\partial \psi}{\partial z}\right)^2-\frac{2 m}{K^2}\left(E+\frac{e^2}{r}\right) \psi^2 =0
 \end{equation}
@@ -186,13 +186,13 @@ And then this quadratic form could be inserted into the variational problem,</p>
 <p>\begin{equation}
 \nabla^2 \psi+\frac{2 m}{K^2}\left(E+\frac{e^2}{r}\right) \psi=0
 \end{equation}</p>
-<p>Schrödinger observed that the familiar Bohr energy levels, which align with the Balmer series, can be derived by assigning a specific value to the constant $K$, he provided a specific value $K = \frac{h}{2\pi}$ for which comes two classes, depending on the value $E$,</p>
+<p>Schrödinger observed that the familiar Bohr energy levels, which align with the Balmer series, can be derived by assigning a specific value to the constant $K$. He provided a specific value $K = \frac{h}{2\pi}$ for which comes two classes, depending on the value $E$,</p>
 <ul>
 <li>For negative values $E&lt;0$ only discrete solutions existed, with the discrete level solutions
 $$
 E=-\frac{2 \pi^2 m e^4}{h^2 n^2}, \quad n=1,2,3, \ldots
 $$</li>
-<li>For positive values $E &gt; 0$ allowed a consistent solution approaches $0$ as $1/r$ increases.</li>
+<li>For positive values $E &gt; 0$, a consistent solution approaches $0$ as $1/r$ increases.</li>
 </ul>
 <p>In summary, the Schrödinger equation uses the concept of the Hamiltonian from classical mechanics to describe the time evolution of quantum states, bridging the gap between classical and quantum descriptions of physical phenomena. This relationship is a key aspect of the correspondence principle, which seeks to ensure that quantum mechanics encompasses classical mechanics as a limiting case.</p>
 <h3 id="time-dependent-schrödinger-equation">Time-dependent Schrödinger equation</h3>
@@ -201,7 +201,7 @@ $$</li>
 \nabla^2 \psi+\frac{2 m}{\hbar^2}\left(E - V\right) \psi=0 \label{eq_25}
 \end{equation}</p>
 <p>Evidently,  this equation is not so general, as it does not depend on time and hence could only describe periodic systems. Then what if the equation evolves over time?
-In next paper <em>über das verhältnis der heisenberg-born-jordanschen quantenmechanik zu der meinen</em> <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, which was received on 17 March 1926, he introduced the following consideration, provided the time-dependence of wave funciton has the basical plane wave form,</p>
+In the next paper <em>über das verhältnis der heisenberg-born-jordanschen quantenmechanik zu der meinen</em> <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, which was received on 17 March 1926, he introduced the following consideration. Provided the time-dependence of wave function has the basic plane wave form,</p>
 <p>\begin{equation}
 \psi \sim e^{\pm  i Et/\hbar}
 \end{equation}
@@ -209,15 +209,15 @@ and this amounts to saying that</p>
 <p>\begin{equation}
 \frac{\partial \psi}{\partial t} = \pm \frac{ i }{\hbar} E\psi
 \end{equation}</p>
-<p>From this equation and combine the expression in Eq. \eqref{eq_25} to eliminate the energy $E$, we could get the final time-dependence wave equation</p>
+<p>From this equation, combining the expression in Eq. \eqref{eq_25} to eliminate the energy $E$, we could get the final time-dependence wave equation</p>
 <p>\begin{equation}
 -\frac{\hbar}{2m}\nabla^2 \psi + V\psi = \pm i \hbar \frac{\partial \psi}{\partial t}
 \end{equation}</p>
-<p>Looking back from a modern perspective, the derivation of Schrödinger’s equation involved many elements that were not rigorous, and it is generally believed by later scholars that this was a process of conjecture. In 1926, Max Born introduced the concept of probability amplitude, which successfully interpreted the physical meaning of the wave function. However, both Schrödinger and Einstein shared the same viewpoint, disagreeing with the statistical or probabilistic approach, as well as the associated discontinuous wave function collapse.</p>
+<p>Looking back from a modern perspective, the derivation of Schrödinger's equation involved many elements that were not rigorous, and it is generally believed by later scholars that this was a process of conjecture. In 1926, Max Born introduced the concept of probability amplitude, which successfully interpreted the physical meaning of the wave function. However, both Schrödinger and Einstein shared the same viewpoint, disagreeing with the statistical or probabilistic approach, as well as the associated discontinuous wave function collapse.</p>
 <h3 id="discussion">Discussion</h3>
-<p>In this exploration, we have traced the intricate pathways that led to the formulation of Schrödinger equation, a cornerstone of quantum mechanics. The pivotal role of de Broglie’s hypothesis of matter waves set the stage for Schrödinger’s groundbreaking work. The elegance of the equation stems from its capacity to harmonize a spectrum of distinct observations and experiments within a cohesive theoretical framework, all while circumventing the need for traditional assumptions. Its origins remind us that scientific breakthroughs are often the result of building upon the collective knowledge of the past, driven by innovative thinking and courage to venture into the unknown.</p>
+<p>In this exploration, we have traced the intricate pathways that led to the formulation of Schrödinger equation, a cornerstone of quantum mechanics. The pivotal role of de Broglie's hypothesis of matter waves set the stage for Schrödinger's groundbreaking work. The elegance of the equation stems from its capacity to harmonize a spectrum of distinct observations and experiments within a cohesive theoretical framework, all while circumventing the need for traditional assumptions. Its origins remind us that scientific breakthroughs are often the result of building upon the collective knowledge of the past, driven by innovative thinking and courage to venture into the unknown.</p>
 <h3 id="acknowledgments">Acknowledgments</h3>
-<p>Sincerely, I thank for valuable discussions with Hong Su and Yiming Ding.</p>
+<p>Sincerely, I thank Hong Su and Yiming Ding for valuable discussions.</p>
 <h3 id="references">References</h3>
 <div class="footnotes" role="doc-endnotes">
 <hr>
@@ -252,15 +252,15 @@ and this amounts to saying that</p>
       <link>https://kairoswong.github.io/posts/2024-06-24-dpo/</link>
       <pubDate>Mon, 24 Jun 2024 23:45:42 +0800</pubDate>
       <guid>https://kairoswong.github.io/posts/2024-06-24-dpo/</guid>
-      <description>Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans.</description>
+      <description>Introduction Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model&#39;s training process, adjusting the model&#39;s parameters to increase the likelihood of generating outputs similar to those preferred by humans.</description>
       <content:encoded><![CDATA[<h3 id="introduction">Introduction</h3>
-<p>Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model’s training process, adjusting the model’s parameters to increase the likelihood of generating outputs similar to those preferred by humans. In advanced stages of reinforcement learning, as the complexity of training escalates and the distinction between selected and discarded responses diminishes, Supervised Fine-Tuning (SFT) may inadvertently increase the rewards for incorrect responses.</p>
+<p>Direct Preference Optimization (DPO) is a method used to fine-tune large language models by directly optimizing their parameters based on human feedback. DPO effectively addresses the challenges associated with supervised fine-tuning during the advanced stages of reinforcement learning. The concept behind DPO is to integrate preference data directly into the model's training process, adjusting the model's parameters to increase the likelihood of generating outputs similar to those preferred by humans. In advanced stages of reinforcement learning, as the complexity of training escalates and the distinction between selected and discarded responses diminishes, Supervised Fine-Tuning (SFT) may inadvertently increase the rewards for incorrect responses.</p>
 <h3 id="background">Background</h3>
-<p>In the field of Natural Language Processing (NLP), the introduction of InstructGPT <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> has significantly advanced research in reinforcement learning from human feedback (RLHF). Typically, the RLHF stage follows supervised fine-tuning (SFT). InstructGPT employs proximal policy optimization (PPO) for preference optimization, but PPO requires the training of an additional reward model. This reward model’s training is inherently unstable, and its outcomes directly impact the final optimization’s effectiveness. Subsequent research has bypassed the reward model training step, directly proceeding with preference training. Knowledge Training Optimization (KTO) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> learns from non-paired preference data, while Initial Public Offering (IPO) <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> uses a root-finding MSE loss to incorporate Kullback-Leibler (KL) regularization. Order Police (ORPO) <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> introduces a reference-model-free odds ratio term to directly contrast winning and losing responses with the policy model, jointly training with the SFT objective.</p>
+<p>In the field of Natural Language Processing (NLP), the introduction of InstructGPT <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> has significantly advanced research in reinforcement learning from human feedback (RLHF). Typically, the RLHF stage follows supervised fine-tuning (SFT). InstructGPT employs proximal policy optimization (PPO) for preference optimization, but PPO requires the training of an additional reward model. This reward model's training is inherently unstable, and its outcomes directly impact the final optimization's effectiveness. Subsequent research has bypassed the reward model training step, directly proceeding with preference training. Knowledge Training Optimization (KTO) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> learns from non-paired preference data, while Initial Public Offering (IPO) <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> uses a root-finding MSE loss to incorporate Kullback-Leibler (KL) regularization. Order Police (ORPO) <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> introduces a reference-model-free odds ratio term to directly contrast winning and losing responses with the policy model, jointly training with the SFT objective.</p>
 <h3 id="theoretical-foundation">Theoretical foundation</h3>
 <h4 id="bradley-terry-model">Bradley-Terry model</h4>
 <p>The DPO algorithm <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, and true to its name, is to integrate the decision and reward functions directly into the reinforcement learning objective, eliminating the need for separate reward modeling. Moreover, DPO has emerged as a promising alternative for aligning Large Language Models (LLMs) to human or AI preferences.</p>
-<p>Imagine that the large language model is prompted with prompts $x$ to produce pairs of answers, we are definitely going to prefer one over the other. Here, the Bradley-Terry model <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> is used to quantify preferences. This model is particularly used in a pairwise comparison, allowing us to express human preference distribution, denoted by $p^{*}$. Like most alignment methods, DPO requires a dataset of paired preferences $\mathcal{D} = \lbrace x^{(i)}, y_{w}^{(i)}, y_{l}^{(i)}  \rbrace_{i = 1}^{N}$ sampled from $p^{*}$, where $y_{w}$ and $y_{l}$ denotes the preferred and dispreferred choice. And we assume that the preferences are generated by an underlying reward model $r^{*}(y, x)$, which could be parametrized by $r_{\phi}(y, x)$. Specifically, the probability that item $y_{w}$ is preferred over item $y_{l}$ could be modeled as</p>
+<p>Imagine that the large language model is prompted with prompts $x$ to produce pairs of answers, we are definitely going to prefer one over the other. Here, the Bradley-Terry model <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> is used to quantify preferences. This model is particularly used in a pairwise comparison, allowing us to express human preference distribution, denoted by $p^{*}$. Like most alignment methods, DPO requires a dataset of paired preferences $\mathcal{D} = \lbrace x^{(i)}, y_{w}^{(i)}, y_{l}^{(i)}  \rbrace_{i = 1}^{N}$ sampled from $p^{*}$, where $y_{w}$ and $y_{l}$ denote the preferred and dispreferred choice. And we assume that the preferences are generated by an underlying reward model $r^{*}(y, x)$, which could be parametrized by $r_{\phi}(y, x)$. Specifically, the probability that item $y_{w}$ is preferred over item $y_{l}$ could be modeled as</p>
 <p>$$
 \begin{equation}
 p^{*}(y_{w} \succ y_{l} \mid x) = \frac{\exp(r^{*}(x,y_{w}))}{\exp(r^{*}(x,y_{w}))+\exp(r^{*}(x,y_{l}))}. \label{eq1}
@@ -302,7 +302,7 @@ $$
 \max_{\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_{\phi}(x,y)] - \beta \mathbb{D}_ {\text{KL}}[\pi_{\theta}(y\mid x) || \pi_{\text{ref}}(y\mid x)] \label{eq5}
 \end{equation}
 $$</p>
-<p>where $\beta$ is a hyper-parameter the controls the deviation from baseline reference policy $\pi_{\text{ref}}$, and $\pi_{\theta}$ is the language model policy. For this equation, $\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_ {\phi}(x,y)]$, reflects our desire to achieve as much reward as possible in the given task while simultaneously minimizing  $\mathbb{D}_ {\text{KL}}[\pi_{\theta}(y\mid x) || \pi_{\text{ref}}(y\mid x)]$, which measures how close or far the model distribution is from the reference distribution.</p>
+<p>where $\beta$ is a hyper-parameter that controls the deviation from baseline reference policy $\pi_{\text{ref}}$, and $\pi_{\theta}$ is the language model policy. For this equation, $\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_ {\phi}(x,y)]$, reflects our desire to achieve as much reward as possible in the given task while simultaneously minimizing  $\mathbb{D}_ {\text{KL}}[\pi_{\theta}(y\mid x) || \pi_{\text{ref}}(y\mid x)]$, which measures how close or far the model distribution is from the reference distribution.</p>
 <h4 id="deriving-the-optimum-of-reward-maximization-objective">Deriving the optimum of reward maximization objective</h4>
 <p>For two probability distributions $P$ and $Q$, Kullback-Leibler (KL) divergence $\mathbb{D}_{\mathrm{KL}}(P|| Q)$ is defined as</p>
 <p>$$
@@ -324,13 +324,13 @@ $$
 \end{equation}
 $$
 </div>
-<p>where partition function is</p>
+<p>where the partition function is</p>
 <p>$$
 \begin{equation}
 Z (x) = \sum_{y}\pi_{\text{ref}(y \mid x) }\exp\left( \frac{1}{\beta} r_{\phi} (x, y) \right).
 \end{equation}
 $$</p>
-<p>Let us go back to statitical physics for explaining the partition function, partition function $Z$ is the sum of all possible state weights of a system, and it determines the equilibrium properties of this system. For a given system, the partition function in physics is defined as $ Z = \sum_{i} \exp\left(-\frac{E_{i}}{k_{B}T}\right)$, where $E_{i}$ is the energy of the $i$-th state, $k_{B}$ is the Boltzmann constant, and $T$ is the temperature of the system. Physically, the partition function $Z$ represents a normalization factor in the system&rsquo;s state space that determines the probability of each state. In the given optimization framework, our goal is to obtain the policy $\pi_\theta$ by maximizing the reward $r_\phi(x, y)$ while minimizing the KL divergence between the distribution $\pi_\theta(y \mid x)$ and the reference distribution $\pi_{\text{ref}}(y \mid x)$. To simplify the computation of the KL divergence, we could introduce a partition function $Z(x)$, which is similar to the partition function in statistical physics. This function normalizes the weighted probabilities across all possible values of $y$. And then we need to define</p>
+<p>Let us go back to statistical physics for explaining the partition function. The partition function $Z$ is the sum of all possible state weights of a system, and it determines the equilibrium properties of this system. For a given system, the partition function in physics is defined as $ Z = \sum_{i} \exp\left(-\frac{E_{i}}{k_{B}T}\right)$, where $E_{i}$ is the energy of the $i$-th state, $k_{B}$ is the Boltzmann constant, and $T$ is the temperature of the system. Physically, the partition function $Z$ represents a normalization factor in the system's state space that determines the probability of each state. In the given optimization framework, our goal is to obtain the policy $\pi_\theta$ by maximizing the reward $r_\phi(x, y)$ while minimizing the KL divergence between the distribution $\pi_\theta(y \mid x)$ and the reference distribution $\pi_{\text{ref}}(y \mid x)$. To simplify the computation of the KL divergence, we could introduce a partition function $Z(x)$, which is similar to the partition function in statistical physics. This function normalizes the weighted probabilities across all possible values of $y$. And then we need to define</p>
 </div>
 $$
 \begin{equation}
@@ -354,7 +354,7 @@ $$
 \end{equation}
 $$
 </div>
-<p>Since we all know $Z(x)$ does depend on $y$, only if the two distributions are identical we will find that the KL-divergence is minimized at $0$. Hence we got the corresponding optimal solution</p>
+<p>Since we all know $Z(x)$ does not depend on $y$, only if the two distributions are identical we will find that the KL-divergence is minimized at $0$. Hence we got the corresponding optimal solution</p>
 <p>$$
 \begin{equation}
 \pi_{\theta}(y \mid x)=\pi^*(y \mid x)=\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right).\label{eq11}
@@ -383,7 +383,7 @@ $$
 $$
 </div>
 <h3 id="discussion">Discussion</h3>
-<p><strong>Recent Literature Review.</strong> Even recently, researchers unveil SimPO <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, an innovative algorithm that streamlines reinforcement learning by leveraging human feedback. By adopting the average log probability of a sequence as an inherent reward, SimPO cleverly bypasses the complexity of using a reference model. This method not only simplifies the process but also proves to be more efficient in computation and memory usage. When pitted against established methods such as DPO, especially in benchmarks like AlpacaEval 2 and Arena-Hard, SimPO demonstrates superior performance.</p>
+<p><strong>Recent Literature Review.</strong> Even recently, researchers unveiled SimPO <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, an innovative algorithm that streamlines reinforcement learning by leveraging human feedback. By adopting the average log probability of a sequence as an inherent reward, SimPO cleverly bypasses the complexity of using a reference model. This method not only simplifies the process but also proves to be more efficient in computation and memory usage. When pitted against established methods such as DPO, especially in benchmarks like AlpacaEval 2 and Arena-Hard, SimPO demonstrates superior performance.</p>
 <h3 id="references">References</h3>
 <div class="footnotes" role="doc-endnotes">
 <hr>
@@ -418,43 +418,43 @@ $$
       <link>https://kairoswong.github.io/posts/2024-06-01-belief_system/</link>
       <pubDate>Sat, 01 Jun 2024 22:56:42 +0800</pubDate>
       <guid>https://kairoswong.github.io/posts/2024-06-01-belief_system/</guid>
-      <description>Introduction Mathematics and science are deeply interconnected, with math providing the founfation for scientific theories. However, there exists an huge gap within mathematics—a gap that ensures we will never touch complete certainty. Certain true statements remain unprovable, potentially challenging our belief in scientific discoveries.
-Historical context Russell&amp;rsquo;s paradox and formalism In 1874, Georg Cantor introduced the concept of sets, and a branch of mathematics named set theory, which studies well-defined collections of things.</description>
+      <description>Introduction Mathematics and science are deeply interconnected, with math providing the foundation for scientific theories. However, there exists a huge gap within mathematics—a gap that ensures we will never touch complete certainty. Certain true statements remain unprovable, potentially challenging our belief in scientific discoveries.
+Historical context Russell&#39;s paradox and formalism In 1874, Georg Cantor introduced the concept of sets, and a branch of mathematics named set theory, which studies well-defined collections of things.</description>
       <content:encoded><![CDATA[<h3 id="introduction">Introduction</h3>
 <p>Mathematics and science are deeply interconnected, with math providing the
-founfation for scientific theories. However, there exists an huge gap within mathematics—a gap that ensures we will never touch complete certainty. Certain true statements remain unprovable, potentially challenging our belief in scientific discoveries.</p>
+foundation for scientific theories. However, there exists a huge gap within mathematics—a gap that ensures we will never touch complete certainty. Certain true statements remain unprovable, potentially challenging our belief in scientific discoveries.</p>
 <h3 id="historical-context">Historical context</h3>
-<h4 id="russells-paradox-and-formalism">Russell&rsquo;s paradox and formalism</h4>
-<p>In 1874, <em>Georg Cantor</em> introduced the concept of sets, and a branch of mathematics named set theory, which studies well-defined collections of things. Despite his attempts to establish a rigorous mathematical framework based on set theory, Cantor acknowledged the inherent difficulties in defining limit precisely. By the end of the 19-th century, a huge debate among mathematicians centered around the foundations of mathematics. On the one hand were the intuitionists led by <em>Luitzen Egbertus Jan Brouwer</em>, who emphasized the constructive aspects of mathematics, arguing that mathematical truths are not discovered but created. On the other hand were the formalist championed by <em>David Hilbert</em>, they aimed to prove the consistency of mathematical systems through formal methods. But <em>Bertrand Russell</em> discovered a paradox in the late spring of 1901 while working within the framework of naive set theory. Russell&rsquo;s paradox arises when considering the set $R$ of all sets that do not contain themselves. Is $R$ a member of itself?</p>
+<h4 id="russells-paradox-and-formalism">Russell's paradox and formalism</h4>
+<p>In 1874, <em>Georg Cantor</em> introduced the concept of sets, and a branch of mathematics named set theory, which studies well-defined collections of things. Despite his attempts to establish a rigorous mathematical framework based on set theory, Cantor acknowledged the inherent difficulties in defining the limit precisely. By the end of the 19-th century, a huge debate among mathematicians centered around the foundations of mathematics. On the one hand were the intuitionists led by <em>Luitzen Egbertus Jan Brouwer</em>, who emphasized the constructive aspects of mathematics, arguing that mathematical truths are not discovered but created. On the other hand were the formalists, championed by <em>David Hilbert</em>, who aimed to prove the consistency of mathematical systems through formal methods. But <em>Bertrand Russell</em> discovered a paradox in the late spring of 1901 while working within the framework of naive set theory. Russell's paradox arises when considering the set $R$ of all sets that do not contain themselves. Is $R$ a member of itself?</p>
 <ul>
 <li>If $R \in R$, by definition of $R, R \notin R$.</li>
 <li>If $R \notin R$, by definition of $R, R \in R$.</li>
 </ul>
-<p>Russell&rsquo;s paradox exposed a fundamental contradiction in naive set theory, a logical contradiction comes from <strong>self-reference</strong>. One common approach to addressing this paradox involves refining how sets are defined. Please consider the formula $\phi(x)$ as $x \not\in x$. The set $\lbrace  x\in S: x \not\in x \rbrace $ is not contradictory because it only includes elements in $ S $ that are not members of themselves <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, it avoids including itself within the set. However, this story continues.</p>
-<h4 id="hilberts-program">Hilbert&rsquo;s program</h4>
-<p>Hilbert&rsquo;s program, formulated by the German mathematician <em>David Hilbert</em> in the early 1920s, aimed to address the foundational crisis in mathematics by establishing a new system for mathematical proofs <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. The construction of a system of proof, relies on the assumption that certain axioms are true. For example, a straight line segment could be drawn joining any two points in Euclidean geometry. And two sets are equal if and only if they contain the same elements in set theory. These axioms serve as basic building blocks for constructing mathematical systems. Theorems can be derived from axioms using a set of inference rules. It is a structured framework used to determine the validity of propositions or statements. At the International Congress of Mathematicians held in Bologna, Italy, in 1928 <em>David Hilbert</em> returned to the second one of the 23 problems, asking <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p>Russell's paradox exposed a fundamental contradiction in naive set theory; a logical contradiction comes from <strong>self-reference</strong>. One common approach to addressing this paradox involves refining how sets are defined. Please consider the formula $\phi(x)$ as $x \not\in x$. The set $\lbrace  x\in S: x \not\in x \rbrace $ is not contradictory because it only includes elements in $ S $ that are not members of themselves <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, it avoids including itself within the set. However, this story continues.</p>
+<h4 id="hilberts-program">Hilbert's program</h4>
+<p>Hilbert's program, formulated by the German mathematician <em>David Hilbert</em> in the early 1920s, aimed to address the foundational crisis in mathematics by establishing a new system for mathematical proofs <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. The construction of a system of proof relies on the assumption that certain axioms are true. For example, a straight line segment could be drawn joining any two points in Euclidean geometry. And two sets are equal if and only if they contain the same elements in set theory. These axioms serve as basic building blocks for constructing mathematical systems. Theorems can be derived from axioms using a set of inference rules. It is a structured framework used to determine the validity of propositions or statements. At the International Congress of Mathematicians held in Bologna, Italy, in 1928 <em>David Hilbert</em> returned to the second one of the 23 problems, asking <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 <ul>
 <li>Is mathematics complete?</li>
 <li>Is mathematics consistent?</li>
 <li>Is mathematics decidable?</li>
 </ul>
-<p>Completeness means that every true mathematical statement could be proven by using an assumed formal system. And consistency means that the system does not lead to any contradictions; in other words, you can&rsquo;t prove both a statement and its opposite. If the final one is true, it suggests that whether any given mathematical statement is true or false could be determinied. Hilbert was convinced that all the answers of those questions were yes, as he saying before, <em><strong>Wir müssen wissen, wir werden wissen</strong></em> (We must know, we will know).</p>
-<h3 id="gödels-incompleteness-theorems">Gödel&rsquo;s incompleteness theorems</h3>
-<h4 id="gödels-incompleteness-proof">Gödel&rsquo;s incompleteness proof</h4>
-<p>In 1931, Gödel addressed Hilbert&rsquo;s first question with his incompleteness theorem <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. This theorem established that it is impossible to construct a formal system, using the axiomatic method, for any branch of mathematics containing arithmetic that encompasses all its truths. This meant that no matter how carefully mathematicians chose their axioms, there would always be some truths that escaped  formal proof  <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. Gödel&rsquo;s incompleteness proof is achieved by assigning unique Gödel numbers to symbols and statements, constructing a self-referential statement that asserts its own unprovability and using logical contradictions to demonstrate that it must be true but unprovable. The key point is still the thing called <em><strong>self-reference</strong></em>. In <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>, the author uses an analogy to illustrate this similar thought, if editor claims that every concept is defined in that dictionary, then it must be logically circular. This is like defining the first word using a second word, and then explaining the second word with a third, continuing indefinitely. And then Gödel&rsquo;s Second Incompleteness Theorem shows that no consistent formal system includes basic arithmetic can prove its own consistency. These groundbreaking results revolutionized the fields of mathematics and logic, profoundly impacting the philosophy of mathematics.</p>
+<p>Completeness means that every true mathematical statement could be proven by using an assumed formal system. And consistency means that the system does not lead to any contradictions; in other words, you can't prove both a statement and its opposite. If the final one is true, it suggests that whether any given mathematical statement is true or false could be determined. Hilbert was convinced that all the answers of those questions were yes, as he had said before, <em><strong>Wir müssen wissen, wir werden wissen</strong></em> (We must know, we will know).</p>
+<h3 id="gödels-incompleteness-theorems">Gödel's incompleteness theorems</h3>
+<h4 id="gödels-incompleteness-proof">Gödel's incompleteness proof</h4>
+<p>In 1931, Gödel addressed Hilbert's first question with his incompleteness theorem <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. This theorem established that it is impossible to construct a formal system, using the axiomatic method, for any branch of mathematics containing arithmetic that encompasses all its truths. This meant that no matter how carefully mathematicians chose their axioms, there would always be some truths that escaped  formal proof  <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. Gödel's incompleteness proof is achieved by assigning unique Gödel numbers to symbols and statements, constructing a self-referential statement that asserts its own unprovability and using logical contradictions to demonstrate that it must be true but unprovable. The key point is still the thing called <em><strong>self-reference</strong></em>. In <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>, the author uses an analogy to illustrate this similar thought: if an editor claims that every concept is defined in that dictionary, then it must be logically circular. This is like defining the first word using a second word, and then explaining the second word with a third, continuing indefinitely. And then Gödel's Second Incompleteness Theorem shows that no consistent formal system that includes basic arithmetic can prove its own consistency. These groundbreaking results revolutionized the fields of mathematics and logic, profoundly impacting the philosophy of mathematics.</p>
 <h4 id="undecidability-in-mathematics">Undecidability in mathematics</h4>
-<p>How about addressing the last question of decidability in mathematics? Interestingly, this question is actually related to Turing machine. Turing imagined an entirely mechanical computer, it consists of an infinite tape divided into cells, a head that can read and write symbols on the tape, and a set of rules that dictate the machine’s actions based on the current state and the symbol it reads. The decidability of a proposition may be considered equivalent to the famous Turing halting problem in computational theory <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>. The most famous example of an undecidable problem is Halting Problem, which asks whether a given Turing machine will halt (stop running) or continue to run forever based on a given input. Alan Turing proved that there is no algorithm can solve the Halting Problem for all possible Turing machine and input pairs. Furthermore, the problem of undecidability even appears in complex physical systems. <em>Cubitt</em> et al. shows that determining whether a quantum system has a spectral gap (a gap in energy levels) is undecidable. This means that there is no algorithm could determine for all possible Hamiltonians whether they are gapped or gapless <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>. Now, we could answer those questions from <em>Hilbert</em>, the truth is <em><strong>we could not know, we will not know</strong></em>.</p>
+<p>How about addressing the last question of decidability in mathematics? Interestingly, this question is actually related to Turing machine. Turing imagined an entirely mechanical computer, it consists of an infinite tape divided into cells, a head that can read and write symbols on the tape, and a set of rules that dictate the machine's actions based on the current state and the symbol it reads. The decidability of a proposition may be considered equivalent to the famous Turing halting problem in computational theory <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>. The most famous example of an undecidable problem is Halting Problem, which asks whether a given Turing machine will halt (stop running) or continue to run forever based on a given input. Alan Turing proved that there is no algorithm that can solve the Halting Problem for all possible Turing machine and input pairs. Furthermore, the problem of undecidability even appears in complex physical systems. <em>Cubitt</em> et al. show that determining whether a quantum system has a spectral gap (a gap in energy levels) is undecidable. This means that there is no algorithm that could determine for all possible Hamiltonians whether they are gapped or gapless <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>. Now, we could answer those questions from <em>Hilbert</em>, the truth is <em><strong>we could not know, we will not know</strong></em>.</p>
 <h3 id="how-do-we-see-science">How do we see science?</h3>
-<p>The correctness of mathematics is equivalent to the correctness of its axioms. It is assumed in mathematics that axioms are self-evident truths from which all mathematical theories are derived. However, the incompleteness, inconsistency, and undecidability inherent in mathematics remind us that even the most fundamental axioms may have their limitations. These limitations could unexpectedly influence various fields of natural science in ways we may not anticipate. Regarding the question “How do we see science?” I have some further thinkings as follows.</p>
+<p>The correctness of mathematics is equivalent to the correctness of its axioms. It is assumed in mathematics that axioms are self-evident truths from which all mathematical theories are derived. However, the incompleteness, inconsistency, and undecidability inherent in mathematics remind us that even the most fundamental axioms may have their limitations. These limitations could unexpectedly influence various fields of natural science in ways we may not anticipate. Regarding the question “How do we see science?” I have some further thoughts as follows.</p>
 <h4 id="the-problem-of-induction">The problem of induction</h4>
-<p>Inductive reasoning, by its nature, lacks strict logical rigor; it serves as a summary of scientific empirical facts to make broader generalizations or predictions which could rise numerous issues. For instance, observing that the sun has risen every day in the past does not logically ensure that it will rise tomorrow. This is because such an inference assumes that the future will resemble the past, which is itself an unproven assumption. It leads to Hume problem articulated by the Scottish philosopher <em>David Hume</em>. Although we rely on inductive reasoning to navigate the world, there is no rational basis for the belief that the future will be consistent with the past. This presents a paradox,  despite the lack of rational justification, inductive reasoning seems both indispensable and reliable in practice.</p>
+<p>Inductive reasoning, by its nature, lacks strict logical rigor; it serves as a summary of scientific empirical facts to make broader generalizations or predictions which could raise numerous issues. For instance, observing that the sun has risen every day in the past does not logically ensure that it will rise tomorrow. This is because such an inference assumes that the future will resemble the past, which is itself an unproven assumption. It leads to the Hume problem articulated by the Scottish philosopher <em>David Hume</em>. Although we rely on inductive reasoning to navigate the world, there is no rational basis for the belief that the future will be consistent with the past. This presents a paradox; despite the lack of rational justification, inductive reasoning seems both indispensable and reliable in practice.</p>
 <h4 id="bayesian-approach-to-belief-and-evidence">Bayesian approach to belief and evidence</h4>
-<p>Employing the views of reinforcement learning, we could envision world as an enigmatic black box—a realm where our initial understanding is starkly devoid of knowledge. Through persistent trial and error, we receive feedback from environment, gradually deepening our comprehension of reality. For instance, in ancient times, as people pushed stones, they observed that exerting greater force resulted in faster motion. Through relentless experimentation, this insight was reinforced. In the virtual realm of computing, such logic manifests as foundational code, while in the tangible world, it is encapsulated by mathematics, physics, and the broader domain of science.</p>
-<p>These perspectives resonate closely with Bayesian epistemology, prior probability represents the degree of belief in a hypothesis before new evidence is taken into account. As evidence is gathered, the prior is updated to the posterior probability, which reflects the revised belief in the hypothesis after considering the new evidence. We strive to approximate the natural laws, perpetually reaching for the profound mysteries of the universe. Nevertheless, the quintessential nature of these truths eludes us, shrouded in obscurity much like the form casts the shadow itself.</p>
+<p>Employing the views of reinforcement learning, we could envision the world as an enigmatic black box—a realm where our initial understanding is starkly devoid of knowledge. Through persistent trial and error, we receive feedback from the environment, gradually deepening our comprehension of reality. For instance, in ancient times, as people pushed stones, they observed that exerting greater force resulted in faster motion. Through relentless experimentation, this insight was reinforced. In the virtual realm of computing, such logic manifests as foundational code, while in the tangible world, it is encapsulated by mathematics, physics, and the broader domain of science.</p>
+<p>These perspectives resonate closely with Bayesian epistemology; prior probability represents the degree of belief in a hypothesis before new evidence is taken into account. As evidence is gathered, the prior is updated to the posterior probability, which reflects the revised belief in the hypothesis after considering the new evidence. We strive to approximate the natural laws, perpetually reaching for the profound mysteries of the universe. Nevertheless, the quintessential nature of these truths eludes us, shrouded in obscurity much like the form casts the shadow itself.</p>
 <h4 id="challenges-and-criticisms">Challenges and criticisms</h4>
-<p>Even within the formalistic framework of logic, there persist certain doubts that challenge the very foundations upon which it stands. Someone has raised questions about <em>law of excluded middle</em>. The principle of excluded middle typically states that in any statement, it is either true or false, with no other possibilities. Is it possible for there to exist a proposition where we cannot determine its correctness or incorrectness, meaning that the law of excluded middle does not apply? Another one is about topos theory, it introduces a novel perspective on truth and logic. Unlike classical logic, where statements are simply true or false, topos theory accommodates a more nuanced view where the truth of a statement can vary depending on the context <sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>. This approach has implications for the foundations of scientific cognition, offering an alternative prespective to view science.</p>
+<p>Even within the formalistic framework of logic, there persist certain doubts that challenge the very foundations upon which it stands. Someone has raised questions about <em>the law of excluded middle</em>. The principle of excluded middle typically states that in any statement, it is either true or false, with no other possibilities. Is it possible for there to exist a proposition where we cannot determine its correctness or incorrectness, meaning that the law of excluded middle does not apply? Another one is about topos theory; it introduces a novel perspective on truth and logic. Unlike classical logic, where statements are simply true or false, topos theory accommodates a more nuanced view where the truth of a statement can vary depending on the context <sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>. This approach has implications for the foundations of scientific cognition, offering an alternative perspective to view science.</p>
 <h3 id="discussion">Discussion</h3>
-<p>Science is not just a collection of facts, it is a dynamic path to understanding. Moreover, science is also about curiosity and the willingness to explore and ask questions about the world around us. It’s about being open to new ideas and evidence, and being ready to revise our understanding as new information becomes available. It is conceivable that we may never reach the ultimate shores of truth, our journey along the path towards enlightenment will persist unceasingly.</p>
+<p>Science is not just a collection of facts; it is a dynamic path to understanding. Moreover, science is also about curiosity and the willingness to explore and ask questions about the world around us. It's about being open to new ideas and evidence, and being ready to revise our understanding as new information becomes available. It is conceivable that we may never reach the ultimate shores of truth; our journey along the path towards enlightenment will persist unceasingly.</p>
 <h3 id="references">References</h3>
 <div class="footnotes" role="doc-endnotes">
 <hr>
@@ -658,13 +658,13 @@ $$
 <hr>
 <ol>
 <li id="fn:1">
-<p>Korteweg, Diederik Johannes, and Gustav De Vries. &ldquo;On the change of form of long waves advancing in a rectangular canal, and on a new type of long stationary waves.&rdquo; The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 39.240 (1895): 422-443.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Korteweg, Diederik Johannes, and Gustav De Vries. &quot;On the change of form of long waves advancing in a rectangular canal, and on a new type of long stationary waves.&quot; The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 39.240 (1895): 422-443.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>Lax, Peter D. &ldquo;Integrals of nonlinear equations of evolution and solitary waves.&rdquo; Communications on pure and applied mathematics 21.5 (1968): 467-490.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Lax, Peter D. &quot;Integrals of nonlinear equations of evolution and solitary waves.&quot; Communications on pure and applied mathematics 21.5 (1968): 467-490.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>Malfliet, Willy. &ldquo;Solitary wave solutions of nonlinear wave equations.&rdquo; American journal of physics 60.7 (1992): 650-654.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Malfliet, Willy. &quot;Solitary wave solutions of nonlinear wave equations.&quot; American journal of physics 60.7 (1992): 650-654.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -762,10 +762,10 @@ $$</p>
 </figure>
 
 <p>数值模拟表明，所有这些要求可以很容易地同时满足实际参数在冷原子气体. 目前的计算是基于单个粒子图，忽略了粒子间的相互作用.</p>
-<h3 id="霍夫斯塔特蝴蝶hofstadters-butterfly">霍夫斯塔特蝴蝶(Hofstadter&rsquo;s Butterfly)</h3>
+<h3 id="霍夫斯塔特蝴蝶hofstadters-butterfly">霍夫斯塔特蝴蝶(Hofstadter's Butterfly)</h3>
 <p>1976年，Douglas Hofstadter 在研究 Bloch 电子在外磁场作用下的量子现象时发现电子的能量和磁场强度可形成分形图像.</p>
 <h4 id="朗道能级">朗道能级</h4>
-<p>事实上，从现在的眼光来看，Hofstadter&rsquo;s Butterfly本身就是朗道能级的二维格点版本. 带电粒子能量在一系列分立的数值中取值，形成朗道能级. 求解外加磁场下的薛定谔方程，从而得到电子能级的分布，即为朗道能级. 外加磁场为均匀磁场，沿 $z$ 方向，即 $\textbf{B}=(0,0,B)$.</p>
+<p>事实上，从现在的眼光来看，Hofstadter's Butterfly本身就是朗道能级的二维格点版本. 带电粒子能量在一系列分立的数值中取值，形成朗道能级. 求解外加磁场下的薛定谔方程，从而得到电子能级的分布，即为朗道能级. 外加磁场为均匀磁场，沿 $z$ 方向，即 $\textbf{B}=(0,0,B)$.</p>
 <p>由 $\mathbf{B}=\nabla \times \hat{\mathbf{A}}$，取朗道规范可得磁矢势 $\hat{\mathbf{A}}=(-B y , 0, 0)$，式中 $\lvert {B} \rvert$，这样的规范下电子的正则动量为 $\hat{\textbf{p}}+q \hat{\textbf{A}}$，电子的哈密顿量可以写为：</p>
 <p>$$
 \begin{equation}
@@ -1043,40 +1043,40 @@ $$</p>
 </figure>
 
 <h3 id="结语">结语</h3>
-<p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 这一种有趣的量子分形现象——Hofstadter蝴蝶，从它与整数量子霍尔效应的联系出发，最近火热的转角石墨烯体系、分数陈绝缘体等与其相关密切. 从现在的眼光来看，Hofstadter&rsquo;s Butterfly本身就是朗道能级的二维格点版本. 本文也讨论了对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到一个美丽的分形图案. 但若要在实验上得以实现，需要极大的磁通，最后也举例了最新的实验观测情况. 实际上，Hofstadter蝴蝶中与之相关的物理现象有很多，例如分数量子霍尔效应也与之有重要的联系.</p>
+<p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 这一种有趣的量子分形现象——Hofstadter蝴蝶，从它与整数量子霍尔效应的联系出发，最近火热的转角石墨烯体系、分数陈绝缘体等与其相关密切. 从现在的眼光来看，Hofstadter's Butterfly本身就是朗道能级的二维格点版本. 本文也讨论了对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到一个美丽的分形图案. 但若要在实验上得以实现，需要极大的磁通，最后也举例了最新的实验观测情况. 实际上，Hofstadter蝴蝶中与之相关的物理现象有很多，例如分数量子霍尔效应也与之有重要的联系.</p>
 <h3 id="references">References</h3>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>Mandelbrot, Benoit B. &ldquo;Les objets fractals: forme, hasard et dimension.&rdquo; (1975).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Mandelbrot, Benoit B. &quot;Les objets fractals: forme, hasard et dimension.&quot; (1975).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>Gao, Chao, Hui Zhai, and Zhe-Yu Shi. &ldquo;Dynamical fractal in quantum gases with discrete scaling symmetry.&rdquo; Physical Review Letters 122.23 (2019): 230402.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Gao, Chao, Hui Zhai, and Zhe-Yu Shi. &quot;Dynamical fractal in quantum gases with discrete scaling symmetry.&quot; Physical Review Letters 122.23 (2019): 230402.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>Klitzing, K. V., Gerhard Dorda, and Michael Pepper. &ldquo;New method for high-accuracy determination of the fine-structure constant based on quantized Hall resistance.&rdquo; Physical review letters 45.6 (1980): 494.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Klitzing, K. V., Gerhard Dorda, and Michael Pepper. &quot;New method for high-accuracy determination of the fine-structure constant based on quantized Hall resistance.&quot; Physical review letters 45.6 (1980): 494.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
-<p>Satija, Indubala. &ldquo;Pythagorean triplets, integral apollonians and the Hofstadter butterfly.&rdquo; arXiv preprint arXiv:1802.04585 (2018).&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Satija, Indubala. &quot;Pythagorean triplets, integral apollonians and the Hofstadter butterfly.&quot; arXiv preprint arXiv:1802.04585 (2018).&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
-<p>János K. Asbóth, László Oroszlány, András Pályi. &ldquo;A Short Course on Topological Insulators: Band Structure and Edge States in One and Two Dimensions.&rdquo; Springer International Publishing, 2016.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>János K. Asbóth, László Oroszlány, András Pályi. &quot;A Short Course on Topological Insulators: Band Structure and Edge States in One and Two Dimensions.&quot; Springer International Publishing, 2016.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6">
-<p>Cage, Marvin E., et al. &ldquo;The quantum Hall effect.&rdquo; Springer Science &amp; Business Media, 2012.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Cage, Marvin E., et al. &quot;The quantum Hall effect.&quot; Springer Science &amp; Business Media, 2012.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
-<p>Analytis, James G., Stephen J. Blundell, and Arzhang Ardavan. &ldquo;Landau levels, molecular orbitals, and the Hofstadter butterfly in finite systems.&rdquo; American Journal of Physics 72.5 (2004): 613-618.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Analytis, James G., Stephen J. Blundell, and Arzhang Ardavan. &quot;Landau levels, molecular orbitals, and the Hofstadter butterfly in finite systems.&quot; American Journal of Physics 72.5 (2004): 613-618.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8">
-<p>Kuhl, U., and H-J. Stöckmann. &ldquo;Microwave realization of the Hofstadter butterfly.&rdquo; Physical review letters 80.15 (1998): 3232.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Kuhl, U., and H-J. Stöckmann. &quot;Microwave realization of the Hofstadter butterfly.&quot; Physical review letters 80.15 (1998): 3232.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:9">
-<p>Roushan, Pedram, et al. &ldquo;Spectroscopic signatures of localization with interacting photons in superconducting qubits.&rdquo; Science 358.6367 (2017): 1175-1179.&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Roushan, Pedram, et al. &quot;Spectroscopic signatures of localization with interacting photons in superconducting qubits.&quot; Science 358.6367 (2017): 1175-1179.&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:10">
-<p>Barrier, Julien, et al. &ldquo;Long-range ballistic transport of Brown-Zak fermions in graphene superlattices.&rdquo; Nature Communications 11.1 (2020): 5756.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Barrier, Julien, et al. &quot;Long-range ballistic transport of Brown-Zak fermions in graphene superlattices.&quot; Nature Communications 11.1 (2020): 5756.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
