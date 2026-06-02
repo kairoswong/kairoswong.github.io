@@ -31,15 +31,14 @@ Why does this matter? In later stages of RL training, the gap between &amp;quot;
 <h4 id="the-bradley-terry-model">The Bradley-Terry Model</h4>
 <p>The DPO algorithm eliminates the need for a separate reward model by treating preference optimization as a direct logistic regression problem <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. At its core lies the Bradley-Terry model—a statistical framework for inferring latent preferences from pairwise comparisons.</p>
 <p>Imagine prompting an LLM with input $x$ to generate a pair of responses. Given human preference data, the Bradley-Terry model<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> posits that the probability of preferring $y_w$ over $y_l$ follows a sigmoid function of their reward difference:</p>
-<p>$$
+$$
 \begin{equation}
-p^<em>(y_w \succ y_l \mid x) = \frac{\exp(r^</em>(x,y_w))}{\exp(r^<em>(x,y_w))+\exp(r^</em>(x,y_l))}. \label{eq1}
+    p^*(y_w \succ y_l \mid x) = \frac{\exp(r^*(x,y_w))}{\exp(r^*(x,y_w))+\exp(r^*(x,y_l))}. \label{eq1}
 \end{equation}
-$$</p>
+$$
 <p>This formulation is elegant for three reasons. First, exponentiation transforms reward differences into probabilities—a non-negative operation that ensures valid probability values. Second, the log-linear form admits efficient gradient-based optimization. Third, it mirrors the Boltzmann distribution in statistical physics, where particle energies $E_i$ determine state probabilities via $\propto \exp(-E_i/k_BT)$. The connection is not merely cosmetic: the exponential family's mathematical properties guarantee stable training dynamics.</p>
-<p>Given this model, we can formulate the learning objective as a maximum likelihood problem over paired preference data $\mathcal{D} = {(x^{(i)}, y_w^{(i)}, y_l^{(i)})}_{i=1}^N$. Taking the negative log-likelihood gives us a clean gradient-based objective:</p>
+<p>Given this model, we can formulate the learning objective as a maximum likelihood problem over paired preference data $\mathcal{D} = \{(x^{(i)}, y_w^{(i)}, y_l^{(i)})\}_{i=1}^N$. Taking the negative log-likelihood gives us a clean gradient-based objective:</p>
 <h4 id="log-likelihood-loss-function">Log-likelihood Loss Function</h4>
-<div>
 $$
 \begin{equation}
     \begin{aligned}
@@ -47,73 +46,69 @@ $$
         =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \frac{\exp \left(r_{\phi}\left(x, y_w\right)\right)}{\exp \left(r_{\phi}\left(x, y_w\right)\right)+\exp \left(r_{\phi}\left(x, y_l\right)\right)}\right] \\
         & =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \frac{1}{1+\exp \left(r_{\phi}\left(x, y_l\right)-r_{\phi}\left(x, y_w\right)\right)}\right] \\
         & =-\mathbb{E}_ {\left(x, y_w, y_l\right) \sim \mathcal{D}}\left[\log \sigma\left(r_{\phi}\left(x, y_w\right)-r_{\phi}\left(x, y_l\right)\right)\right]
-    \end{aligned} \label{eq4}
+    \end{aligned} \label{eq2}
 \end{equation}
 $$
-</div>
 <p>where $\sigma$ is the logistic function, $\sigma(x) = 1/(1 + \exp(-x))$.</p>
 <p>To align the policy $\pi_\theta$ with preferences, we maximize expected reward while constraining it to stay close to a reference model $\pi_{\text{ref}}$:</p>
-<p>$$\max_{\pi_\theta} \mathbb{E}<em>{x \sim \mathcal{D}, y \sim \pi</em>\theta}[r_\phi(x,y)] - \beta \mathbb{D}<em>{\text{KL}}[\pi</em>\theta(y \mid x) || \pi_{\text{ref}}(y \mid x)] \label{eq5}$$</p>
+$$
+\begin{equation}
+    \max_{\pi_\theta} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi_\theta}[r_\phi(x,y)] - \beta \mathbb{D}_{\text{KL}}[\pi_\theta(y \mid x) || \pi_{\text{ref}}(y \mid x)] \label{eq3}
+\end{equation}
+$$
 <p>Here, $\beta$ is a hyperparameter controlling how far $\pi_\theta$ can drift from the reference policy $\pi_{\text{ref}}$. The KL term acts as a regularization anchor—it prevents the model from collapsing onto a single high-reward response and preserves diversity.</p>
 <h4 id="deriving-the-optimum-of-reward-maximization-objective">Deriving the optimum of reward maximization objective</h4>
 <p>For two probability distributions $P$ and $Q$, Kullback-Leibler (KL) divergence $\mathbb{D}_{\mathrm{KL}}(P|| Q)$ is defined as</p>
-<p>$$
+$$
 \begin{equation}
-\mathbb{D}_ {\text{KL}}(P || Q)= \sum_{x \in \mathcal{X}} P(x)\log \left( \frac{P(x)}{Q(x)} \right)
+    \mathbb{D}_ {\text{KL}}(P || Q)= \sum_{x \in \mathcal{X}} P(x)\log \left( \frac{P(x)}{Q(x)} \right) 
 \end{equation}
-$$</p>
-<p>where $\mathcal{X}$ is the set of possible outcomes for the discrete random variable $x$. KL divergence measures the information loss when distribution $Q$ is used to approximate distribution $P$. In other words, it quantifies the difference between distributions $Q$ and $P$. In the following derivation, we need to introduce the concept of partition function in physics, $Z (x)$. With Eq. \eqref{eq5}, we could have</p>
-</div>
+$$
+<p>where $\mathcal{X}$ is the set of possible outcomes for the discrete random variable $x$. KL divergence measures the information loss when distribution $Q$ is used to approximate distribution $P$. In other words, it quantifies the difference between distributions $Q$ and $P$. In the following derivation, we need to introduce the concept of partition function in physics, $Z (x)$. With Eq. \eqref{eq3}, we could have</p>
 $$
 \begin{equation}
     \begin{aligned}
-    & \max_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}} [r_{\phi}(x, y)] -\beta \mathbb{D}_ {\mathrm{KL}}\left[\pi_{\theta}(y \mid x) \| \pi_{\mathrm{ref}}(y \mid x)\right]  \\
-    & = \max_{\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_{\phi}(x, y)] - \mathbb{E} _ {x \sim \mathcal{D}, y \sim \pi_{\theta}}\left[ \beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\text{ref}}(y \mid x)} \right]\\
-    & =\max_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[r_{\phi}(x, y)-\beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\mathrm{ref}}(y \mid x)}\right] \\
-    & =\min_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[\log \frac{\pi_{\theta}(y \mid x)}{\pi_{\mathrm{ref}}(y \mid x)}-\frac{1}{\beta} r_{\phi}(x, y)\right] \\
-    & =\min_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[\log \frac{\pi_{\theta}(y \mid x)}{\color{red}{\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right)}}-\log Z(x)\right],
+        & \max_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}} [r_{\phi}(x, y)] -\beta \mathbb{D}_ {\mathrm{KL}}\left[\pi_{\theta}(y \mid x) \| \pi_{\mathrm{ref}}(y \mid x)\right]  \\
+        & = \max_{\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{\theta}}[r_{\phi}(x, y)] - \mathbb{E} _ {x \sim \mathcal{D}, y \sim \pi_{\theta}}\left[ \beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\text{ref}}(y \mid x)} \right]\\
+        & =\max_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[r_{\phi}(x, y)-\beta \log \frac{\pi_{\theta}(y \mid x)}{\pi_{\mathrm{ref}}(y \mid x)}\right] \\
+        & =\min_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[\log \frac{\pi_{\theta}(y \mid x)}{\pi_{\mathrm{ref}}(y \mid x)}-\frac{1}{\beta} r_{\phi}(x, y)\right] \\
+        & =\min_ {\pi_{\theta}} \mathbb{E}_ {x \sim \mathcal{D}} \mathbb{E}_ {y \sim \pi_{\theta}}\left[\log \frac{\pi_{\theta}(y \mid x)}{\textcolor{red}{\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right)}}-\log Z(x)\right],
     \end{aligned}\label{eq7}
 \end{equation}
 $$
-</div>
 <p>where the partition function is</p>
-<p>$$
+$$
 \begin{equation}
-Z (x) = \sum_{y}\pi_{\text{ref}(y \mid x) }\exp\left( \frac{1}{\beta} r_{\phi} (x, y) \right).
+    Z (x) = \sum_{y}\pi_{\text{ref}(y \mid x) }\exp\left( \frac{1}{\beta} r_{\phi} (x, y) \right).
 \end{equation}
-$$</p>
+$$
 <p>Let us go back to statistical physics for explaining the partition function. The partition function $Z$ is the sum of all possible state weights of a system, and it determines the equilibrium properties of this system. For a given system, the partition function in physics is defined as $ Z = \sum_{i} \exp\left(-\frac{E_{i}}{k_{B}T}\right)$, where $E_{i}$ is the energy of the $i$-th state, $k_{B}$ is the Boltzmann constant, and $T$ is the temperature of the system. Physically, the partition function $Z$ represents a normalization factor in the system's state space that determines the probability of each state. In the given optimization framework, our goal is to obtain the policy $\pi_\theta$ by maximizing the reward $r_\phi(x, y)$ while minimizing the KL divergence between the distribution $\pi_\theta(y \mid x)$ and the reference distribution $\pi_{\text{ref}}(y \mid x)$. To simplify the computation of the KL divergence, we could introduce a partition function $Z(x)$, which is similar to the partition function in statistical physics. This function normalizes the weighted probabilities across all possible values of $y$. And then we need to define</p>
-</div>
-$$
-\begin{equation}
-\begin{aligned}
-        \frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) &\exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right) \\
-        & = \frac{\pi_{\text{ref}}(y \mid x)\exp \left( \frac{1}{\beta}r_{\phi}(x, y) \right)}{\sum_{y}\pi_{\text{ref}(y \mid x)}\exp\left( \frac{1}{\beta}r_{\phi}(x,y) \right)}\\
-        & = \pi^{*}(y \mid x)
-\end{aligned}
-\end{equation}
-$$
-</div>
-<p>Now we should re-organize the detailed result in Eq. \eqref{eq7} as</p>
-</div>
 $$
 \begin{equation}
     \begin{aligned}
-\min_{\pi_{\theta}}\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{ \theta}}& \left[ \log \frac{\pi(y \mid x)}{\pi^{*}(y \mid  x)} - \log Z(x) \right] \\
-& = \min_{\pi_{\theta}}\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{ \theta}} \left[ \log \frac{\pi_{\theta}(y \mid x)}{\pi^{*}(y \mid  x)} \right] \\
-& = \min_{\pi_{\theta}}\mathbb{E} _ {x \sim \mathcal{D}}[\mathbb{D}_ {\text{KL}}(\pi_{\theta}(y \mid x) ||\pi^{*}(y \mid x))].
-\end{aligned}
+        \frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) &\exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right) \\
+        & = \frac{\pi_{\text{ref}}(y \mid x)\exp \left( \frac{1}{\beta}r_{\phi}(x, y) \right)}{\sum_{y}\pi_{\text{ref}(y \mid x)}\exp\left( \frac{1}{\beta}r_{\phi}(x,y) \right)}\\
+        & = \pi^{*}(y \mid x)
+    \end{aligned}
 \end{equation}
 $$
-</div>
-<p>Since we all know $Z(x)$ does not depend on $y$, only if the two distributions are identical we will find that the KL-divergence is minimized at $0$. Hence we got the corresponding optimal solution</p>
-<p>$$
+<p>Now we should reorganize the detailed result in Eq. \eqref{eq7} as</p>
+$$
 \begin{equation}
-\pi_{\theta}(y \mid x)=\pi^*(y \mid x)=\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right).\label{eq11}
+    \begin{aligned}
+        \min_{\pi_{\theta}}\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{ \theta}}& \left[ \log \frac{\pi(y \mid x)}{\pi^{*}(y \mid  x)} - \log Z(x) \right] \\
+        & = \min_{\pi_{\theta}}\mathbb{E}_ {x \sim \mathcal{D}, y \sim \pi_{ \theta}} \left[ \log \frac{\pi_{\theta}(y \mid x)}{\pi^{*}(y \mid  x)} \right] \\
+        & = \min_{\pi_{\theta}}\mathbb{E} _ {x \sim \mathcal{D}}[\mathbb{D}_ {\text{KL}}(\pi_{\theta}(y \mid x) ||\pi^{*}(y \mid x))].
+    \end{aligned}
 \end{equation}
-$$</p>
+$$
+<p>Since we all know $Z(x)$ does not depend on $y$, only if the two distributions are identical we will find that the KL-divergence is minimized at $0$. Hence we got the corresponding optimal solution</p>
+$$
+\begin{equation}
+    \pi_{\theta}(y \mid x)=\pi^*(y \mid x)=\frac{1}{Z(x)} \pi_{\mathrm{ref}}(y \mid x) \exp \left(\frac{1}{\beta} r_{\phi}(x, y)\right).\label{eq11}
+\end{equation}
+$$
 <p>And then we derive $r_{\phi}$ from Eq. \eqref{eq11}</p>
-</div>
 $$
 \begin{equation}
     \begin{aligned}
@@ -122,9 +117,7 @@ $$
     \end{aligned} \label{eq12}
 \end{equation}
 $$
-</div>
-<p>By substituting Eq. \eqref{eq12} into Eq. \eqref{eq4} we could obtain</p>
-</div>
+<p>By substituting Eq. \eqref{eq12} into Eq. \eqref{eq2} we could obtain</p>
 $$
 \begin{equation}
     \begin{aligned}
@@ -133,7 +126,6 @@ $$
     \end{aligned}    
 \end{equation}
 $$
-</div>
 <h3 id="discussion">Discussion</h3>
 <p><strong>Recent Literature Review.</strong> Even recently, researchers unveiled SimPO <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, an innovative algorithm that streamlines reinforcement learning by leveraging human feedback. By adopting the average log probability of a sequence as an inherent reward, SimPO cleverly bypasses the complexity of using a reference model. This method not only simplifies the process but also proves to be more efficient in computation and memory usage. When pitted against established methods such as DPO, especially in benchmarks like AlpacaEval 2 and Arena-Hard, SimPO demonstrates superior performance.</p>
 <h3 id="references">References</h3>
